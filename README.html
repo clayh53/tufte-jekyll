@@ -1,1 +1,88 @@
+<h1>tufte-jekyll theme</h1>
 
+<p>The <em>Tufte-Jekyll</em> theme is a natural extension of the work done by <a href="https://github.com/daveliepmann/tufte-css">Dave Leipmann</a> on Github that created a CSS file that allows web writers to use the simple and elegant style employed by Edward Tufte in his published materials.</p>
+
+<p>To incorporate these styles into a Jekyll theme, I have made some very slight modifications that attempt to maintain the feel of the CSS styles in this repo.</p>
+
+<h2>Installation</h2>
+
+<p>I&rsquo;m not going to go into great detail here. I am just going to assume that anyone interested in either Jekyll, Edward Tufte&rsquo;s work or Github has some basic skills. I created this with Ruby 2.2.0 and Jekyll 2.5.3. There is absolutely nothing exotic going on here, so you can probably make any recent version of Jekyll work with this setup.</p>
+
+<p>So copy, pull, download a zipfile or whatever and fire it up.</p>
+
+<p><code>
+%&gt; cd ~/thatPlaceYouPutIt/tufte-jekyll
+%&gt; jekyll build
+%&gt; jekyll serve -w
+</code></p>
+
+<p>And then point your browser at localhost:4000</p>
+
+<h2>Some things about the things</h2>
+
+<p>I needed to create several custom Liquid tags to wrap content in the right kind of tags. You will create your posts in the normal way in the <code>_posts</code> directory, and then edit them with Github-Flavored Markdown. To all that GFM goodness, you can use the following custom Liquid tags in your content area.</p>
+
+<h3>Sidenote</h3>
+
+<p>This tag inserts a <em>sidenote</em> in the content, which is like a footnote, only its in the spacious right-hand column. It is numbered. Just put it in the content like you would insert a footnote like so:</p>
+
+<p><code>
+blah lorem blah{% sidenote 1 'This is a random sidenote'%} blah blah
+</code>
+And it will add the spans and superscripts. You are responsible for keeping track of the numbering!</p>
+
+<h3>Margin note</h3>
+
+<p>This tag is essentially the same as a sidenote, but heh, no number. Like this:</p>
+
+<p><code>
+lorem nobeer toasty critters{% marginnote 'Random thought when drinking'%} continue train of thought
+</code></p>
+
+<h3>Full width image</h3>
+
+<p>This tag inserts an image that spans both the main content column and the side column. Full-width IOW:</p>
+
+<p><code>
+blah blah {% fullwidth /url/to/image 'A caption for the image'}
+</code></p>
+
+<h3>Main column image</h3>
+
+<p>This tag inserts an image that is confined to the main content column:</p>
+
+<p><code>
+blah blah{% maincolumn /path/to/image 'This is the caption' %} blah
+</code></p>
+
+<h3>Margin figure</h3>
+
+<p>This tag inserts and image in the side column area:</p>
+
+<p><code>
+blah blah {% marginfigure /path/to/image 'This is the caption' %} blah
+</code></p>
+
+<h3>New thought</h3>
+
+<p>This tag will render its contents in small caps. Useful at the beginning of new sections:</p>
+
+<p><code>
+{% newthought 'This will be rendered in small caps %} blah blah
+</code></p>
+
+<h3>Mathjax</h3>
+
+<p>Totally used this functionality from a <a href="https://gist.github.com/jessykate/834610">gist by Jessy Cowan-Sharpe</a> to make working with Mathjax expressions a little easier. Short version, wrap inline math in a tag pair thusly: <code>{% m %}mathjax expressino{% em %}</code> and wrap bigger block level stuff with <code>{% math %}mathjax expression{% endmath %}</code></p>
+
+<p>As a side note - if you do not need the math ability, navigate to the <code>_data/options.yml</code> file and change the mathjax to &lsquo;false&rsquo; and it will not load the mathjax javascript.</p>
+
+<h2>Other stuff</h2>
+
+<h3>SASS</h3>
+
+<p>I made a half-hearted effort to use Sass to create the css file used by this theme. If you would like to change things like fonts, colors and so forth, edit the <code>_scss/_settings.scss</code> file. I really didn&rsquo;t do any heavy lifting with SASS on this project since the CSS is relatively straightforward.</p>
+
+<h3>Social icons</h3>
+
+<p>You can edit the <code>_data/social.yml</code> file and put in your own information for the footer links</p>
