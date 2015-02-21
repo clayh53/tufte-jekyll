@@ -1,6 +1,6 @@
 ## This has a fairly harmless hack that wraps the img tag in a div to prevent it from being
 ## wrapped in a paragraph tag instead, which would totally fuck things up layout-wise
-## Usage {% fullwidth /path/to/image "caption goes here in quotes" %}
+## Usage {% fullwidth /path/to/image 'caption goes here in quotes' %}
 #
 module Jekyll
   class RenderFullWidthTag < Liquid::Tag

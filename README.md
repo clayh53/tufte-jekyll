@@ -4,6 +4,10 @@ The *Tufte-Jekyll* theme is a natural extension of the work done by [Dave Leipma
 
 To incorporate these styles into a Jekyll theme, I have made some very slight modifications that attempt to maintain the feel of the CSS styles in this repo.
 
+## Demo
+
+A sample site with self-documenting content is available [here](http://clayh53.github.io/tufte-jekyll/) on github pages.
+
 ## Installation
 
 I'm not going to go into great detail here. I am just going to assume that anyone interested in either Jekyll, Edward Tufte's work or Github has some basic skills. I created this with Ruby 2.2.0 and Jekyll 2.5.3. There is absolutely nothing exotic going on here, so you can probably make any recent version of Jekyll work with this setup.
@@ -16,7 +20,7 @@ So copy, pull, download a zipfile or whatever and fire it up.
 %> jekyll serve -w
 ```
 
-And then point your browser at localhost:4000
+And then point your browser at localhost:4000/tufte-jekyll/
 
 ## Some things about the things
 
@@ -74,7 +78,7 @@ Totally used this functionality from a [gist by Jessy Cowan-Sharpe](https://gist
 
 As a side note - if you do not need the math ability, navigate to the ```_data/options.yml``` file and change the mathjax to 'false' and it will not load the mathjax javascript.
 
-## Other stuff
+## Other stuff, Problems and Programming Sorrow
 
 ### SASS
 
@@ -83,6 +87,26 @@ I made a half-hearted effort to use Sass to create the css file used by this the
 ### Social icons
 
 You can edit the ```_data/social.yml``` file and put in your own information for the footer links
+
+### Silly-ass badge in the upper left
+
+In the ```/assets/img``` directory is a file called ```badge_1.png```. This file's parent is ```badge_1.psd``` and is an editable photoshop file with layers for the letters comprising the initials. Change them to suit your fancy. Or just substitute another badge in its place. You can edit the ```/_includes/header.html``` file and change the file that it points too. Find your favorite Tufte emoji and fly your freak flag proudly.
+
+### Which brings me to sorrow and shame
+
+Getting this thing to display properly on *Github Pages* revealed an issue with path names. So here is the deal: In the ```/_config.yml``` file is a setting called *baseurl*. This is used by the Jekyll engine to construct all the proper links in the static site. This is all well and good for the bones of the site. Right now it is set to '*tufte-jekyll*' and all the links are created assuming that is the root path. On your local installation, if you tire of typing in ```localhost:4000/tufte-jekyll``` all you need to do is change that baseurl parameter to '/'.
+
+However... When writing content that includes images that are inside the customm Liquid tags, you must hard-code the *entire* path for your intended site configuration. Normally, one could enter an image path something like ```{{site.baseurl}}/assets/img/someimage.png``` and it would be properly fleshed out. But my Liquid tags are pretty dumb, and the do not recursively call the Liquid engine to properly build the url. At the present, my N00b status in the Ruby language has prevented me from fixing this problem. 
+
+Here are some discussions about the reason behind the baseurl business:
+
+* [Jekyll docs](http://jekyllrb.com/docs/configuration/)
+* [Parker Moore](http://blog.parkermoore.de/2014/04/27/clearing-up-confusion-around-baseurl/)
+* [Andrew Shell](http://blog.andrewshell.org/understanding-baseurl/)
+
+### Rakefile
+
+At the moment, this rakefile only has one task in it - an automated upload to a *Github Pages* location of the site. This is necessary because of the plugins used by this theme. It does scary stuff like move your ```_site``` somewhere safe, delete everything, move the ```_site``` back and then do a commit to the ```gh-pages``` branch of your repository. You can read about it [here](http://blog.nitrous.io/2013/08/30/using-jekyll-plugins-on-github-pages.html).  
 
 ### To-do list
 
