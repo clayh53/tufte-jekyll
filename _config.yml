@@ -13,3 +13,4 @@ highlighter: rouge
 permalink: /articles/:short_year/:title
 timezone: America/New_York
 excerpt_separator: =]  # you can specify your own separator, of course.
+exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', 'README.md']
