@@ -91,7 +91,6 @@ You can edit the ```_data/social.yml``` file and put in your own information for
 ### Silly-ass badge in the upper left
 
 In the ```/assets/img``` directory is a file called ```badge_1.png```. This file's parent is ```badge_1.psd``` and is an editable photoshop file with layers for the letters comprising the initials. Change them to suit your fancy. Or just substitute another badge in its place. You can edit the ```/_includes/header.html``` file and change the file that it points too. Find your favorite Tufte emoji and fly your freak flag proudly.
-
 ### Which brings me to sorrow and shame
 
 Getting this thing to display properly on *Github Pages* revealed an issue with path names. So here is the deal: In the ```/_config.yml``` file is a setting called *baseurl*. This is used by the Jekyll engine to construct all the proper links in the static site. This is all well and good for the bones of the site. Right now it is set to '*tufte-jekyll*' and all the links are created assuming that is the root path. On your local installation, if you tire of typing in ```localhost:4000/tufte-jekyll``` all you need to do is change that baseurl parameter to '/'.
@@ -114,6 +113,7 @@ It would be nice to have the sidenotes tag do all the counting for you. I have a
 
 I also will probably be adding a very basic Rakefile to do things like create posts, and so forth. But not right now. 
 
+This is not a professional shiny works-out-of-the-box theme. But bang on it a little and I am sure you can make it work for you.
 
 
 
