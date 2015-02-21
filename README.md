@@ -113,7 +113,7 @@ It would be nice to have the sidenotes tag do all the counting for you. I have a
 
 I also will probably be adding a very basic Rakefile to do things like create posts, and so forth. But not right now. 
 
-This is not a professional shiny works-out-of-the-box theme. But bang on it a little and I am sure you can make it work for you.
+This is not a professional shiny "works-out-of-the-box theme". But bang on it a little and I am sure you can make it work for you.
 
 
 
