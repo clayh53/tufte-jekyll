@@ -84,6 +84,11 @@ I made a half-hearted effort to use Sass to create the css file used by this the
 
 You can edit the ```_data/social.yml``` file and put in your own information for the footer links
 
+### To-do list
+
+It would be nice to have the sidenotes tag do all the counting for you. I have a feeling it is going to involve some ```@@rubyVariables``` to keep track of things. I'll probably get around to digging into this sooner or later, but if any of you Ruby gods out there want to take a whack at it, please fork this repo and go for it.
+
+I also will probably be adding a very basic Rakefile to do things like create posts, and so forth. But not right now. 
 
 
 
