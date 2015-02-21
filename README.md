@@ -20,7 +20,7 @@ So copy, pull, download a zipfile or whatever and fire it up.
 %> jekyll serve -w
 ```
 
-And then point your browser at localhost:4000/tufte-jekyll/
+And then point your browser at localhost:4000
 
 ## Some things about the things
 
