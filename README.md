@@ -91,6 +91,7 @@ You can edit the ```_data/social.yml``` file and put in your own information for
 ### Silly-ass badge in the upper left
 
 In the ```/assets/img``` directory is a file called ```badge_1.png```. This file's parent is ```badge_1.psd``` and is an editable photoshop file with layers for the letters comprising the initials. Change them to suit your fancy. Or just substitute another badge in its place. You can edit the ```/_includes/header.html``` file and change the file that it points too. Find your favorite Tufte emoji and fly your freak flag proudly.
+
 ### Which brings me to sorrow and shame
 
 Getting this thing to display properly on *Github Pages* revealed an issue with path names. So here is the deal: In the ```/_config.yml``` file is a setting called *baseurl*. This is used by the Jekyll engine to construct all the proper links in the static site. This is all well and good for the bones of the site. Right now it is set to '*tufte-jekyll*' and all the links are created assuming that is the root path. On your local installation, if you tire of typing in ```localhost:4000/tufte-jekyll``` all you need to do is change that baseurl parameter to '/'.
@@ -105,13 +106,13 @@ Here are some discussions about the reason behind the baseurl business:
 
 ### Rakefile
 
-At the moment, this rakefile only has one task in it - an automated upload to a *Github Pages* location of the site. This is necessary because of the plugins used by this theme. It does scary stuff like move your ```_site``` somewhere safe, delete everything, move the ```_site``` back and then do a commit to the ```gh-pages``` branch of your repository. You can read about it [here](http://blog.nitrous.io/2013/08/30/using-jekyll-plugins-on-github-pages.html).  
+I have added a boilerplate Rakefile directly from the [jekyll-rake-boilerplate repo](https://github.com/gummesson/jekyll-rake-boilerplate). This saves you a small amount of time by prepending the date on a post name and populated the bare minimum of YAML front matter in the file. Please visit the link to the repo to find out how it runs. One thing to note is that there should be *no* space between the task and the opening bracket of your file name. ```rake post["Title"]``` will work while ```rake post ["Title"]``` will not. 
+
+There is another rakefile (UploadtoGithub.Rakefile) included that only has one task in it - an automated upload to a *Github Pages* location of the site. This is necessary because of the plugins used by this theme. It does scary stuff like move your ```_site``` somewhere safe, delete everything, move the ```_site``` back and then do a commit to the ```gh-pages``` branch of your repository. You can read about it [here](http://blog.nitrous.io/2013/08/30/using-jekyll-plugins-on-github-pages.html). You would only need to use this if you are using Github project pages to host your site. Integration with the existing Rakefile is left as an exercise for the reader.
 
 ### To-do list
 
 It would be nice to have the sidenotes tag do all the counting for you. I have a feeling it is going to involve some ```@@rubyVariables``` to keep track of things. I'll probably get around to digging into this sooner or later, but if any of you Ruby gods out there want to take a whack at it, please fork this repo and go for it.
-
-I also will probably be adding a very basic Rakefile to do things like create posts, and so forth. But not right now. 
 
 This is not a professional shiny "works-out-of-the-box theme". But bang on it a little and I am sure you can make it work for you.
 

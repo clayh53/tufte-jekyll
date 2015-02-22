@@ -79,6 +79,11 @@ body {
   max-width: 1400px;
 
 }
+@media screen and (min-width: 800px){
+    body{
+      width:95%;
+    }
+    }
 body > header{
   padding-top: 1rem;
   border-bottom: 1px lighten($text-color,60%) solid;
@@ -425,6 +430,9 @@ span.newthought {
     h2,
     h3 {
         page-break-after: avoid;
+    }
+    body header , body footer {
+      display:none;
     }
 }
 /* --- Icomoon icon fonts CSS --*/
