@@ -35,6 +35,11 @@ html{
     font-size: 11px;
 
   }
+  @media screen{
+    .print-footer{
+      display: none;
+    }
+  }
   @media screen and (min-width: 800px){
     html{
       font-size: 12px;
@@ -83,7 +88,7 @@ body {
     body{
       width:95%;
     }
-    }
+}
 body > header{
   padding-top: 1rem;
   border-bottom: 1px lighten($text-color,60%) solid;
@@ -405,7 +410,20 @@ span.newthought {
         box-shadow: none !important;
         text-shadow: none !important;
     }
-
+    @page {
+        margin: 0.75in 0.5in 0.75in 0.5in;
+    }
+    body {
+        font-size:  12pt;
+          
+    }
+    html body span.print-footer{
+      font-family: $sans-font;
+      font-size: 9pt;
+      margin-top: 22.4pt;
+      padding-top: 4pt;
+      border-top: 1px solid #000;
+    }
 
     thead {
         display: table-header-group;
@@ -423,14 +441,13 @@ span.newthought {
     p,
     h2,
     h3 {
-        orphans: 3;
-        widows: 3;
+        orphans: 4;
+        widows: 4;
     }
-
-    h2,
-    h3 {
+    article h2, article h2 h3, article h3, article h3 h4, article h4, article h4 h5 {
         page-break-after: avoid;
     }
+
     body header , body footer {
       display:none;
     }
