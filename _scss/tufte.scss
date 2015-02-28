@@ -21,6 +21,7 @@
 html, body { height: 100%; }
 a {
   text-decoration: none;
+
 }
 
 /* clearfix hack after Cederholm (group class name) */
@@ -33,6 +34,8 @@ a {
 html{
     text-align: baseline;
     font-size: 11px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
   }
   @media screen{
@@ -210,11 +213,11 @@ p, li{
     padding-right: 0px;
     vertical-align: baseline;
 }
-// Since there is no grid here, lists break if they are too long.
+// Since there is no grid here, lists and pre-formatted code break if they are too long.
 // Necessary to specify that any list within an article is the same width as
 // the paragraphs
 
-p, article  ul li{
+p, article  ul li, pre code, pre code p, code{
   width: 55%;
 }
 
@@ -412,7 +415,9 @@ span.newthought {
     }
     @page {
         margin: 0.75in 0.5in 0.75in 0.5in;
+        orphans:4; widows:2;
     }
+    
     body {
         font-size:  12pt;
           

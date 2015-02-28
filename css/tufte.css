@@ -170,7 +170,9 @@ a {
 
 html {
   text-align: baseline;
-  font-size: 11px; }
+  font-size: 11px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 @media screen {
   .print-footer {
@@ -319,7 +321,7 @@ p, li {
   padding-right: 0px;
   vertical-align: baseline; }
 
-p, article ul li {
+p, article ul li, pre code, pre code p, code {
   width: 55%; }
 
 @media screen and (max-width: 600px) {
@@ -508,7 +510,9 @@ span.newthought {
     text-shadow: none !important; }
 
   @page {
-    margin: 0.75in 0.5in 0.75in 0.5in; }
+    margin: 0.75in 0.5in 0.75in 0.5in;
+    orphans: 4;
+    widows: 2; }
   body {
     font-size: 12pt; }
 
