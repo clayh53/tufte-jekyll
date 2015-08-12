@@ -1,3 +1,7 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
 /*****************************************************************************/
 /*
 /* Tufte Jekyll blog theme
@@ -8,9 +12,9 @@
 
 // Imports to create final 
 
-@import "fonts";
-@import "settings";
-@import "syntax-highlighting";
+@import "../_sass/fonts";
+@import "../_sass/settings";
+@import "../_sass/syntax-highlighting";
 
 // Global Resets
 * {
