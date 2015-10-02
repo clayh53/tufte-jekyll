@@ -61,7 +61,7 @@ body {
   width: 87.5%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 8.4%;
+  padding-left: 12.5%; //8.4%;
   font-family: $body-font;
   padding-bottom: 400px;
   background-color: $bg-color;
@@ -244,11 +244,7 @@ sub { top: 0.2rem; }
   }
 }
 
-@media screen and (max-width: 400px){
-  .sidenote, .marginnote{
-  display:none;
-  }
-}
+@media screen and (max-width: 400px){ .sidenote, .marginnote{ display:none;} }
 
 h1 { font-style: italic;
       font-weight: 400;
