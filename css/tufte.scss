@@ -165,9 +165,8 @@ li.listing h4.new {
   text-transform: uppercase;
   font-style: normal;
 }
-cite{
-  font-style: italic;
-}
+cite{ font-style: italic; }
+
 .sans { font-family: $sans-font; }
 
 pre code, pre code p, code  {
@@ -303,7 +302,7 @@ h6 { font-style: italic; }
 
 div.footnotes{ margin-bottom: 1.4rem; }
 
-subtitle { font-style: italic;
+.subtitle { font-style: italic;
            font-size: 1.8rem;
            margin-bottom: 1.088888888889rem;
            margin-top: 1.088888888889rem;
