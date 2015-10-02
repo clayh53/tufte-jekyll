@@ -1,3 +1,6 @@
+//---
+
+//---
 /*****************************************************************************/
 /*
 /* Tufte Jekyll blog theme
@@ -8,15 +11,13 @@
 
 // Imports to create final 
 
-@import "fonts";
-@import "settings";
-@import "syntax-highlighting";
+@import "../_sass/fonts";
+@import "../_sass/settings";
+@import "../_sass/syntax-highlighting";
 
 // Global Resets
-* {
-  margin: 0;
-  padding: 0;
-}
+// 
+* { margin: 0; padding: 0; }
 
 html, body { height: 100%; }
 
@@ -43,37 +44,17 @@ html{
 
   }
 
-  @media screen and (min-width: 800px){
-    html{
-      font-size: 12px;
-    }
-    }
+@media screen and (min-width: 800px){ html{ font-size: 12px;} }
 
-  @media screen and (min-width: 900px){
-    html{
-      font-size: 13px;
-    }
-    }
-  @media screen and (min-width: 1000px){
-    html{
-      font-size: 14px;
-    }
-    }
-  @media screen and (min-width: 1100px){
-    html{
-      font-size: 15px;
-    }
-    }
-  @media screen and (min-width: 1200px){
-    html{
-      font-size: 16px;
-    }
-    }
-  @media screen and (min-width: 1300px){
-    html{
-      font-size: 17px;
-    }
-    }
+@media screen and (min-width: 900px){ html{ font-size: 13px;} }
+
+@media screen and (min-width: 1000px){ html{ font-size: 14px;} }
+
+@media screen and (min-width: 1100px){ html{ font-size: 15px; } }
+
+@media screen and (min-width: 1200px){ html{ font-size: 16px; } }
+
+@media screen and (min-width: 1300px){ html{ font-size: 17px; } }
 
 body { 
   width: 87.5%;
@@ -87,20 +68,16 @@ body {
   max-width: 1400px;
 
 }
-@media screen and (min-width: 800px){
-    body{
-      width:95%;
-    }
-}
+@media screen and (min-width: 800px){ body{ width:95%;} }
+
 body > header{
   padding-top: 1rem;
   border-bottom: 1px lighten($text-color,60%) solid;
   max-width: 90%;
   padding-bottom: 0.5rem;
 }
-header > nav.group {
-  height: 4.5rem;
-}
+
+header > nav.group { height: 4.5rem; }
 
 header > nav  a{
   font-size: 1.2rem;
