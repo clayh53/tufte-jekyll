@@ -168,15 +168,15 @@ a {
   display: table;
   clear: both; }
 
+@media screen {
+  .print-footer {
+    display: none; } }
 html {
   text-align: baseline;
   font-size: 11px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-@media screen {
-  .print-footer {
-    display: none; } }
 @media screen and (min-width: 800px) {
   html {
     font-size: 12px; } }

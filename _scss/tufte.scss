@@ -19,10 +19,8 @@
 }
 
 html, body { height: 100%; }
-a {
-  text-decoration: none;
 
-}
+a { text-decoration: none;}
 
 /* clearfix hack after Cederholm (group class name) */
 .group:after {
@@ -30,6 +28,12 @@ a {
   display: table;
   clear: both;
 }
+// Does not display a print-footer for screen
+  @media screen{
+    .print-footer{
+      display: none;
+    }
+  }
 //Base media queries - responsiveness is keyed to underlying font size
 html{
     text-align: baseline;
@@ -38,11 +42,7 @@ html{
     -moz-osx-font-smoothing: grayscale;
 
   }
-  @media screen{
-    .print-footer{
-      display: none;
-    }
-  }
+
   @media screen and (min-width: 800px){
     html{
       font-size: 12px;
@@ -217,35 +217,25 @@ p, li{
 // Necessary to specify that any list within an article is the same width as
 // the paragraphs
 
-p, article  ul li, pre code, pre code p, code{
-  width: 55%;
-}
+p, article  ul li, pre code, pre code p, code{ width: 55%; }
 
-@media screen and (max-width: 600px){
-    p{
-      width: 65%;
-    }
-}     
-@media screen and (max-width: 400px){
-    p{
-      width: 90%;
-    }
-}
+@media screen and (max-width: 600px){ p{ width: 65%;} }
 
+@media screen and (max-width: 400px){ p{ width: 90%;} }
 
-a, .marginnote a, .sidenote a{
-  color: $contrast-color;
-}
-ul.content{
-  list-style: none;
-}
+a, .marginnote a, .sidenote a{ color: $contrast-color; }
+
+ul.content{ list-style: none; }
+
 img { max-width: 100%; }
+
 sup, sub {
    font-size: 0.9rem;
    line-height: 0;    
    position: relative;
    top: -0.2rem;
 }
+
 sub { top: 0.2rem; }
 
 .fullwidth { max-width: 95%; } 
@@ -275,6 +265,7 @@ sub { top: 0.2rem; }
     margin-right: -35%;
   }
 }
+
 @media screen and (max-width: 400px){
   .sidenote, .marginnote{
   display:none;
@@ -288,9 +279,7 @@ h1 { font-style: italic;
       font-size: 2.5rem;
       line-height: 0.784; 
 }
-
-      
-
+     
 h2 {  font-style: italic;
       font-weight: 400;
       font-size: 2.1rem;
@@ -334,16 +323,11 @@ ol > [id^="fn:"]{
   }
 }
 
-h6 {
-      font-style: italic;
-}
-.contrast {
-      color: $contrast-color;
-}    
-div.footnotes{
-  margin-bottom: 1.4rem;
+h6 { font-style: italic; }
 
-}
+.contrast { color: $contrast-color; }    
+
+div.footnotes{ margin-bottom: 1.4rem; }
 
 subtitle { font-style: italic;
            font-size: 1.8rem;
@@ -377,16 +361,9 @@ a.url, .sidenote a { text-decoration: none;
         word-break: break-all;
         font-family: $url-font; }
 
+sup.sidenote-number { color: lighten($contrast-color, 15%); }
 
-
-sup.sidenote-number {      
-  color: lighten($contrast-color, 15%);
-}
-
-span.newthought { 
-  font-variant: small-caps;
-  
-}
+span.newthought { font-variant: small-caps; }
 
 /* LaTeX-logo-specific styling */
 .latex sub, .latex sup { text-transform: uppercase; }
