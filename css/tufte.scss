@@ -61,7 +61,7 @@ body {
   width: 87.5%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 12.5%; //8.4%;
+  padding-left: 12.5%; 
   font-family: $body-font;
   padding-bottom: 400px;
   background-color: $bg-color;
@@ -69,7 +69,9 @@ body {
   max-width: 1400px;
 
 }
-@media screen and (min-width: 800px){ body{ width:95%;} }
+
+// more content visible at small screen sizes
+@media screen and (max-width: 640px){ body{ width:92%; padding-left:8%;} }
 
 body > header{
   padding-top: 1rem;

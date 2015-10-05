@@ -1,4 +1,4 @@
-mmodule Jekyll
+module Jekyll
   class MathJaxBlockTag < Liquid::Tag
     def render(context)
       '&#8203;<script type="math/tex; mode=display">'
