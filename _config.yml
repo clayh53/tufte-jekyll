@@ -5,7 +5,7 @@ author: clay harmon
 simple_search: http://google.com/search
 description: A Jekyll theme for content-rich sites
 name: tufte
-markdown: Kramdown
+markdown: kramdown
 kramdown:  
   input: GFM
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
