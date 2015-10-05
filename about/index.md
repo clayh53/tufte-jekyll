@@ -1,10 +1,17 @@
 ---
 layout: post
 title: About
+published: true
 ---
 
-The *Tufte-Jekyll* theme is a natural extension of the work done by [Dave Leipmann](https://github.com/daveliepmann/tufte-css) on Github that created a CSS file that allows web writers to use the simple and elegant style employed by Edward Tufte in his published materials.
 
-To incorporate these styles into a Jekyll theme, I have made some very slight modifications that attempt to maintain the feel of the CSS styles in this repo.
+This is a collection of articles and posts about anything that I found interesting or that, at least, inspired my to write. You will find articles about law, being a mature student, being a parent, some book reviews and maybe even some politics. There may well be other things that I haven't thought of yet.
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+I'm not a professional writer nor am I an academic. The thoughts and opinions I express are my own and do not reflect in any way on people or organisations that I have associations with. 
+
+If you wish to make comments, whether positive or negative, please do. However, any comment that is offensive or impolite will be removed.
+
+If you wish to get in touch with me please use Twitter *(@niclebreuilly)* in the first instance.
+
+Thanks for reading,
+Nic
