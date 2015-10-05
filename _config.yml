@@ -1,17 +1,17 @@
 baseurl: 
-title: Tufte
-subtitle: Content-centric blogging
-author: clay harmon
+title: Nicleb.com
+subtitle: Personal blog
+author: Nic Le Breuilly
 simple_search: http://google.com/search
-description: A Jekyll theme for content-rich sites
-name: tufte
+description: A Blog about law, literature and a bit of politics
+name: nicleb
 markdown: kramdown
 kramdown:  
   input: GFM
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 highlighter: rouge
 permalink: /articles/:short_year/:title
-timezone: America/New_York
+timezone: Europe/London
 excerpt_separator: <!--more-->  # you can specify your own separator, of course.
 exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', 'README.md']
 post:
