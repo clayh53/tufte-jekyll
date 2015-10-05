@@ -21,10 +21,10 @@ page:
   template: _page.txt
   extension: md
 editor: gvim
-# git:
-#  branch: master
-#transfer:
-#  command: rsync
-#  settings: -av
-#  source: _site/
-#  destination: ~/Git/clayh53.github.com/ 
+git:
+  branch: master
+transfer:
+  command: rsync
+  settings: -av
+  source: _site/
+  destination: ~/Git/clayh53.github.com/ 
