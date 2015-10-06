@@ -1,7 +1,5 @@
 /* This file contains all the constants for colors and font styles */
 
-/*-- Global stuff with fonts, background colors,etc --*/
-
 $body-font:   ETBembo, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 // Note that Gill Sans is the top of the stack and corresponds to what is used in Tufte's books
 // However, it is not a free font, so if it is not present on the computer that is viewing the webpage
@@ -13,5 +11,7 @@ $text-color: #111;
 $bg-color: #fffff8;
 $contrast-color: #a00000;
 $border-color: #333333;
-// for syntax highlighting
+$link-style: color; // choices are 'color' or 'underline'. Default is color using $contrast-color set above
+
+
 

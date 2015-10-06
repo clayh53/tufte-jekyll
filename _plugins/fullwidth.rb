@@ -12,8 +12,8 @@ require "shellwords"
     end
 
     def render(context)
-      "<div><img class='fullwidth' src='#{@text[0]}'/></div> " +
-      "<p><span class='marginnote'>#{@text[1]}</span></p>"
+      "<figure class='fullwidth'><img  src='#{@text[0]}'/>" +
+      "<figcaption>#{@text[1]}</figcaption></figure>"
     end
   end
 end

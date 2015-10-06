@@ -1,11 +1,12 @@
 ---
 # this ensures Jekyll reads the file to be transformed into CSS later
 # only Main files contain this front matter, not partials.
+nav_exclude: true
 ---
 /*****************************************************************************/
 /*
 /* Tufte Jekyll blog theme
-/* Based on Tufte CSS by Dave Liepmann ( https://github.com/daveliepmann/tufte-css )
+/* Based on Tufte CSS by Dave Liepmann ( https://github.com/edwardtufte/tufte-css )
 /* 
 /* The README.md will show you how to set up your site along with other goodies
 /*****************************************************************************/
@@ -20,23 +21,18 @@
 // 
 * { margin: 0; padding: 0; }
 
-html, body { height: 100%; }
-
-a { text-decoration: none;}
-
 /* clearfix hack after Cederholm (group class name) */
 .group:after {
   content: "";
   display: table;
   clear: both;
 }
-// Does not display a print-footer for screen
-  @media screen{
-    .print-footer{
-      display: none;
-    }
-  }
-//Base media queries - responsiveness is keyed to underlying font size
+
+html, body { height: 100%; }
+
+// First significant deviation from CSS on tufte.css site - variable font size as browser width expands or contracts
+//html { font-size: 15px; }
+
 html{
     text-align: baseline;
     font-size: 11px;
@@ -57,30 +53,289 @@ html{
 
 @media screen and (min-width: 1300px){ html{ font-size: 17px; } }
 
-body { 
-  width: 87.5%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 12.5%; 
-  font-family: $body-font;
-  padding-bottom: 400px;
-  background-color: $bg-color;
-  color: $text-color;
-  max-width: 1400px;
+// sets link style according to values in _settings.scss
 
+a { @if $link-style == underline
+    {
+      color: $text-color;
+      text-decoration: none;
+      border-bottom: 1px solid #777;
+      padding-bottom: 1px; 
+    }
+    @else
+    {
+      color: $contrast-color;
+      text-decoration: none;
+    }
+  }  
+
+body { width: 87.5%;
+       margin-left: auto;
+       margin-right: auto;
+       padding-left: 12.5%;
+       font-family: et-bembo, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+       background-color: $bg-color;
+       color: $text-color;
+       max-width: 1400px;
+       counter-reset: sidenote-counter; }
+
+// --------- Typography stuff -----------//
+// added rational line height and margins ala http://webtypography.net/intro/ 
+
+h1 { font-weight: 400;
+     margin-top: 1.568rem;
+     margin-bottom: 1.568rem;
+     font-size: 2.5rem;
+     line-height: 0.784; }
+
+h2 { font-style: italic;
+     font-weight: 400;
+     margin-top: 1.866666666666667rem;
+     margin-bottom: 0;
+     font-size: 2.1rem;
+     line-height: 0.933333333333333; }
+
+h3 { font-style: italic;
+     font-weight: 400;
+     font-size: 1.8rem;
+     margin-top: 2.1777777777777778rem;
+     margin-bottom: 0;
+     line-height: 1.08888888888889; }
+
+// ET says a need for more than 3 levels of headings is the sign of a diseased mind
+
+p .subtitle { font-style: italic;
+             margin-top: 2.1777777777777778rem;
+             margin-bottom: 2.1777777777777778rem;
+             font-size: 1.8rem;
+             display: block;
+             line-height: 1.08888888888889; }
+
+
+p, ol, ul { font-size: 1.4rem; }
+
+p, li { line-height: 2rem;
+        margin-top: 1.4rem;
+        padding-right: 2rem; //removed because,  why?
+        vertical-align: baseline; }
+
+blockquote p {  font-size: 1.1rem;
+                line-height: 1.78181818;
+                margin-top: 1.78181818rem;
+                margin-bottom: 1.78181818rem; 
+                width: 45%;
+                padding-left: 2.5%;
+                padding-right: 2.5%; }
+
+blockquote footer { width: 45%;
+                    text-align: right; }
+
+
+.sans { font-family: $sans-font;
+        letter-spacing: .03em; }
+
+pre, pre code, p code, p pre code { font-family: $code-font;  // removed .code 'class' since code is an actual html tag
+        font-size: 1.2rem;                   // also added p code, p pre code and pre selector to account for Markdown parsing
+        line-height: 1.71428571;        // of triple backticks plus rationalized line-heights and margins
+        margin-top: 1.71428571rem; }
+
+
+h1 code, h2 code, h3 code { font-size: 0.80em; } //left in for no real reason
+
+/*-- Table styling section - For Tufte-Jekyll, booktabs style is default for Markdown tables  --*/
+
+table, table.booktabs { width: auto;  //making booktabs style tables the unstyled default in case someone uses Markdown styling
+                 margin: 0 auto;
+                 border-spacing: 0px;
+                 border-top: 2px solid $border-color;
+                 border-bottom: 2px solid $border-color; }
+
+.booktabs th, th { border-bottom: 1px solid $border-color;
+               padding: 0.65ex 0.5em 0.4ex 0.5em;
+               font-weight: normal;
+               text-align: center; }
+
+th, td{ font-size: 1.2rem;
+        line-height: 1.71428571;  }
+
+.booktabs th.cmid, th { border-bottom: 1px solid lighten($border-color, 25%); }
+
+.booktabs th.nocmid { border-bottom: none; }
+
+.booktabs tbody tr:first-child td,  tr:first-child td { padding-top: 0.65ex; } /* add space between thead row and tbody */ 
+
+.booktabs td, td {  padding-left: 0.5em;
+                    padding-right: 0.5em;
+                    text-align: left; }
+
+.booktabs caption, caption { font-size: 90%;
+                    text-align: left;
+                    width: auto;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 1ex;
+                    caption-side: top; }
+
+.booktabs tbody tr td.l { text-align: left !important; }
+.booktabs tbody tr td.c { text-align: center !important; }
+.booktabs tbody tr td.r { text-align: right !important; }
+
+.table-caption { float:right;
+                 clear:right;
+                 margin-right: -60%;
+                 width: 50%;
+                 margin-top: 0;
+                 margin-bottom: 0;
+                 font-size: 1.0rem;
+                 line-height: 1.96; }
+/* -- End of Table Styling section --*/
+
+/* Basic Layout stuff --*/
+
+article { position: relative;
+          padding: 1
+
+          rem 0rem 2.5rem 0rem; } // reduced top and bottom padding by 50%
+
+section { padding-top: 1rem;
+          padding-bottom: 1rem; }
+
+
+ul { width: 45%;
+     -webkit-padding-start: 5%;
+     -webkit-padding-end: 5%;
+     list-style-type: none; }
+
+//li { padding: 0.5em 0; } //vertical padding on list items screws up vertical rhythym 
+
+figure { max-width: 55%;
+         -webkit-margin-start: 0;
+         -webkit-margin-end: 0;
+         margin-bottom: 3em; }
+
+figcaption { float: right;
+             clear: right;
+             margin-right: -48%;
+             margin-top: 0;
+             margin-bottom: 0;
+             font-size: 1.0rem;
+             line-height: 1.6;
+             vertical-align: baseline;
+             position: relative;
+             max-width: 40%; }
+
+figure.fullwidth figcaption { margin-right: 24%; }
+
+
+
+img { max-width: 100%; }
+
+.sidenote, .marginnote { float: right;
+                         clear: right;
+                         margin-right: -60%;
+                         width: 50%;
+                         margin-top: 0;
+                         margin-bottom: 1.96rem;
+                         font-size: 1.0rem;
+                         line-height: 1.96; //changed to bring line heights into rational pattern
+                         vertical-align: baseline;
+                         position: relative; }
+
+li .sidenote, li .marginnote{ margin-right: -80%; } //added to allow for the fact that lists are indented and marginnotes and sidenotes push to right
+
+.sidenote-number { counter-increment: sidenote-counter; }
+
+.sidenote-number:after, .sidenote:before { content: counter(sidenote-counter) " ";
+                                           font-family: et-bembo-roman-old-style;
+                                           color: $contrast-color; //added color 
+                                           position: relative;
+                                           vertical-align: baseline; }
+
+.sidenote-number:after { content: counter(sidenote-counter);
+                         font-size: 1rem;
+                         top: -0.5rem;
+                         left: 0.1rem; }
+
+.sidenote:before { content: counter(sidenote-counter) ".\000a0"; // this is unicode for a non-breaking space
+                   color: $contrast-color;
+                   top: 0rem; } //removed superscripting for numerical reference in sidenote
+
+p, footer, div.table-wrapper { width: 55%; }
+
+div.table-wrapper { overflow-x: auto; } //changed all overflow values to 'auto' so scroll bars appear only as needed
+
+@media screen and (max-width: 760px) { p, footer { width: 90%; }
+                                       pre code { width: 87.5%; }
+                                       ul { width: 85%; }
+                                       figure { max-width: 90%; }
+                                       figcaption, figure.fullwidth figcaption { margin-right: 0%;
+                                                                                 max-width: none; }
+                                       blockquote p, blockquote footer {  width: 80%;
+                                                                          padding-left: 5%;
+                                                                          padding-right: 5%;
+                                                                        }}
+
+.marginnote code, .sidenote code { font-size: 1rem; } //more .code class removal
+
+pre, pre code, p pre code { width: 52.5%;
+           padding-left: 2.5%;
+           overflow-x: auto; }
+
+.fullwidth, li.listing div{ max-width: 90%; }
+
+span.newthought { font-variant: small-caps;
+                  font-size: 1.2em;
+                  letter-spacing: 0.05rem; }
+
+input.margin-toggle { display: none; }
+
+label.sidenote-number { display: inline; }
+
+label.margin-toggle:not(.sidenote-number) { display: none; }
+
+@media (max-width: 760px) { label.margin-toggle:not(.sidenote-number) { display: inline; color: $contrast-color; }
+                            .sidenote, .marginnote { display: none; }
+                            .margin-toggle:checked + .sidenote, 
+                            .margin-toggle:checked + .marginnote { display: block;
+                                                                   float: left;
+                                                                   left: 1rem;
+                                                                   clear: both;
+                                                                   width: 95%;
+                                                                   margin: 1rem 2.5%;
+                                                                   vertical-align: baseline;
+                                                                   position: relative; }
+                            label { cursor: pointer; }
+                            pre, pre code, p code, p pre code { width: 90%; 
+                                       padding: 0; }
+                            .table-caption { display: block;
+                                             float: right;
+                                             clear: both;
+                                             width: 98%;
+                                             margin-top: 1rem;
+                                             margin-bottom: 0.5rem;
+                                             margin-left: 1%;
+                                             margin-right: 1%;
+                                             vertical-align: baseline;
+                                             position: relative; }
+                            div.table-wrapper, table, table.booktabs { width: 85%; }
+                            div.table-wrapper { border-right: 1px solid #efefef; }
+                            img { max-width: 100%; } }
+/*--- End of Basic Layout stuff from tufte.css ---*/
+
+/* -- Jekyll specific styling --*/
+//helper classes
+
+.contrast { color: $contrast-color;}
+.smaller { font-size: 80%;}
+//Nav and Footer styling area
+
+header > nav.group, body footer { 
+  width: 95%;
+  padding-top: 2rem;
 }
 
-// more content visible at small screen sizes
-@media screen and (max-width: 640px){ body{ width:92%; padding-left:8%;} }
-
-body > header{
-  padding-top: 1rem;
-  border-bottom: 1px lighten($text-color,60%) solid;
-  max-width: 90%;
-  padding-bottom: 0.5rem;
-}
-
-header > nav.group { height: 4.5rem; }
+nav.group a.active:before{ content:"\0003c\000a0";} // escaped unicode for the carats and then a space on active menu links
+nav.group a.active:after{ content:"\000a0\0003e" ;}
 
 header > nav  a{
   font-size: 1.2rem;
@@ -95,30 +350,30 @@ header > nav  a{
   margin-top: 0;
   margin-bottom: 0;
   padding-right: 2rem;
-  margin-left: 1rem;
+  //margin-left: 1rem;
   vertical-align: baseline;
 }
 header > nav a img{
-  height: 4rem;
+  height: 5rem;
   position: relative;
+  max-width: 100%;
   top:-1.5rem;
 }
-body > footer{
-  padding-bottom: 2rem;
-  border-top: 1px lighten($text-color, 60%) solid;
-  max-width: 90%;
+ul.footer-links, .credits{
+  list-style: none;
   text-align: center;
+  margin: 0 auto;
+}
+ul.footer-links li{
+  display: inline;
+  padding: 0.5rem 0.25rem;
+}
+.credits{
+  padding: 1rem 0rem;
 }
 
-body > footer  ul  li{
-  list-style: none;
-  display: inline-block;
-  padding: 0 1rem 0 1rem;
-}
-body > footer ul li a{
-  font-size: 1.8rem;
-}
 //change font color for credit links in footer
+
 .credits{
   font-family: $sans-font;
     & a{
@@ -126,7 +381,20 @@ body > footer ul li a{
     }
 }
 
-// Styling of articles listings //
+// End of Nav and Footer styling area
+
+//Full width page styling stuff
+
+body.full-width, .content-listing, ul.content-listing li.listing{ width: 90%;
+       margin-left: auto;
+       margin-right: auto;
+       padding: 0% 5%;
+
+}
+.full-width article p{
+  width: 90%;
+}
+
 
 h1.content-listing-header{
   font-style: normal;
@@ -135,233 +403,59 @@ h1.content-listing-header{
   font-size: 1.8rem;
 }
 
-hr.slender {
-    border: 0;
-    height: 1px;
-    margin-bottom:2.8rem;
-    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
-    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
-    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
-    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
-}
-
 li.listing hr{
   width:100%;
 }
-.listing, .listing h3{
+.listing, .listing h3
+{
   display: inline-block;
   margin:0;
 }
 li.listing {
   margin:0;
+  & p{
+    width: 100%
+  }
 }
-li.listing  p{
-  width: 100%;  
-}
+
 
 li.listing:last-of-type{
   border-bottom: none;
   margin-bottom: 1.4rem;
 }
-li.listing h4.new {
+li.listing h3.new {
   text-transform: uppercase;
   font-style: normal;
 }
-cite{ font-style: italic; }
-
-.sans { font-family: $sans-font; }
-
-pre code, pre code p, code  {
-  font-family: $code-font;
-  color: #222;
-  font-size: 1.2rem;
-  line-height: 1.63333333333; 
-} 
-pre{
-  margin-top: 1.4rem;
-  margin-bottom: 1.4rem;
-}
-article { position: relative; display: inline-block;}
-
-p, li{ 
-    font-size: 1.4rem;
-    line-height: 1.4;
+hr.slender {
+    border: 0;
+    height: 1px;
     margin-top: 1.4rem;
-    margin-bottom: 1.4rem;
-    //width: 55%;
-    padding-right: 0px;
-    vertical-align: baseline;
+    margin-bottom:1.4rem;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
 }
-// Since there is no grid here, lists and pre-formatted code break if they are too long.
-// Necessary to specify that any list within an article is the same width as
-// the paragraphs
+// End of front listing page stuff
 
-p, article  ul li, pre code, pre code p, code{ width: 55%; }
 
-@media screen and (max-width: 600px){ p{ width: 65%;} }
+// Printing ands screen media queries
 
-@media screen and (max-width: 400px){ p{ width: 90%;} }
-
-a, .marginnote a, .sidenote a{ color: $contrast-color; }
-
-ul.content{ list-style: none; }
-
-img { max-width: 100%; }
-
-sup, sub {
-   font-size: 0.9rem;
-   line-height: 0;    
-   position: relative;
-   top: -0.2rem;
-}
-
-sub { top: 0.2rem; }
-
-.fullwidth { max-width: 95%; } 
-
-.sidenote, .marginnote{
-  float: right;
-  clear: right;
-  margin-right: -60%;
-  width: 50%;
-  margin-top: 0rem;
-  margin-bottom: 1.96rem;
-  font-size: 1.0rem;
-  line-height: 1.96;
-  vertical-align: baseline;
-  position: relative;
-}
-
-.sidenote a {
-  font-size: 0.9rem;
-  line-height: 2.177777777778;
-  margin-bottom: 2.177777777778rem;
-} 
-                         
-@media screen and (max-width: 600px){
-  .sidenote, .marginnote{
-    width: 25%;
-    margin-right: -35%;
+// Does not display a print-footer for screen display
+@media screen{
+  .print-footer{
+    display: none;
   }
 }
 
-@media screen and (max-width: 400px){ .sidenote, .marginnote{ display:none;} }
-
-h1 { font-style: italic;
-      font-weight: 400;
-      margin-top: 5%;
-      margin-bottom: 1.568rem;
-      font-size: 2.5rem;
-      line-height: 0.784; 
-}
-     
-h2 {  font-style: italic;
-      font-weight: 400;
-      font-size: 2.1rem;
-      margin-top: 1.86666666666667rem;
-      margin-bottom: 0rem;
-      line-height: 0.9333333333333; }
-
-h3 {  font-style: italic;
-      font-weight: 400;
-      font-size: 1.8rem;
-      margin-top: 2.177777777778rem;
-      margin-bottom: 0;
-      line-height: 1.088888888889; }
-
-h4 {  font-style: italic;
-      font-weight: 400;
-      font-size: 1.6rem;
-      margin-top: 2.45rem;
-      margin-bottom: 0;
-      line-height: 1.225; }
-
-h5 {  font-style: italic;
-      font-weight: 400;
-      font-size: 1.4rem;
-      margin-top: 2.8rem;
-      margin-bottom: 0rem;
-      line-height: 1.4;
-      }
-
-h6, .smaller, [id^="fn:"] > p, ol > [id^="fn:"] {  
-      font-weight: 400;
-      font-size: 1.2rem;
-      margin-top: 3.266666666667rem;
-      margin-bottom: 0rem;
-      line-height: 1.63333333333; 
-    }
-ol > [id^="fn:"]{
-  color: $contrast-color;
-  & p{
-    color: $text-color;
-  }
-}
-
-h6 { font-style: italic; }
-
-.contrast { color: $contrast-color; }    
-
-div.footnotes{ margin-bottom: 1.4rem; }
-
-.subtitle { font-style: italic;
-           font-size: 1.8rem;
-           margin-bottom: 1.088888888889rem;
-           margin-top: 1.088888888889rem;
-           display: block;
-           line-height: 1.088888888889; }
-
-table { width: 53%;
-        text-align: right;
-        font-size: 1.4rem;
-        line-height: 1.4;
-        margin-top: 1.4rem;
-        margin-bottom: 1.4rem;
-        margin-left: 1%;
-        margin-right: 1%;
-        border-top: 2px solid $border-color;
-        border-bottom: 2px solid $border-color;
-        border-collapse: separate; 
-        border-spacing: 0 5px;
-        -webkit-font-feature-settings: 'tnum'; /* This is technically redundant */
-        -moz-font-feature-settings: 'tnum';
-        -ms-font-feature-settings: 'tnum'; }
-
-thead th { border-bottom: 1px solid $border-color;
-           font-weight: 400; 
-           border-collapse: separate; 
-           border-spacing: 5px 5px;}
-
-a.url, .sidenote a { text-decoration: none;
-        word-break: break-all;
-        font-family: $url-font; }
-
-sup.sidenote-number { color: lighten($contrast-color, 15%); }
-
-span.newthought { font-variant: small-caps; }
-
-/* LaTeX-logo-specific styling */
-.latex sub, .latex sup { text-transform: uppercase; }
-
-.latex sub { vertical-align: -0.5ex;
-             margin-left: -0.1667rem;
-             margin-right: -0.125rem; }
-
-.latex, .latex sub { font-size: 1rem; }
-
-.latex sup { font-size: 0.85rem;
-             vertical-align: 0.15rem;
-             margin-left: -0.36rem;
-             margin-right: -0.15rem; }
-
-/*--- Media query for printing --*/
+//printing stuff
 @media print {
     *,
     *:before,
     *:after {
         background: transparent !important;
-        color: #000 !important; /* Black prints faster:
-                                   http://www.sanbeiji.com/archives/953 */
+        color: #000 !important; // Black prints faster:http://www.sanbeiji.com/archives/953 
         box-shadow: none !important;
         text-shadow: none !important;
     }
@@ -409,6 +503,8 @@ span.newthought { font-variant: small-caps; }
       display:none;
     }
 }
+
+
 /* --- Icomoon icon fonts CSS --*/
 @font-face {
   font-family: 'icomoon';
@@ -484,6 +580,4 @@ span.newthought { font-variant: small-caps; }
 .icon-box-add:before {
   content: "\e60e";
 }
-
-
 /*-- End of Icomoon icon font section --*/            

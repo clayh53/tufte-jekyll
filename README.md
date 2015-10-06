@@ -1,8 +1,6 @@
 # tufte-jekyll theme
 
-The *Tufte-Jekyll* theme is a natural extension of the work done by [Dave Leipmann](https://github.com/daveliepmann/tufte-css) on Github that created a CSS file that allows web writers to use the simple and elegant style employed by Edward Tufte in his published materials.
-
-To incorporate these styles into a Jekyll theme, I have made some very slight modifications that attempt to maintain the feel of the CSS styles in this repo.
+The *Tufte-Jekyll* blog theme is based on the github repository by Edward Tufte [here](https://github.com/edwardtufte/tufte-css), which was orginally created by Dave Leipmann, but is now labeled under Edward Tufte's moniker. I borrowed freely from the Tufte-CSS repo and have transformed many of the typographic and page-structural features into a set of custom Liquid tags that make creating content using this style much easier than writing straight HTML. Essentially, if you know markdown, and mix in a few custom Liquid tags, you can be creating a website with this document style in short order.
 
 ## Demo
 
@@ -24,30 +22,34 @@ And then point your browser at localhost:4000
 
 ## Some things about the things
 
-I needed to create several custom Liquid tags to wrap content in the right kind of tags. You will create your posts in the normal way in the ```_posts``` directory, and then edit them with Github-Flavored Markdown. To all that GFM goodness, you can use the following custom Liquid tags in your content area.
+I needed to create several custom Liquid tags to wrap content in the right kind of tags. You will create your posts in the normal way in the ```_posts``` directory, and then edit them with Github-Flavored Markdown. To all that GFM goodness, you can use the following custom Liquid tags in your content area. 
+
+Note that these tags *have been altered* from Version 1 of this theme to accommodate some responsive features, namely the ability to reveal hidden sidenotes, margin notes and margin figures by tapping either a superscript or a symbol on small screens. This requires you to add a parameter to the tag that is a unique *ID* for each tag instance on the page. What the id is called is not important, but it is important that it be unique for each individual element on the page. I would recommend in the interest of sanity to give names that are descriptive, like ```'sn-id-1'``` or ```'mf-id-rhino'```.
 
 ### Sidenote
 
-This tag inserts a *sidenote* in the content, which is like a footnote, only its in the spacious right-hand column. It is numbered. Just put it in the content like you would insert a footnote like so:
+This tag inserts a *sidenote* in the content, which is like a footnote, only its in the spacious right-hand column. It is automatically numbered, starting over on each page. Just put it in the content like you would insert a footnote like so:
 
 ```
-blah lorem blah{% sidenote 1 'This is a random sidenote'%} blah blah
+blah lorem blah{% sidenote 'sidenote-id' 'This is a random sidenote'%} blah blah
 ```
-And it will add the spans and superscripts. You are responsible for keeping track of the numbering!
+And it will add the html spans and superscripts. On smaller screens, tapping on the number will reveal the sidenote!
 
 ### Margin note
 
 This tag is essentially the same as a sidenote, but heh, no number. Like this:
 
 ```
-lorem nobeer toasty critters{% marginnote 'Random thought when drinking'%} continue train of thought
+lorem nobeer toasty critters{% marginnote 'margin-note-id' 'Random thought when drinking'%} continue train of thought
 ```
+On smaller screens, tapping on the <span>&#8853;</span> symbol will open up the margin note.
+
 ### Full width image
 
 This tag inserts an image that spans both the main content column and the side column. Full-width IOW:
 
 ```
-blah blah {% fullwidth /url/to/image 'A caption for the image'}
+blah blah {% fullwidth '/url/to/image' 'A caption for the image'}
 ```
 
 ### Main column image
@@ -55,16 +57,19 @@ blah blah {% fullwidth /url/to/image 'A caption for the image'}
 This tag inserts an image that is confined to the main content column:
 
 ```
-blah blah{% maincolumn /path/to/image 'This is the caption' %} blah
+blah blah{% maincolumn '/path/to/image' 'This is the caption' %} blah
 ```
+No need for an ID in this tag because it doesn't have any doohickies that open and close on narrow screens.
 
 ### Margin figure
 
-This tag inserts and image in the side column area:
+This tag inserts and image in the side column area. Note that an id needs to be specified:
 
 ```
-blah blah {% marginfigure /path/to/image 'This is the caption' %} blah
+blah blah {% marginfigure 'margin-figure-id' '/path/to/image' 'This is the caption' %} blah
 ```
+This needs an ID parameter so that it can be clicked and opened on small screens.
+
 ### New thought
 
 This tag will render its contents in small caps. Useful at the beginning of new sections:
@@ -82,7 +87,7 @@ As a side note - if you do not need the math ability, navigate to the ```_data/o
 
 ### SASS
 
-I made a half-hearted effort to use Sass to create the css file used by this theme. If you would like to change things like fonts, colors and so forth, edit the ```_scss/_settings.scss``` file. I really didn't do any heavy lifting with SASS on this project since the CSS is relatively straightforward.
+I am using Sass to create the css file used by this theme. If you would like to change things like fonts, colors and so forth, edit the ```_scss/_settings.scss``` file. I really didn't do any heavy lifting with SASS on this project since the CSS is relatively straightforward.
 
 ### Social icons
 
@@ -112,9 +117,7 @@ There is another rakefile (UploadtoGithub.Rakefile) included that only has one t
 
 ### To-do list
 
-It would be nice to have the sidenotes tag do all the counting for you. I have a feeling it is going to involve some ```@@rubyVariables``` to keep track of things. I'll probably get around to digging into this sooner or later, but if any of you Ruby gods out there want to take a whack at it, please fork this repo and go for it.
-
-This is not a professional shiny "works-out-of-the-box theme". But bang on it a little and I am sure you can make it work for you.
+One very cool option would be for someone to monkey with the SASS file so that when the full-width page option is picked *margin notes* and *side notes* can be used, but opened by the same clicking technique as is implemented on smaller screens.
 
 
 
