@@ -101,7 +101,11 @@ In the ```/assets/img``` directory is a file called ```badge_1.png```. This file
 
 Getting this thing to display properly on *Github Pages* revealed an issue with path names. So here is the deal: In the ```/_config.yml``` file is a setting called *baseurl*. This is used by the Jekyll engine to construct all the proper links in the static site. This is all well and good for the bones of the site. Right now it is set to '*tufte-jekyll*' and all the links are created assuming that is the root path. On your local installation, if you tire of typing in ```localhost:4000/tufte-jekyll``` all you need to do is change that baseurl parameter to '/'.
 
-However... When writing content that includes images that are inside the custom Liquid tags, you must hard-code the *entire* path for your intended site configuration. Normally, one could enter an image path something like ```{{site.baseurl}}/assets/img/someimage.png``` and it would be properly fleshed out. But my Liquid tags are pretty dumb, and they do not recursively call the Liquid engine to properly build the url. At the present, my N00b status in the Ruby language has prevented me from fixing this problem. 
+However... When writing content that includes images that are inside the custom Liquid tags, you must hard-code the *entire* path for your intended site configuration. Normally, one could enter an image path something like ```{{site.baseurl}}/assets/img/someimage.png``` and it would be properly fleshed out. But my Liquid tags are pretty dumb, and they do not recursively call the Liquid engine to properly build the url. At the present, my N00b status in the Ruby language has prevented me from fixing this problem. So what you will need to do is explicitly embed the ```site.baseurl``` in the url. So for one of the image tags, you might code it as:
+
+```
+{% marginfigure 'mf-id-1' '/*tufte-jekyll*/assets/img/rhino.png' 'F.J. Cole, “The History of Albrecht Dürer’s Rhinoceros in Zoological Literature,” *Science, Medicine, and History: Essays on the Evolution of Scientific Thought and Medical Practice* (London, 1953), ed. E. Ashworth Underwood, 337-356. From page 71 of Edward Tufte’s *Visual Explanations*.'  %}
+```
 
 Here are some discussions about the reason behind the baseurl business:
 
