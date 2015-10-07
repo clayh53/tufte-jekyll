@@ -190,6 +190,7 @@ th, td{ font-size: 1.2rem;
                  line-height: 1.96; }
 /* -- End of Table Styling section --*/
 
+
 /* Basic Layout stuff --*/
 
 article { position: relative;
@@ -208,7 +209,7 @@ ul { width: 45%;
 
 //li { padding: 0.5em 0; } //vertical padding on list items screws up vertical rhythym 
 
-figure { max-width: 55%;
+figure, figure img.maincolumn { max-width: 55%;
          -webkit-margin-start: 0;
          -webkit-margin-end: 0;
          margin-bottom: 3em; }
