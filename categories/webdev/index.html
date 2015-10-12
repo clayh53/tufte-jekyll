@@ -1,0 +1,20 @@
+---
+layout: main
+title: Writing|Web Development
+published: true
+footerNav: true
+---
+
+<section class="content-wrapper">
+<h2>Web development</h2>
+  <ul class="posts">
+    {% for post in site.posts %}
+    	{% if post.category == 'webdev' %}
+		    <li class=""><h3 class=""><a href="{{ post.url }}">{{ post.title }}</h3></a>
+		      <small>Posted on: {{ post.date | date: "%d %b %Y" }}</small>
+		            <p>{{ post.excerpt }}</p>
+	        </li>
+	    {% endif %}
+    {% endfor %}
+  </ul>
+</section>
