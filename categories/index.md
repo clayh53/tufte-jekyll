@@ -1,8 +1,9 @@
 ---
 layout: post
-title: About
+title: Categories
 published: true
 ---
+
 
 <ul>
     {% for category in site.categories %}
