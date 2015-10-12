@@ -1,30 +1,869 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for post in site.posts limit:10 %}
+    <title>nicleb.com</title>
+    <description>A Blog about law, literature and a bit of politics</description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 12 Oct 2015 23:08:11 +0100</pubDate>
+    <lastBuildDate>Mon, 12 Oct 2015 23:08:11 +0100</lastBuildDate>
+    <generator>Jekyll v1.5.1</generator>
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
-        {% for tag in post.tags %}
-        <category>{{ tag | xml_escape }}</category>
-        {% endfor %}
-        {% for cat in post.categories %}
-        <category>{{ cat | xml_escape }}</category>
-        {% endfor %}
+        <title>A test draft</title>
+        <description>
+</description>
+        <pubDate>Mon, 12 Oct 2015 00:00:00 +0100</pubDate>
+        <link>/articles/:short_year/a-test-draft</link>
+        <guid isPermaLink="true">/articles/:short_year/a-test-draft</guid>
+        
+        
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>Databases And Vagrant</title>
+        <description>&lt;h2 id=&quot;databases-and-virtual-machines&quot;&gt;Databases and Virtual Machines&lt;/h2&gt;
+
+&lt;p&gt;A common problem people face when using a VM for development is how to connect to a database that is hosted on the VM but from an application running on their host machine. I scratched my head about this for a while but infact the solution is pretty simple. Here is is.&lt;/p&gt;
+
+&lt;h3 id=&quot;sequel-pro&quot;&gt;Sequel Pro&lt;/h3&gt;
+
+&lt;p&gt;First off, you need to get a nice database manage application. You could install phpMyAdmin on your VM and use that in the browser but I much prefer to have a seperate app that can handle many database connections. &lt;a href=&quot;http://sequelpro.com&quot;&gt;Sequel Pro&lt;/a&gt; is free and I find it really excellent and easy to use. I’ll show you how to set it up to use with your VM.&lt;/p&gt;
+
+&lt;p&gt;First you need to create a new connection. When you open the app the new connection window will appear and you need to click on the SSH tab. We’re going to create an SSH tunnel to your VM and access the database from there as if we were using localhost on that computer.&lt;/p&gt;
+
+&lt;p&gt;So the first lot of connection details are easy. These are the mysql details that you would use if you were connection to the database locally. They will be something like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/sequelpro1.png&quot; alt=&quot;Screenshot of first part of SequelPro connection details&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now we’ve done that we need to go to the command line and get some SSH details. Get to your project root and type:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vagrant ssh-config
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will give you a list of relevant information.&lt;/p&gt;
+
+&lt;p&gt;Simply copy the information for hostname, user and port into the correct fields. The key field can be filled by clicking on the key icon next to the field and navigating to &lt;code&gt;~/.vagrant-d/insecure_private_key&lt;/code&gt;. You might need to click on the Show Hidden Files option and then navigate out and back into your home directory before .vagrant-d directory shows up.&lt;/p&gt;
+
+&lt;p&gt;And that’s it. You complete connection window should look a bit like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/sequelpro2.png&quot; alt=&quot;Screenshot of completed SequelPro connection window&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now you can add this connection to your list of favourites so yuo can use it again without having to remember all of the details. Once you’ve done that just click Connect and you’re good to go!&lt;/p&gt;
+</description>
+        <pubDate>Wed, 16 Jul 2014 12:24:00 +0100</pubDate>
+        <link>/articles/:short_year/databases-and-vagrant</link>
+        <guid isPermaLink="true">/articles/:short_year/databases-and-vagrant</guid>
+        
+        <category>Web</category>
+        
+        <category>Development,</category>
+        
+        <category>VM,</category>
+        
+        <category>Vagrant,</category>
+        
+        <category>Databases</category>
+        
+        
+        <category>webdev</category>
+        
+      </item>
+    
+      <item>
+        <title>The Lovely Bones by Alice Sebold</title>
+        <description>&lt;h3 id=&quot;the-lovely-bones-by-alice-sebold&quot;&gt;The Lovely Bones by Alice Sebold&lt;/h3&gt;
+
+&lt;p&gt;“that in the air between the living, spirits bob and weave and laugh with us. They are the oxygen we breathe.”&lt;/p&gt;
+
+&lt;p&gt;It is impossible not to be drawn into this novel just as the hopes and dreams and loves of the small community of people are drawn in and swallowed up by the sink hole that keeps hold of it’s history for ever. The novel starts in a hole in the ground that forever holds it’s secret and the reader is constantly reminded by everything being buried. People bury their feelings, their secrets and their desires. And yet the one thing that isn’t buried is the one thing that is literally under the earth - Susie. She is in the air, dead yet alive, she is the oxygen that everyone breaths and she is also the oxygen that finally leaves her killer.&lt;/p&gt;
+
+&lt;p&gt;This is a curious book which manages to keep the reader engaged but can, at times, feel like it’s dragging it’s feet in a blancmange of metaphor. You crave some narrative to replace the imagery just for a moment.&lt;/p&gt;
+
+&lt;p&gt;It is touching, moving and thought provoking but manages to avoid sentimentality. After all the trauma and horror one finishes the novel with an uplifting sense that everything will be ok - that life is just part of the journey.&lt;/p&gt;
+
+&lt;p&gt;This review first appeared on &lt;a href=&quot;https://www.goodreads.com/review/show/928799545&quot;&gt;GoodReads&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 14 Jun 2014 00:00:00 +0100</pubDate>
+        <link>/articles/:short_year/the-lovely-bones</link>
+        <guid isPermaLink="true">/articles/:short_year/the-lovely-bones</guid>
+        
+        
+        <category>books</category>
+        
+      </item>
+    
+      <item>
+        <title>Catcher In The Rye by J.D. Salinger</title>
+        <description>&lt;h3 id=&quot;catcher-in-the-rye-by-jd-salinger&quot;&gt;Catcher In The Rye by J.D. Salinger&lt;/h3&gt;
+
+&lt;p&gt;At first you would be forgiven for thinking that you had to be the same age as Holden Caulfield to be able to relate to this book - perhaps this is why it is on so many school reading lists. This would be a mistake though. Everyone will be able to have a relationship with Holden regardless of whether or not they can relate directly with his situation. For me, I read the book from the point of view of a parent and my overwhelming feeling was one of sadness for this child who was so desperate. Had my sixteen year old self been reading it then my relationship would have been completely different.&lt;/p&gt;
+
+&lt;p&gt;I would recommend everyone to read this book as it is bound to provoke a reaction. You shouldn’t expect to empathise with Holden, although of course you might, but you can’t escape being affected by his narrative and learning something of what it is like to be a teenager trying to find their way in a big and confusing world. It is as powerful now as it was when first published over 50 years ago.&lt;/p&gt;
+
+&lt;p&gt;This review first appeared on &lt;a href=&quot;https://www.goodreads.com/review/show/938936137&quot;&gt;GoodReads&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 25 May 2014 00:00:00 +0100</pubDate>
+        <link>/articles/:short_year/catcher-in-the-rye</link>
+        <guid isPermaLink="true">/articles/:short_year/catcher-in-the-rye</guid>
+        
+        
+        <category>books</category>
+        
+      </item>
+    
+      <item>
+        <title>Hangover Square by Patrick Hamilton</title>
+        <description>&lt;h3 id=&quot;hangover-square-by-patrick-hamilton&quot;&gt;Hangover Square by Patrick Hamilton&lt;/h3&gt;
+
+&lt;p&gt;I cannot say that I enjoyed reading this novel. At times it was uncomfortable to the point of being painful. When you think the misery and pain can’t tumble any further Hamilton manages to plumb even deeper depths of despair, loneliness and depravity. One becomes as desperate as George Bone himself for everything to come to an end and yet Hamilton forces the reader, and Bone, to put themselves through one more trauma and then one more still.&lt;/p&gt;
+
+&lt;p&gt;In the small world based off the Earls Court Road we are shown the cruelty of mankind in all it’s familiar guises and we realise how our relationships with other people are what make us feel human. George’s only true relationship is with his adopted white (pure) cat but even that is bundled up in the misery of place. His only comfort can’t be taken with him. His endless walks alone in the rain reflect his own sense of where his life is but at no point is the reader given any glimmer of hope that things might turn out ok.&lt;/p&gt;
+
+&lt;p&gt;It is a brilliantly written novel that uses hugely evocative language that place the reader right at the centre of this man’s small world, both physically and mentally. Although it is desperately sad throughout the reader is left at the end with a sense that things don’t have to be that way. Bone is useless without muscle and tissue and purpose and Hamilton, I think, is urging all of us to not allow our lives to wither and to fully live in the present.&lt;/p&gt;
+
+&lt;p&gt;This review first appeared on &lt;a href=&quot;https://www.goodreads.com/review/show/928807417&quot;&gt;GoodReads&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 16 May 2014 00:00:00 +0100</pubDate>
+        <link>/articles/:short_year/Hangover-Square</link>
+        <guid isPermaLink="true">/articles/:short_year/Hangover-Square</guid>
+        
+        
+        <category>books</category>
+        
+      </item>
+    
+      <item>
+        <title>Replicate Your Vps</title>
+        <description>&lt;h2 id=&quot;replicate-your-vps---custom-provisioning-bash-scripts-permissions-and-more&quot;&gt;Replicate Your VPS - custom provisioning, bash scripts, permissions and more!&lt;/h2&gt;
+
+&lt;p&gt;In the last post we looked at how to setup and provision your VM using Vagrant and Salt. In this post I’m going to dive a little deeper (only a little) and walk through how I have setup my VM to duplicate the VPS (Virtual Private Server) that I will be using.&lt;/p&gt;
+
+&lt;p&gt;Why do I need to do this?&lt;/p&gt;
+
+&lt;p&gt;Well, the whole point of using a VM for development is to make your development environment as close as possible to your production environment so that you don’t get any nasty surprises when it comes time to deploy.&lt;/p&gt;
+
+&lt;p&gt;In my case I have signed up for a VPS with a company called &lt;a href=&quot;http://servergrove.com/vps&quot;&gt;ServerGrove&lt;/a&gt;. I chose them because they had good reveiws especially from the Symfony2 community which is currently my PHP framework of choice, and certainly what I would be using on my next project. I have found their service brilliant so far. I think the pricing is competitive, their UI is really easy to use but best of all I have found their customer service and support to be second to one. I have honestly never experienced anything like the level of support that I’ve had from these guys. Total superstars.&lt;/p&gt;
+
+&lt;p&gt;So, in order to replicate my ServerGrove VPS as closely as possible I need to try and copy the following things:&lt;br /&gt;
+1. Use the same OS / Base Box&lt;br /&gt;
+2. Provision it with the same LAMP stack&lt;/p&gt;
+
+&lt;p&gt;The OS part is pretty straight forward. I’m using “precise64” which is a pretty good match, at least for the time being.&lt;/p&gt;
+
+&lt;p&gt;The interesting part is when we get to provisioning our LAMP stack.&lt;/p&gt;
+
+&lt;p&gt;I will try and explain everything but if you’re feeling impatient I have also put up this configuration on &lt;a href=&quot;https://github.com/musonic/vagrant-salt-servergrove&quot;&gt;GitHub&lt;/a&gt; where you can either just look at the code or download it.&lt;/p&gt;
+
+&lt;h3 id=&quot;lets-give-it-a-bash&quot;&gt;Let’s Give It A Bash&lt;/h3&gt;
+
+&lt;p&gt;ServerGrove usefully provide publically available repositories of all the software that they install on their VPSs. The question is, how do we use them?&lt;/p&gt;
+
+&lt;p&gt;If you read the Vagrant &lt;a href=&quot;http://docs.vagrantup.com/v2/getting-started/provisioning.html&quot;&gt;docs&lt;/a&gt; you will see that in their getting started tutorial they provision their first box by using a script that they call directly from their VagrantFile. This script is called a bash script and it effectively allows you to run the same commands that you would run in the command line. As such, it is really the simplest way of provisioning your VM, but it’s not the most flexible.&lt;/p&gt;
+
+&lt;p&gt;However, we need to run some commands on our VM &lt;em&gt;before&lt;/em&gt; we start to provision it in order for us to download the software from the ServerGrove repo and use that to provision rather than the defaults.&lt;/p&gt;
+
+&lt;p&gt;Start by creating a new file in your project root (the same level as your VagrantFile) and call it anything you like - I’ve called mine “bootstrap.sh”.&lt;/p&gt;
+
+&lt;p&gt;Copy and paste the following into the file, but remember to read the explanation that follows carefully so that you understand what you’ve just done!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/usr/bin/env bash
+
+apt-get -y install curl
+
+echo deb http://repos.servergrove.com/servergrove-ubuntu-precise precise main &amp;gt; /etc/apt/sources.list.d/servergrove.list
+
+curl -O http://repos.servergrove.com/servergrove-ubuntu-precise/servergrove-ubuntu-precise.gpg.key 
+apt-key add servergrove-ubuntu-precise.gpg.key
+
+apt-get update
+
+rm -rf /var/www
+ln -fs /vagrant /var/www
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The first line is important. The first two characters mark the beginning of the script. The rest of the first line is defining which shell will be used to run the commands. In our case it is Bash (Bourne Again SHell). If you would like to find out more about Unix Shells and Bash in particular take a look at &lt;a href=&quot;http://www.tldp.org/LDP/Bash-Beginners-Guide/html/&quot;&gt;this beginners guide&lt;/a&gt;.&lt;br /&gt;
+Next we make sure that &lt;a href=&quot;http://curl.haxx.se/docs/faq.html&quot;&gt;curl&lt;/a&gt; is installed.&lt;br /&gt;
+The third command gets the contents of the remote repository and places it in a new file on our VM. This is where the ServerGrove versions of PHP, Apache etc. reside.&lt;br /&gt;
+Next up we have to add a &lt;a href=&quot;http://www.gnupg.org&quot;&gt;gpg key&lt;/a&gt; for security.&lt;br /&gt;
+Finally, we update apt-get so that it can now access the packages contained in the ServerGrove repository.&lt;/p&gt;
+
+&lt;p&gt;I’m hoping that I will be able to move all of this stuff into my SaltStack configuration but I haven’t worked out yet how to do that. The main thing is that this works!&lt;/p&gt;
+
+&lt;p&gt;Next is provisioning…&lt;/p&gt;
+
+&lt;p&gt;###Salt and Symfony&lt;/p&gt;
+
+&lt;p&gt;At this point it’s worth recapping exactly what I am trying to achieve. As well as trying to replicate my ServerGrove VPS as closely as possible I am also needing to prepare my VM for using the &lt;a href=&quot;http://symfony.com&quot;&gt;Symfony2 PHP framework&lt;/a&gt;. Symfony2 has certain &lt;a href=&quot;http://symfony.com/doc/current/reference/requirements.html&quot;&gt;requirements&lt;/a&gt; which take a little bit of extra configuring on most systems but the SaltStack options I’m about to explore will be useful and resuable regardless of what you are trying to do with your LAMP stack.&lt;/p&gt;
+
+&lt;p&gt;###PHP extensions and config&lt;/p&gt;
+
+&lt;p&gt;Let’s make a start by setting up PHP.&lt;/p&gt;
+
+&lt;p&gt;Since we are now using the ServerGrove repos we need to change our top.sls file to install their version of PHP rather than what we had before. Delete the file called libapache2-mod-php5.sls and create a new file simply called php55.sls. This will be very similar to the old file we had, but we are also going to use it to install some PHP extensions. Here is the complete file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;php55:
+	pkg:
+    	- installed
+    	- pkgs:
+        	- php55
+        	- php55-apcu
+        	- php55-mod-php
+        	- libjpeg-turbo8 
+        	- php55-intl
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This should look very familiar to you now. The pkgs key lists the exact packages we want to be installed. Notice how we’ve include apc caching and the intl extension that is required by Symfony2.&lt;/p&gt;
+
+&lt;p&gt;Now you can update your top.sls by simply replacing the old libapache2-mod-php5.sls file name with our new php55.sls.&lt;/p&gt;
+
+&lt;p&gt;Simple!&lt;/p&gt;
+
+&lt;p&gt;Well, not quite… for PHP to work properly we need to create a php.ini file that contains some custom directives. Some are required by Symfony2 and others are used to enable the extensions we’ve just installed. We’ll come back to this in a bit. For now, let’s get a bit more complex…&lt;/p&gt;
+
+&lt;p&gt;###Apache&lt;/p&gt;
+
+&lt;p&gt;In our previous setup we very simply used Salt to provision our VM with Apache but simply requesting the default apache2 module. This time though we’re going to take things further and get more complex.&lt;/p&gt;
+
+&lt;p&gt;Remember that our goal is to replicate the ServerGrove VPS setup on our local VM. To do this accurately we need to do more than simply use the same packages. ServerGrove will have configured their servers in certain ways that they think best serve their customers. We need to also replicate these configurations. Navigate into your VPS either using the dashboard file manager or ssh from the command line. Then navigate to /etc. In this directory there will be a directory called apache2. Download the entire apache2 directory and place it in your salt/roots/salt directory on your local machine. This directory contains all the custom configuration from your VPS that you can replicate locally.&lt;/p&gt;
+
+&lt;p&gt;Next we need to rewrite our apache state. Create a new file in salt/roots/salt and call it apache2-mpm-prefork.sls. The first part of this file will be very familiar:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apache2-mpm-prefork:
+  		pkg:
+		- installed
+  		service:
+		- running
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We request the module “apache2-mpm-prefork” and install it and then we simply check that it is running.&lt;/p&gt;
+
+&lt;p&gt;Now we need to add some configuration. First we’re going to add the main apache2.conf file. Here is the code to add below the previous codeblock.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/etc/apache2/apache2.conf:
+	file.copy:
+    	- name: /etc/apache2/apache2.conf
+    	- source: /srv/salt/apache2/apache2.conf
+    	- force: True
+    	- makedirs: True
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In Salt terms this is another state. It is the state the refers to the file “/etc/apache2/apache2.conf” whereas the previous state referred to the package “apache2-mpm-prefork”. Here’s what is going on here:&lt;br /&gt;
+1. We are going to use the copy function of the Salt file module&lt;br /&gt;
+2. We tell it the name and location of the copied file i.e. the destination&lt;br /&gt;
+3. We tell it the location of the file we want to copy i.e. the source file&lt;br /&gt;
+4. We tell it to overwrite any files that already exist at the destination location with the same name.&lt;br /&gt;
+5. We tell it to create any required subdirectories if they don’t already exist.&lt;/p&gt;
+
+&lt;p&gt;When you break it down like this it is quite straightforward. However, there is still one big problem. How did we get our apache2.conf file into /srv/salt/apache2 on the VM in the first place?&lt;/p&gt;
+
+&lt;p&gt;For this we need to return to Vagrant for a minute and open up our Vagrantfile.&lt;br /&gt;
+Look for the lines where we set the configuration for synced folders. Delete what is there and replace it with the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  ## For masterless, mount your file roots file root
+  	config.vm.synced_folder &quot;salt/roots/&quot;, &quot;/srv/&quot;, 
+	:owner =&amp;gt; &quot;vagrant&quot;,
+	:group =&amp;gt; &quot;www-data&quot;,
+	:mount_options =&amp;gt; [&quot;dmode=775&quot;,&quot;fmode=664&quot;]
+  	config.vm.synced_folder &quot;.&quot;, &quot;/vagrant&quot;, 
+	:owner =&amp;gt; &quot;vagrant&quot;,
+	:group =&amp;gt; &quot;www-data&quot;,
+	:mount_options =&amp;gt; [&quot;dmode=775&quot;,&quot;fmode=664&quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This tells vagrant that we want to sync two folders. The first is our “salt/roots” directory which will be synced with the “/src/” directory on the VM and the second is the sync our root directory with “/vagrant” on the VM. We then set some options for each. These set the directory permissions on the VM and are basic settings that allow us to read and write depending on the user and group. Remember that vagrant creates a user “vagrant” rather than using root - this is why we need to make this user the owner of these synced directories.&lt;/p&gt;
+
+&lt;p&gt;It should now make sense why we need Salt to copy our Apache config files. The files are stored locally and when Vagrant runs it syncs those files into “/srv/”. From there we get Salt to copy them into the right place for Apache to find them.&lt;/p&gt;
+
+&lt;p&gt;Whilst you’re getting used to file.copy why not do the same thing for the “/srv/salt/apache2/conf.d/php.conf” file? You should be able to do this using the code we used above, but if not then head over to the &lt;a href=&quot;https://github.com/musonic/vagrant-salt-servergrove/blob/master/salt/roots/salt/apache2-mpm-prefork.sls&quot;&gt;github repo&lt;/a&gt; and have a look how I did it.&lt;/p&gt;
+
+&lt;p&gt;Having looked at file.copy we’re now going to use another of salt’s file module functions - file.managed. This function is incredibly useful because it is so versatile. We are going to use it firstly to create and manage a file to store our virtual host configuration. To do this we simply create another state in our apache2-mpm-prefork.sls file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/etc/apache2/sites-enabled/mysite.com.conf:
+	file.managed:
+    	- user: root
+    	- contents_pillar: virtualhosts:vhost
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Again, this should all look very familiar. We tell salt the name and location of the file that we want it to manage. We then tell it to use the root user. The final line is the interesting one as it introduces a new concept.&lt;/p&gt;
+
+&lt;p&gt;###Pillars of Salt&lt;br /&gt;
+Salt uses a concept they call Pillars. Pillars are simply files that contain pretty much any sort of data that might be required by the states themselves. It is simply a nice way of keeping things organised. In the above example we have a file in our pillar directory called “virtualhosts.sls” and in that file is a YAML declaration with “vhost” as the key. Here’s the contents of the file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;virtualhosts:
+	vhost: |
+    	&amp;lt;VirtualHost *:80&amp;gt;
+        	    CustomLog /var/log/apache2/mysite.com-access.log combined
+            	DocumentRoot /var/www/web
+            	ServerName mysite.com
+            	ServerAlias localhost
+
+            	&amp;lt;Directory /var/www/web&amp;gt;
+                    AllowOverride All
+                    Order allow,deny
+                    Allow from all
+            	&amp;lt;/Directory&amp;gt;
+    	&amp;lt;/VirtualHost&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;So you can see that we use a pipe (&lt;/td&gt;
+      &lt;td&gt;) before we simply write out a standard apache virtualhost configuration. I won’t go into this all now, but a small amount of googling will help you find information about virtualhosts. Obviously, replace “mysite” with whatever your site is called!&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;In just the same way that salt state files are collected together in a top.sls file, so are pillars. Create a top.sls file in your pillar directory and copy the following in:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;base:
+  		&#39;*&#39;:
+	  - data
+	  - virtualhosts
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You see? Exactly like we did with the states top file. You will see we have also requested another file, “data”, which we will come to in a minute.&lt;/p&gt;
+
+&lt;p&gt;To return to our file.managed state it should now be clear that all the “contents_pillar” option does is to take the contents of our pillar file (virtualhosts.sls) and make that the contents of the file it is managing.&lt;/p&gt;
+
+&lt;p&gt;We’re nearly there with our apache configuration now. The only thing left is to create our php.ini file. We do this exactly like above:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/usr/local/php55/lib/php.ini:
+	file.managed:
+    	- contents_pillar: data:custom
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and the contents of “pillar/data.sls” is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;data:
+	custom: |
+  	  extension=intl.so
+  	  short_open_tag = Off
+  	  opcache.enable = &quot;0&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;you can now add any custom php configurations you like to this file.&lt;/p&gt;
+
+&lt;p&gt;There is one final thing we must do before we can leave apache and move on. When ever we make any changes to the php.ini file we need to restart apache for the changes to take effect. In order for this to happen we need to tell salt to watch our php.ini file. If it detects any changes it will restart the service. Just underneath where you have added the “running” option, add the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    - watch:
+  		- file: /usr/local/php55/lib/php.ini
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Remember to check the &lt;a href=&quot;https://github.com/musonic/vagrant-salt-servergrove/blob/master/salt/roots/salt/apache2-mpm-prefork.sls&quot;&gt;GitHub repo&lt;/a&gt; if you want to make sure you’ve got it right.&lt;/p&gt;
+
+&lt;p&gt;###What about MySQL?&lt;/p&gt;
+
+&lt;p&gt;Easy. You’ll be pleased to know that nothing has changed in how we’ve setup our MySQL state, so you can just leave that exactly how it is!&lt;/p&gt;
+
+&lt;p&gt;###Nearly there!&lt;br /&gt;
+We have now been through and made sure that all our states are how we want them. We just have one more job to do. Open up your minion file and add the line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;master: localhost
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This tells Salt that we are running in masterless mode. In other words, rather than having one master controlling many different minions, we just have one minion that is effectively it’s own master. If you open up the &lt;a href=&quot;https://github.com/musonic/vagrant-salt-servergrove/blob/master/salt/minion&quot;&gt;minion file&lt;/a&gt; in the GitHub repo you will see a whole load of configuration options that are currently commented out but you could decide to use if you so chose.&lt;/p&gt;
+
+&lt;p&gt;###Start her up&lt;br /&gt;
+So now you should be set to start up your Virtual Machine. Run&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vagrant destroy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;to start completely afresh and then&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vagrant up
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and see your entire setup build before your eyes.&lt;/p&gt;
+
+&lt;p&gt;###Any problems?&lt;br /&gt;
+Whilst getting this working I did run into a few problems and found that there were a few things that were helpful when trying to figure out what had gone wrong.&lt;/p&gt;
+
+&lt;p&gt;The first place to look is the logs. They are located on your VM (so you need to ssh into it) at /var/logs and you should see there an apache error log and an apache access log. Open these up in nano and see what is there. They will give a big clue as to what went wrong.&lt;/p&gt;
+
+&lt;p&gt;If you discover that there is something going wrong with your salt configuration a useful thing to do, rather than re-provisioning using vagrant every time, is to run salt directly on the vm from the command line. Firstly ssh into your vm.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vagrant ssh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then you can run a command called salt-call. This will allow you to debug the salt.highstate function which is what runs all your salt states.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ salt-call -l debug state.highstate
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will give you very detailed and verbose information about every stage of the process.&lt;/p&gt;
+
+&lt;p&gt;For more info about salt and for finding help don’t forget to check out their &lt;a href=&quot;http://docs.saltstack.com&quot;&gt;docs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;###Well done for getting this far!&lt;/p&gt;
+
+&lt;p&gt;If you’re still reading then well done! I hope you’ve found it interesting and useful. My next post will probably be on Symfony2 but check back and find out and be sure to post links to this blog and leave comments if you’ve found it useful. Thanks for reading!&lt;/p&gt;
+</description>
+        <pubDate>Fri, 18 Apr 2014 00:00:00 +0100</pubDate>
+        <link>/articles/:short_year/replicate-your-VPS</link>
+        <guid isPermaLink="true">/articles/:short_year/replicate-your-VPS</guid>
+        
+        <category>Web</category>
+        
+        <category>Development,</category>
+        
+        <category>VM,</category>
+        
+        <category>Vagrant,</category>
+        
+        <category>Salt</category>
+        
+        
+        <category>webdev</category>
+        
+      </item>
+    
+      <item>
+        <title>Add Some Salt</title>
+        <description>&lt;p&gt;##Provisioning&lt;/p&gt;
+
+&lt;p&gt;You could do this manually but downloading whatever you need using package managers like apt-get etc. This is fine, but there are two important reasons why this probably isn’t the best way to go.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;To perform tasks like installing new software you will have to have root access. At the moment you are logged in as a user called Vagrant, not Root. You can change this easily enough, however, by typing:&lt;/p&gt;
+
+    &lt;p&gt;sudo su&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;This is the biggie. If you install things by hand then when you destroy your virtual machine (which you will do, often) then everything you have installed will disappear with it. You will have to re-install everything &lt;em&gt;every&lt;/em&gt; time you startup a new VM. Bad times.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So what’s the answer? It’s called &lt;strong&gt;Provisioning&lt;/strong&gt; and it means that you have some sort of config file saved that Vagrant can run a series of commands and install everything you need &lt;em&gt;each time you start a new VM&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, this is where things start to get (for me at least) a bit tricky. There are various options, but it took me quite sometime to get this setup correctly.&lt;/p&gt;
+
+&lt;p&gt;From what I can gather there are three main ways of provisioning a VM using Vagrant (not including writing a bash script - see the vagrant docs for info on this):&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Puppet&lt;/li&gt;
+  &lt;li&gt;Chef&lt;/li&gt;
+  &lt;li&gt;Salt&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I think that they all do basically the same thing, but in slightly different ways. I’ve tried playing with Puppet but whilst asking for some help on the Vagrant irc channel I was recommended Salt which is what I’ll be talking about now. Puppet and Chef both use Ruby, so if that’s your thing then go for that. Salt uses files written in the YAML format which I personally find much easier to understand. It is also used a lot in Symfony2 and Doctrine which I will be discussing later on in this series.&lt;/p&gt;
+
+&lt;h3 id=&quot;salt-stack&quot;&gt;Salt Stack&lt;/h3&gt;
+&lt;p&gt;So, let’s get going with Salt. Much of what follows is based on work done by &lt;a href=&quot;http://geoffpetrie.com&quot;&gt;Geoff Petrie&lt;/a&gt; and his freely available github repository to build a PHP Lamp stack using Vagrant and Salt that you can find &lt;a href=&quot;https://github.com/geopet/salt-lamp-vagrant&quot;&gt;here&lt;/a&gt;. If you like you can follow the instructions in his github repo readme and you’ll have a fully working LAMP stack, however if you want to walk through with me and learn what he’s done, then carry on reading.&lt;/p&gt;
+
+&lt;p&gt;The good news is that Vagrant (as of version 1.3) has native support for Salt. If for some reason you’re running an older version either upgrade or install the vagrant-salty plugin. Google will help you out with either of these two things.&lt;/p&gt;
+
+&lt;p&gt;Next up, create a new folder to keep all of our SaltStack stuff and a subfolder called “roots”.&lt;br /&gt;
+	$ mkdir salt&lt;br /&gt;
+	$ cd salt&lt;br /&gt;
+    	$ mkdir roots&lt;/p&gt;
+
+&lt;p&gt;Now let’s think for a moment what we are trying to achieve. We need to set up Salt so that everytime we start a new VM using Vagrant we know that the new machine will be automatically provisioned with everything &lt;em&gt;exactly&lt;/em&gt; how we’ve specified previously. There’s a lovely description about this in the &lt;a href=&quot;http://docs.saltstack.com/ref/states/index.htm&quot;&gt;SaltStack docs&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;State management, also frequently called software configuration management (SCM), is a program that puts and keeps a system into a predetermined state. It installs software packages, starts or restarts services, or puts configuration files in place and watches them for changes.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Salt uses files called SLS files to store states. You should think of states as simpe data lists. This is why they are written in YAML format. If you haven’t come across YAML before it is a super easy way of writing organised data lists. We need to write a separate state for every component that we want our VM to be provisioned with. Let’s start with a nice easy example. We’re going to write the SLS file for our Apache2 installation.&lt;/p&gt;
+
+&lt;p&gt;Open up your IDE or text editor or whatever and create a new file in the roots directory and call it “apache2.sls”. Then copy this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apache2:
+  		pkg:
+   			- installed
+  		service:
+			- running
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Please make sure you have indented the lines correctly because this is fundemental to how YAML works.&lt;/p&gt;
+
+&lt;p&gt;The first line is, as you would expect, the name we have given to this set of data. Officially it is called an &lt;em&gt;ID Declaration&lt;/em&gt;. It is important that this matches the package name that you are going to install. This is dependent on your operating system and package manager. We are using Ubuntu and apt so if you are using something else then you need to check what the package name needs to be.&lt;/p&gt;
+
+&lt;p&gt;The second line is the &lt;em&gt;State Declaration&lt;/em&gt;. This tells us what state we are going to use. These are all listed in the docs and you can even create your own, but let’s just stick with what we need for now. You can see now why the indentation is important. By indenting you can clearly see what data is a subset of something else. In our case “pkg” and “service” are indented by the same amount so they are obviously first children of “apache2”. I hope this is fairly self-explanatory.&lt;br /&gt;
+The state declaration refers to a salt state module. This has several functions built in that do various different things. The third line in our example simply says that we want to use the “installed” function of the “pkg” state module. As you would expect this simply is a check to make sure that the package is installed.&lt;/p&gt;
+
+&lt;p&gt;Moving on you can see we use another module called “service”. Here we’ve specified that apache should be started if it is not already running.&lt;br /&gt;
+And there we are, you’ve just written your first SLS!&lt;/p&gt;
+
+&lt;p&gt;The next step is to create a file called top.sls which will work as a master mapping file. Top files come into their own when you want to set up different environments or provision different minions separately. For us it will be very straightforward. Once you’ve created the file (in the salt directory) copy in:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;base:
+	   &#39;*&#39;:
+          - apache2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here we have created an environment called “base”. Within this environment we are using “*” to match all minions (if you have mulitple minions you might specify specific names instead) and finally we send all minions the apache2 state. Pretty easy, huh?!&lt;/p&gt;
+
+&lt;p&gt;We just have one more file to create. In the salt directory created a blank file (make sure it isn’t automatically given the .txt suffix) called “minion”. This is a config file and all it needs in it is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;file_client: local
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;By default Salt looks for files on the master server, but because we are going to utilise Vagrant’s ability to sync folders.&lt;/p&gt;
+
+&lt;p&gt;The final step is to update our Vagrantfile. Open up your Vagrantfile and add:&lt;/p&gt;
+
+  	## For masterless, mount your file roots file root&lt;br /&gt;
+  	config.vm.synced_folder “salt/roots/”, “/srv/”&lt;br /&gt;
+
+&lt;pre&gt;&lt;code&gt;# Provision using Saltstack
+config.vm.provision :salt do |salt|
+  
+  	salt.minion_config = &quot;salt/minion&quot;
+  	salt.run_highstate = true
+  
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you Vagrant Up you will have a working Apache server on your VM. However, at the moment we can’t easily test this. We need to add one more thing to our Vagrantfile in order to be able to test in the browser:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;config.vm.network :forwarded_port, guest: 80, host: 4567
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This sets up some port forwarding so that when we go to http://localhost:4567 in our browser we are actually visiting port 80 on the VM. The resuly is that you should see a page that tells you that your Apache server is working!&lt;/p&gt;
+
+&lt;p&gt;Time for another cup of tea!&lt;/p&gt;
+
+&lt;p&gt;Ok, so we should now be able to use the same techniques to provision our VM with the other components of our LAMP stack - MySQL and PHP. Hopefully you’re ahead of me now and have realised that to do this we need to create two more SLS files. We’ll name them both after the packages we are going to install:&lt;br /&gt;
+First, PHP. Create a new file in the roots directory:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ touch libapache2-mod-php5.sls
+	$ vim libapache2-mod-php5.sls
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(nb I am using the text editor vim but you can create this file however you choose, just remember to ignore the second line if you’re not using vim!) Then add the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;libapache2-mod-php5:
+		pkg:
+    		- installed
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This should look very familiar. Next, we will do the same for MySQL. Create a file called mysql.sls and in it should be:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysql:
+	   pkg:
+          - installed
+          - names:
+        	- mysql-server
+            - libapache2-mod-auth-mysql
+            - php5-mysql
+   service:
+          - running
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So, this is a little bit more complex but it shouldn’t phase you. We’re saying that mysql should be installed and running (just like we did with apache). The extra bit is under “names”. This specifies additional packages that also need to be installed in order for this state to be successful. If they are not then Salt will install them.&lt;/p&gt;
+
+&lt;p&gt;Finally, we just need to make sure that our top file includes our seperate files. Add them to the top file in just the same way that you did apache2.&lt;/p&gt;
+
+&lt;p&gt;So now we should have a full working LAMP stack on our VM.&lt;br /&gt;
+Destroy your existing VM by typing:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vagrant destroy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And build it again by using&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vagrant up
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;All being well your VM should boot and provision itself and you’re ready to rock.&lt;/p&gt;
+
+&lt;p&gt;Please remember that I am only scraping the surface of what Vagrant and Salt can do but I hope it is enough to get us going. Hopefully I will be able to dive a bit deeper in future articles.&lt;/p&gt;
+
+&lt;p&gt;Since writing this article I have come across some GUI (Graphical User Interface) tools that help build your config files to use with Vagrant. I haven’t explored them much yet, but they look good to get you up and running quickly. Check out:&lt;br /&gt;
+- &lt;a href=&quot;http://getprotobox.com&quot;&gt;Protobox&lt;/a&gt;&lt;br /&gt;
+- &lt;a href=&quot;https://puphpet.com&quot;&gt;PuPHPet&lt;/a&gt;&lt;br /&gt;
+- &lt;a href=&quot;http://rove.io&quot;&gt;Rove&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 20 Mar 2014 18:54:00 +0000</pubDate>
+        <link>/articles/:short_year/add-some-salt</link>
+        <guid isPermaLink="true">/articles/:short_year/add-some-salt</guid>
+        
+        <category>Web</category>
+        
+        <category>Development,</category>
+        
+        <category>VM,</category>
+        
+        <category>Vagrant,</category>
+        
+        <category>Salt</category>
+        
+        
+        <category>webdev</category>
+        
+      </item>
+    
+      <item>
+        <title>A Development Environment</title>
+        <description>&lt;h2 id=&quot;getting-started---a-basic-development-environment&quot;&gt;Getting Started - a basic development environment&lt;/h2&gt;
+
+&lt;p&gt;So, before we can do any exciting coding it’s good to get yourself setup and feeling comfortable. It’s a bit like cooking a new recipe and making sure you’ve got all of your ingredients out on the counter before you start rather than scrabbling around at the back of a cupboard once you’re halfway through.&lt;/p&gt;
+
+&lt;p&gt;I will try and use inline links where appropriate and if there are technical terms (or even semi-technical terms) I will try and link to Wikipedia articles.&lt;/p&gt;
+
+&lt;p&gt;In this post I’m going to guide you through how I setup my current development environment. Please remember that:&lt;br /&gt;
+1. This is just how I do it - there are a million and one ways to do the same thing.&lt;br /&gt;
+2. This is only a basic setup. All of the things I talk about can be taken much, much further if you have the time, inclination, mental capacity etc.&lt;br /&gt;
+3. IMPORTANT - I develop on a Mac running OS X. If you use a different operating system then I cannot guarantee that what I am doing will work without some modification. I would like to think that the fundementals will be the same, but you might have to do some googling to help!&lt;/p&gt;
+
+&lt;h3 id=&quot;what-is-a-development-environment&quot;&gt;What is a development environment?&lt;/h3&gt;
+
+&lt;p&gt;An environment is a way of seperating different stages of building a web site or app or whatever. At it’s most basic level you will have a developement environment and a production environment. The development environment is where you’ll spend most of your time and is usually on your local computer. This is where you write your code and check that everything works before releasing it to the wild. The production environment is where your code is when your site is live. This usually involves &lt;a href=&quot;http://en.wikipedia.org/wiki/Web_hosting&quot;&gt;hosting&lt;/a&gt; of some kind unless you’re able to run your own servers.&lt;/p&gt;
+
+&lt;p&gt;Really you can define any number of environments in any way that you like. It depends on what works best for your workflow. The most common additional environment is often called the Staging environment. This is like a half-way house between development and production and is usually used for rigorous testing before the code is finally pushed up to the production server.&lt;/p&gt;
+
+&lt;p&gt;I’m going to show you how to setup two environments: developement and staging. Production environments depend on how you want to host your work so I will leave that for a later post.&lt;/p&gt;
+
+&lt;p&gt;###Options&lt;/p&gt;
+
+&lt;p&gt;There are many ways to setup a development environment. At the most basic level you need:&lt;br /&gt;
+1. a local &lt;a href=&quot;http://en.wikipedia.org/wiki/Web_server&quot;&gt;webserver&lt;/a&gt;&lt;br /&gt;
+2. a &lt;a href=&quot;http://en.wikipedia.org/wiki/Database_server&quot;&gt;database server&lt;/a&gt;&lt;br /&gt;
+3. a &lt;a href=&quot;http://en.wikipedia.org/wiki/Scripting_language&quot;&gt;scripting language&lt;/a&gt;&lt;br /&gt;
+4. a way of editing files&lt;/p&gt;
+
+&lt;p&gt;This is often referred to as your development stack. You will also see this abbreviated to *AMP. The star could be W for windows, M for Mac or L for Linux. The A stands for &lt;a href=&quot;www.apache.org/&quot;&gt;Apache&lt;/a&gt; (the webserver), M for &lt;a href=&quot;www.mysql.com/‎&quot;&gt;MySQL&lt;/a&gt; (the database server) and P for &lt;a href=&quot;php.net/&quot;&gt;PHP&lt;/a&gt; (a scripting language).&lt;/p&gt;
+
+&lt;p&gt;You can see that this doesn’t sound complicated or difficult to setup. The other great news is that you can setup a really good development environment completely free (except your hardware).&lt;/p&gt;
+
+&lt;p&gt;As far as I know there are three main ways you can go about setting up a development environment and there is quite a lot of crossover between them.&lt;br /&gt;
+I’ll briefly explain each in turn and then go into more detail about my current preferred option.&lt;/p&gt;
+
+&lt;p&gt;####Using pre-installed software plus some extras&lt;br /&gt;
+If you are using Mac OS X then there is a ready-made development environment for you. The OS comes bundled with an Apache web server, MySQL and several scripting languages including PHP and Ruby. You can use TextEdit.app to edit and create files or, if you feel comfortable, a command line &lt;em&gt;(Terminal in Mac speak)&lt;/em&gt; editor like &lt;a href=&quot;http://www.vim.org&quot;&gt;Vim&lt;/a&gt;. This works absolutely fine and if you choose to you can modify, upgrade and basically pimp the setup to your hearts desire. Some things you might want to do are:&lt;br /&gt;
+- Manage your software using a package manager. &lt;a href=&quot;brew.sh/&quot;&gt;Homebrew&lt;/a&gt; is one of many.&lt;br /&gt;
+- Download a better way of creating and editing your code. This could be an editor like &lt;a href=&quot;macromates.com/&quot;&gt;TextMate&lt;/a&gt; or maybe a full IDE like &lt;a href=&quot;netbeans.org/&quot;&gt;NetBeans&lt;/a&gt; or &lt;a href=&quot;aptana.com/‎&quot;&gt;Aptana&lt;/a&gt;.&lt;br /&gt;
+This is how I have been developing for several years.&lt;/p&gt;
+
+&lt;p&gt;####Download an environment tool&lt;br /&gt;
+The most common tool for helping you build and manage environments is &lt;a href=&quot;www.mamp.info/‎&quot;&gt;MAMP&lt;/a&gt;. This is software that you download and it gives you a ready made MAMP stack. This is &lt;em&gt;really&lt;/em&gt; easy to use. You make sure that your code goes in the correct folder and bamm everything is setup for you. You can tweak settings etc. and it just works. The benefit of this is it means you don’t have to mess around with your OS to get it all going. There are plenty of other options for this kind of installation.&lt;/p&gt;
+
+&lt;p&gt;####Use Virtual Machines (VMs) and a VM management tool&lt;br /&gt;
+So, this is where I’m now at. This is still a very recent departure for me and I am still tweaking and getting things right, but the good news is that you can dive straight in with me!&lt;br /&gt;
+In the past I always shyed away from virtual machines. I couldn’t really see the benefits, I was frankly a little bit scared in case something went wrong and also I didn’t really want to spend the cash!&lt;br /&gt;
+It turns out I was wrong on all counts…&lt;br /&gt;
+Firstly, it doesn’t have to cost you anything. Secondly, there is nothing to be scared about - if you don’t like it you can just uninstall everything just like any other piece of software. Thirdly, I can now &lt;em&gt;really&lt;/em&gt; see the benefits. Let’s start with some basics.&lt;/p&gt;
+
+&lt;p&gt;A &lt;a href=&quot;http://en.wikipedia.org/wiki/Virtual_machine&quot;&gt;Virtual Machine&lt;/a&gt; is software that runs on your computer and emulates a completely separate operating system. This is great because it means that you can set it up to replicate your production server which will often be different, especially if you develop using a Mac. If your development server is effectively the same as your production server then it should remove that commonly heard excuse &lt;em&gt;“But it works fine on my local machine”&lt;/em&gt; when things go wrong. It gives you the means to thoroughly test everything before you get to that point. &lt;br /&gt;
+The other huge advantage is that you can keep everything separate from your local operating system. You can install, try out, mess up as much as you like and if you want to you can remove the whole thing with one command.&lt;/p&gt;
+
+&lt;p&gt;So, now that I’ve convinced you that this is the way to go, let’s get started setting things up. Remember that everything I write assumes you are using Mac OS X simply because that is what I use and I don’t have access to anything else.&lt;/p&gt;
+
+&lt;p&gt;###Setting up your VM&lt;br /&gt;
+In order to follow along you will need to use the Command Line. For some people this can be scarey. It looks very nerdy and not dissimilar to &lt;a href=&quot;http://en.wikipedia.org/wiki/The_Matrix&quot;&gt;The Matrix&lt;/a&gt;. It is also &lt;em&gt;very&lt;/em&gt; powerful and so you are right to treat it with respect and caution. Make sure you understand each and every command you type into it before you hit enter. Soon you’ll realise that with this power comes flexibility and speed and you will start to wonder why you were scared in the first place!&lt;br /&gt;
+On a Mac the command line is accessed by using Terminal.app. You will be able to find this in you Applications folder inside the Utilities folder. Go ahead and load it up. You will see a black screen with something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Nics-MacBook-Air:~ niclebreuilly$
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is the name of your computer. It also tells you that you are in the users home directory. You can check this by typing:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ls
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and hitting enter.&lt;br /&gt;
+NB. The dollar sign ($) is used to denote a new command. You DO NOT type it again as you should see it already in your Terminal window. &lt;br /&gt;
+You should see a list of all the directories contained within you home directory. “ls” is the command for list directory contents. If you type:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ls -ln
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and hit enter you will get the same list but this time in a more verbose form with lots more information about the individual folders. “-ln” is a flag that is a combination of two options. The first is specifying a long listing format i.e. more information and the second specifies you want to see a numeric representation of user and group IDs. Try typing:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ls -l
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and hit enter and you’ll see the difference.&lt;br /&gt;
+Incidentally it is possible to customize the look of your Terminal window. Just go to the Preferences menu and you can select different themes for your windows. Select something you like and open a new tab or window. This will immediately make it feel more approachable.&lt;/p&gt;
+
+&lt;p&gt;Next we’re going to start really getting our hands dirty.&lt;/p&gt;
+
+&lt;p&gt;In order to manage our VM we are going to use some software called &lt;a href=&quot;http://www.vagrantup.com&quot;&gt;Vagrant&lt;/a&gt;. Like everything in this series if you want to really get into Vagrant then you should check out their documentation.&lt;/p&gt;
+
+&lt;p&gt;First things first, we need to install it. Head over to http://www.vagrantup.com/downloads and select the correct download for whichever OS you are using and follow through the installation process. It is incredibly simple.&lt;/p&gt;
+
+&lt;p&gt;Once you have the software installed, go back to your Terminal window and type:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vagrant -v
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(from now on I’m going to assume you know to press Enter each time you type a command to make it run). If everything has installed correctly it should print out the version of Vagrant that you now have installed on your machine.&lt;/p&gt;
+
+&lt;p&gt;Next we need to download and install our Virtual Machine software. I will be using the free and open-source &lt;a href=&quot;https://www.virtualbox.org&quot;&gt;VirtualBox&lt;/a&gt; by Oracle. There are others available but VirtualBox is free and does everything we need it to. Head over to https://www.virtualbox.org and download and install the appropriate version.&lt;/p&gt;
+
+&lt;p&gt;With these two bits of software installed we’re ready to setup our first project.&lt;/p&gt;
+
+&lt;p&gt;###Create a new project&lt;br /&gt;
+Ok, so we first need to create a folder for our new project. You can do this through Finder or why not use the command line? For now, I’ll assume you’re going to add your project folder directly into your Home folder (although you can, of course, put it whereever you want!). So type the command to make a new directory:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ mkdir my_web_project
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will create a new directory called “my_web_project” in your Home folder. Open up a new Finder window and check!&lt;br /&gt;
+Now you need to navigate into that folder. This is done with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd my_web_folder
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can use this command to navigate yourself around your file system. You can use paths to get to specific folders rather than a new command each time. If you want to go up a level you would type:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd ../
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you want to start again from the user’s Home directory then type:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd ~/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or you can type out the full path eg.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd /Users/niclebreuilly/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now that you have your project folder you need to tell Vagrant that you want to use it. Make sure you’re in your project folder.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vagrant init
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will place a file called a vagrantfile inside that folder. This file is a configuration file where you tell Vagrant everything it needs to know about your setup. Open it up in a text editor or IDE of your choice and take a look. It is pre-filled with lots of comments and demo settings to give you an idea of what you can set.&lt;/p&gt;
+
+&lt;p&gt;Our next job is to setup the VM itself. Virtual Machines are often referred to as Boxes. There are &lt;a href=&quot;http://www.vagrantbox.es&quot;&gt;loads of diffrent boxes&lt;/a&gt; you can choose from but for now we’re going to use one of the default boxes that comes packaged with Vagrant. It is called precise32 and is a standard Linux Ubuntu 12.04 server.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;vagrant box add precise32 \ 
+http://files.vagrantup.com/precise32.box
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This downloads the box from the Vagrant website. Nb. Make sure you hit Enter after the slash. This seems to make a difference but I don’t know why!&lt;/p&gt;
+
+&lt;p&gt;The cool thing about this is that the same box can be used for multiple projects. What happens is that each time you setup a new project that project actually uses a clone of the original box and so you can have as many as you like!&lt;/p&gt;
+
+&lt;p&gt;Next we need to tell Vagrant to use the box. Open your Vagrantfile (if it isn’t already) and find the line that starts&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;config.vm.box
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You need to change it to&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;config.vm.box = &quot;precise32&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now we’re ready to fire up the virtual machine. Go back to your terminal and type:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;vagrant up
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And after a few moments you will have a complete virtual machine running! Horray! Give yourself a pat on the back and go and make a cup of tea!&lt;/p&gt;
+
+&lt;p&gt;This is excellent but what can we do with it now? Well, the short answer is anything you would do with any other machine! &lt;br /&gt;
+First let’s try accessing our machine through &lt;a href=&quot;http://en.wikipedia.org/wiki/Secure_Shell&quot;&gt;SSH&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;vagrant ssh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That’s all you need. You are now logged into your VM as a user called vagrant. Try making a directory just like you did before but this time on your VM. Then list the contents of the current directory. What do you see? If it all went well you should see your brand new directory listed. Simple.&lt;/p&gt;
+
+&lt;p&gt;However, things aren’t &lt;em&gt;quite&lt;/em&gt; that simple. At the moment your VM is a pretty empty box. You will need to install your development stack before you can do anything too useful.&lt;/p&gt;
+
+&lt;h3 id=&quot;next-steps&quot;&gt;Next steps&lt;/h3&gt;
+
+&lt;p&gt;I was going to go all the way through getting your development environment up and running in this article, but I think that it would actually be simpler if I split things up into separate posts. I hope this will make things more easily digestible. Please let me know if you disagree!&lt;/p&gt;
+
+&lt;p&gt;So in the next post we will explore provisioning - getting your VM ready for action!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://nicleb.com/2014-02-17-add-some-salt.html&quot; title=&quot;Link to next article&quot;&gt;Next Article: Add Some Salt&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 08 Feb 2014 00:00:00 +0000</pubDate>
+        <link>/articles/:short_year/a-development-environment</link>
+        <guid isPermaLink="true">/articles/:short_year/a-development-environment</guid>
+        
+        <category>Web</category>
+        
+        <category>Development,</category>
+        
+        <category>VM,</category>
+        
+        <category>Vagrant</category>
+        
+        
+        <category>webdev</category>
+        
+      </item>
+    
+      <item>
+        <title>Let&#39;s Take A Trip</title>
+        <description>&lt;h3 id=&quot;coming-along-for-the-ride&quot;&gt;Coming along for the ride?&lt;/h3&gt;
+
+&lt;p&gt;Here we go with the first post in my new series all about web development for non-developers. &lt;br /&gt;
+I hope to post as regularly as I can manage and to cover as many topics as I can going into&lt;br /&gt;
+as much depth as I think is useful at the time. &lt;br /&gt;
+I really hope that you will use the comments on each post to ask questions, suggest improvements&lt;br /&gt;
+and have discussions about the post. With that in mind, don’t forget to read the comments after &lt;br /&gt;
+each post because they may well contain some really useful bits of information.&lt;/p&gt;
+
+&lt;p&gt;My aim with this series is for ask to go hand-in-hand into the world of web development and learn&lt;br /&gt;
+new skills together as we go. I am not a web professional and lots of the stuff I will be writing &lt;br /&gt;
+about I will be experiencing for the first time, just as I hope you will be. I WILL make mistakes&lt;br /&gt;
+but I hope that together we will all get through them.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-am-i-doing-this&quot;&gt;Why am I doing this?&lt;/h3&gt;
+
+&lt;p&gt;Ok, so let me give you a little bit of background. I’m not a web developer. I’m a professional musician&lt;br /&gt;
+based just outside of London, UK. Since about 2005 I’ve been interested in web design and development and&lt;br /&gt;
+over the years have tinkered around and tried to learn (and retain) as much as I can. However, my problem &lt;br /&gt;
+is that with work and family commitments I don’t have very much time to devote to my hobby. I try and grab &lt;br /&gt;
+20 minutes here and an hour there, but there might be some days I don’t open my laptop at all. &lt;br /&gt;
+This was ok at first but in the last few years there has been such as massive acceleration in web technologies&lt;br /&gt;
+that trying to keep up with best practices has become almost impossible. Even when I do get my head around something &lt;br /&gt;
+new if I don’t use it for a few weeks or months because I’m focussing on something else then I’ve invariably forgotten&lt;br /&gt;
+everything I learnt in the first place.&lt;/p&gt;
+
+&lt;p&gt;So, this on-going series of posts is for me just as much as for you. I’m going to start right at the very&lt;br /&gt;
+beginning talking about development tools and workflows before moving on to working through an example project.&lt;br /&gt;
+It’s all fairly standard tutorial stuff but the difference is that I won’t be writing from the point of view of &lt;br /&gt;
+an expert who uses this stuff every day. I will be learning and making mistakes as I go. I hope that everything will be&lt;br /&gt;
+documented. This way it will become an invaluable resource for me to keep track of my progress as well as hopefully&lt;br /&gt;
+being a useful path for you to follow along and contribute to.&lt;/p&gt;
+
+&lt;p&gt;I’ve written up a very quick &lt;a href=&quot;http://nicleb.com/roadmap&quot;&gt;roadmap&lt;/a&gt; with some ideas of things I would like to cover but this will almost&lt;br /&gt;
+certainly change and be updated as we go!&lt;/p&gt;
+
+&lt;p&gt;Please be aware that once we get as far as building applications I will &lt;em&gt;mainly&lt;/em&gt; be talking about PHP as this&lt;br /&gt;
+is the language I have most experience of. Obviously I will talk about HTML, CSS and javascript and maybe further &lt;br /&gt;
+down the line look at some client-side libraries for building dynamic websites (Backbone.js, Angular.js etc) but &lt;br /&gt;
+that won’t be for a while yet.&lt;br /&gt;
+It would be really beneficial if you could get the basics of HTML, CSS and PHP down because although I will go&lt;br /&gt;
+as slowly as I can there simply won’t be time to go into absolute minute detail about everything.&lt;br /&gt;
+I will try and keep a &lt;a href=&quot;http://nicleb.com/links&quot;&gt;links&lt;/a&gt; page updated with links to other sites that I have found useful for covering stuff&lt;br /&gt;
+either in advance or stuff you want more detail on.&lt;/p&gt;
+
+&lt;h3 id=&quot;if-youre-sitting-comfortably-then-ill-begin&quot;&gt;If you’re sitting comfortably then I’ll begin&lt;/h3&gt;
+
+&lt;p&gt;So finally, a big thank you for joining me on this adventure. I’m really excited to write regularly and discover&lt;br /&gt;
+new things together. Let’s go!&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 02 Feb 2014 00:00:00 +0000</pubDate>
+        <link>/articles/:short_year/Lets-Take-A-Trip</link>
+        <guid isPermaLink="true">/articles/:short_year/Lets-Take-A-Trip</guid>
+        
+        <category>Web</category>
+        
+        <category>Development-series</category>
+        
+        <category>Tutorial</category>
+        
+        
+        <category>webdev</category>
+        
+      </item>
+    
   </channel>
 </rss>

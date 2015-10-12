@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Databases And Vagrant</title>
+  <meta name="description" content="A common problem people face when using a VM for development is how to connect to a database that is hosted on the VM but from an application running on thei...">
+
+
+  <link rel="stylesheet" href="/css/tufte.css">	
+  
+
+  <!-- Google Fonts loaded here -->
+  <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="canonical" href="/articles/:short_year/databases-and-vagrant">
+  <link rel="alternate" type="application/rss+xml" title="nicleb.com" href="/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+		<a href="/"><img class="badge" src="/assets/img/logo.png" alt="CH"></a>
+      <a href="/categories">Categories</a>
+		<a href="/about">About</a>
+	</nav>
+</header>
+
+    <article>
+      <p>July 16, 2014</p>
+
+
+<h2 id="databases-and-virtual-machines">Databases and Virtual Machines</h2>
+
+<p>A common problem people face when using a VM for development is how to connect to a database that is hosted on the VM but from an application running on their host machine. I scratched my head about this for a while but infact the solution is pretty simple. Here is is.</p>
+
+<h3 id="sequel-pro">Sequel Pro</h3>
+
+<p>First off, you need to get a nice database manage application. You could install phpMyAdmin on your VM and use that in the browser but I much prefer to have a seperate app that can handle many database connections. <a href="http://sequelpro.com">Sequel Pro</a> is free and I find it really excellent and easy to use. I’ll show you how to set it up to use with your VM.</p>
+
+<p>First you need to create a new connection. When you open the app the new connection window will appear and you need to click on the SSH tab. We’re going to create an SSH tunnel to your VM and access the database from there as if we were using localhost on that computer.</p>
+
+<p>So the first lot of connection details are easy. These are the mysql details that you would use if you were connection to the database locally. They will be something like this:</p>
+
+<p><img src="/assets/img/sequelpro1.png" alt="Screenshot of first part of SequelPro connection details" /></p>
+
+<p>Now we’ve done that we need to go to the command line and get some SSH details. Get to your project root and type:</p>
+
+<pre><code>$ vagrant ssh-config
+</code></pre>
+
+<p>This will give you a list of relevant information.</p>
+
+<p>Simply copy the information for hostname, user and port into the correct fields. The key field can be filled by clicking on the key icon next to the field and navigating to <code>~/.vagrant-d/insecure_private_key</code>. You might need to click on the Show Hidden Files option and then navigate out and back into your home directory before .vagrant-d directory shows up.</p>
+
+<p>And that’s it. You complete connection window should look a bit like this:</p>
+
+<p><img src="/assets/img/sequelpro2.png" alt="Screenshot of completed SequelPro connection window" /></p>
+
+<p>Now you can add this connection to your list of favourites so yuo can use it again without having to remember all of the details. Once you’ve done that just click Connect and you’re good to go!</p>
+
+
+    </article>
+    <span class="print-footer">Databases And Vagrant - July 16, 2014 - nic le breuilly</span>
+    <footer>
+  <ul class="footer-links group">
+    <li><a href="mailto:nic@nicleb.com"><span class="icon-mail"></span></a></li>    
+    
+      <li>
+        <a href="//www.twitter.com/nicholaslebreuilly"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/musonic"><span class="icon-github"></span></a>
+      </li>
+      
+  </ul>
+<div class="credits">
+<span>&copy; 2015 &nbsp;&nbsp;NIC LE BREUILLY</span></br> 
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Personal blog </a> in <a href="//jekyllrb.com">Jekyll</a>.</span> 
+</div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- nicleb-main -->
+		<ins class="adsbygoogle"
+		     style="display:block"
+		     data-ad-client="ca-pub-3112512319671523"
+		     data-ad-slot="9490473693"
+		     data-ad-format="auto"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+</footer>
+
+  </body>
+</html>

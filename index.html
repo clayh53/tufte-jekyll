@@ -1,19 +1,148 @@
----
-layout: default
-title: nicleb.com
-published: true
----
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>nicleb.com</title>
+  <meta name="description" content="A Blog about law, literature and a bit of politics">
 
 
-  <h1 class="content-listing-header sans">Recent Articles</h1>
+  <link rel="stylesheet" href="/css/tufte.css">	
+  
+
+  <!-- Google Fonts loaded here -->
+  <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="canonical" href="/">
+  <link rel="alternate" type="application/rss+xml" title="nicleb.com" href="/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+		<a href="/"><img class="badge" src="/assets/img/logo.png" alt="CH"></a>
+      <a href="/categories">Categories</a>
+		<a href="/about">About</a>
+	</nav>
+</header>
+
+    <article>
+        <h1 class="content-listing-header sans">Recent Articles</h1>
   <ul class="content">
-    {% for post in site.posts %}
+    
       <li class="listing">
       	<hr class="slender">
-      	<a href="{{ post.url }}"><h4 class="contrast">{{ post.title }}</h4></a>
-      	<span class="smaller">{{ post.date | date: "%B %-d, %Y" }}</span>  <br/>
-		<div>{{ post.excerpt }}</div>
+      	<a href="/articles/:short_year/a-test-draft"><h4 class="contrast">A test draft</h4></a>
+      	<span class="smaller">October 12, 2015</span>  <br/>
+		<div>
+</div>
 		
       </li>
-    {% endfor %}
+    
+      <li class="listing">
+      	<hr class="slender">
+      	<a href="/articles/:short_year/databases-and-vagrant"><h4 class="contrast">Databases And Vagrant</h4></a>
+      	<span class="smaller">July 16, 2014</span>  <br/>
+		<div>A common problem people face when using a VM for development is how to connect to a database that is hosted on the VM but from an application running on their host machine. I scratched my head about this for a while but infact the solution is pretty simple. Here is is.</div>
+		
+      </li>
+    
+      <li class="listing">
+      	<hr class="slender">
+      	<a href="/articles/:short_year/the-lovely-bones"><h4 class="contrast">The Lovely Bones by Alice Sebold</h4></a>
+      	<span class="smaller">June 14, 2014</span>  <br/>
+		<div>"that in the air between the living, spirits bob and weave and laugh with us. They are the oxygen we breathe."</div>
+		
+      </li>
+    
+      <li class="listing">
+      	<hr class="slender">
+      	<a href="/articles/:short_year/catcher-in-the-rye"><h4 class="contrast">Catcher In The Rye by J.D. Salinger</h4></a>
+      	<span class="smaller">May 25, 2014</span>  <br/>
+		<div>Everyone will be able to have a relationship with Holden regardless of whether or not they can relate directly with his situation.</div>
+		
+      </li>
+    
+      <li class="listing">
+      	<hr class="slender">
+      	<a href="/articles/:short_year/Hangover-Square"><h4 class="contrast">Hangover Square by Patrick Hamilton</h4></a>
+      	<span class="smaller">May 16, 2014</span>  <br/>
+		<div>I cannot say that I enjoyed reading this novel. At times it was uncomfortable to the point of being painful.</div>
+		
+      </li>
+    
+      <li class="listing">
+      	<hr class="slender">
+      	<a href="/articles/:short_year/replicate-your-VPS"><h4 class="contrast">Replicate Your Vps</h4></a>
+      	<span class="smaller">April 18, 2014</span>  <br/>
+		<div>In the last post we looked at how to setup and provision your VM using Vagrant and Salt. In this post I'm going to dive a little deeper (only a little) and walk through how I have setup my VM to duplicate the VPS (Virtual Private Server) that I will be using.</div>
+		
+      </li>
+    
+      <li class="listing">
+      	<hr class="slender">
+      	<a href="/articles/:short_year/add-some-salt"><h4 class="contrast">Add Some Salt</h4></a>
+      	<span class="smaller">March 20, 2014</span>  <br/>
+		<div>Provisioning. You could do this manually but downloading whatever you need using package managers like apt-get etc. This is fine, but there are two important reasons why this probably isn't the best way to go.</div>
+		
+      </li>
+    
+      <li class="listing">
+      	<hr class="slender">
+      	<a href="/articles/:short_year/a-development-environment"><h4 class="contrast">A Development Environment</h4></a>
+      	<span class="smaller">February 8, 2014</span>  <br/>
+		<div>So, before we can do any exciting coding it's good to get yourself setup and feeling comfortable. It's a bit like cooking a new recipe and making sure you've got all of your ingredients out on the counter before you start rather than scrabbling around at the back of a cupboard once you're halfway through.</div>
+		
+      </li>
+    
+      <li class="listing">
+      	<hr class="slender">
+      	<a href="/articles/:short_year/Lets-Take-A-Trip"><h4 class="contrast">Let's Take A Trip</h4></a>
+      	<span class="smaller">February 2, 2014</span>  <br/>
+		<div>Here we go with the first post in my new series all about web development for non-developers. I hope to post as regularly as I can manage and to cover as many topics as I can going into as much depth as I think is useful at the time.</div>
+		
+      </li>
+    
   </ul>
+
+    </article>
+    <span class="print-footer">nicleb.com - nic le breuilly</span>
+    <footer>
+  <ul class="footer-links group">
+    <li><a href="mailto:nic@nicleb.com"><span class="icon-mail"></span></a></li>    
+    
+      <li>
+        <a href="//www.twitter.com/nicholaslebreuilly"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/musonic"><span class="icon-github"></span></a>
+      </li>
+      
+  </ul>
+<div class="credits">
+<span>&copy; 2015 &nbsp;&nbsp;NIC LE BREUILLY</span></br> 
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Personal blog </a> in <a href="//jekyllrb.com">Jekyll</a>.</span> 
+</div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- nicleb-main -->
+		<ins class="adsbygoogle"
+		     style="display:block"
+		     data-ad-client="ca-pub-3112512319671523"
+		     data-ad-slot="9490473693"
+		     data-ad-format="auto"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+</footer>
+
+  </body>
+</html>
