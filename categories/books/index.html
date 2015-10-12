@@ -1,13 +1,14 @@
 ---
 layout: main
-title: Writing|Book Reviews
+title: "Writing|Book Reviews"
 published: true
 footerNav: true
 ---
 
-<section class="content-wrapper">
+
+<section>
 <h2>Book Reviews</h2>
-  <ul class="posts">
+  <ul>
     {% for post in site.posts %}
     	{% if post.category == 'books' %}
 		    <li class=""><h3 class=""><a href="{{ post.url }}">{{ post.title }}</h3></a>
