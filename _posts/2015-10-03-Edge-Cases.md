@@ -7,6 +7,76 @@ categories: post
 Some edge cases and cautionary examples on using Markdown for writing content using this theme. In particular, list syntax can really knot things up.
 <!--more-->
 
+### Mathjax improperly parsing greater and less than and ampersands inside blocks
+
+The mathjax plugin has been modified to contain all the block style mathjax inside a ```<div class="mathblock">..</div>``` tag wrapper pair
+which fixes many of the issues with conflicts with the Kramdown parser. Some examples sent to me by Quxiaofeng are now parsing correctly, I believe.
+
+This code:
+
+```
+{{ "{% math " }} %}
+  D = \left(\begin{matrix}
+  1 & -1 & & & & \\
+  &    & \cdots &   & \\
+  &    &        & 1 & -1
+ \end{matrix}
+ \right)
+{{ "{% endmath " }}%}
+```
+yields this:
+
+{% math %}
+D = \left(\begin{matrix}
+  1 & -1 & & & & \\
+  &    & \cdots &   & \\
+  &    &        & 1 & -1
+\end{matrix}
+\right)
+{% endmath %}
+
+Other examples from the [wikia Tex reference](http://latex.wikia.com/wiki/Matrix_environments):
+
+{% math %}
+\begin{matrix}
+\alpha& \beta^{*}\\
+\gamma^{*}& \delta
+\end{matrix}
+{% endmath %}
+
+
+{% math %}
+\begin{bmatrix}
+\alpha& \beta^{*}\\
+\gamma^{*}& \delta
+\end{bmatrix}
+{% endmath %}
+
+{% math %}
+\begin{Bmatrix}
+\alpha& \beta^{*}\\
+\gamma^{*}& \delta
+\end{Bmatrix}
+{% endmath %}
+
+{% math %}
+\begin{vmatrix}
+\alpha& \beta^{*}\\
+\gamma^{*}& \delta
+\end{vmatrix}
+{% endmath %}
+
+{% math %}
+\begin{Vmatrix}
+\alpha& \beta^{*}\\
+\gamma^{*}& \delta
+\end{Vmatrix}
+{% endmath %}
+
+However, a problem still exists for inline matrix notation, from an example [here](https://en.wikibooks.org/wiki/LaTeX/Mathematics#Matrices_in_running_text):
+
+A matrix in text must be set smaller: {% m %}\bigl(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix} \bigr){% em %} to not increase leading in a portion of text
+
 ## Edge Case 1 from Quxiaofeng:
 
 ### No blank lines between Markdown list items
@@ -81,4 +151,5 @@ Related algorithms
 + Numerous applications in statistics and machine learning: lasso, gen. lasso, graphical lasso, (overlapping) group lasso, ...
 
 + Embraces distributed computing for big data {% sidenote 3 'Boyd, S., Parikh, N., Chu, E., Peleato, B., and Eckstein, J. (2011). Distributed optimization and statistical learning via the alternating direction method of multipliers. Found. Trends Mach. learn., 3(1):1-122.' %}
+
 

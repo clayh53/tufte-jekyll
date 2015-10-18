@@ -12,7 +12,7 @@ nav_exclude: true
 /*****************************************************************************/
 
 // Imports to create final 
-
+ 
 @import "../_sass/fonts";
 @import "../_sass/settings";
 @import "../_sass/syntax-highlighting";
@@ -261,7 +261,7 @@ li .sidenote, li .marginnote{ margin-right: -80%; } //added to allow for the fac
                    color: $contrast-color;
                    top: 0rem; } //removed superscripting for numerical reference in sidenote
 
-p, footer, div.table-wrapper { width: 55%; }
+p, footer, div.table-wrapper, div.mathblock { width: 55%; }
 
 div.table-wrapper { overflow-x: auto; } //changed all overflow values to 'auto' so scroll bars appear only as needed
 
