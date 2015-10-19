@@ -146,15 +146,23 @@ is written by enclosing a Mathjax expression with a *Liquid inline tag pair* ('m
 
 ```When {{ "{% m "}}%} a \ne 0{{ "{% em "}}%}, there are two solutions to {{ "{% m " }}%}ax^2 + bx + c = 0{{ "{% em " }}%}```
 
-Similarly, this block-level Mathjax expression: {% math %}x = {-b \pm \sqrt{b^2-4ac} \over 2a}.{% endmath %}
+Similarly, this block-level Mathjax expression: 
+
+{% math %}x = {-b \pm \sqrt{b^2-4ac} \over 2a}.{% endmath %}
 
 is written by enclosing the expression with a *Liquid block tag pair* ('math' and 'endmath') like so:
 
 ```{{ "{% math "}}%}x = {-b \pm \sqrt{b^2-4ac} \over 2a}.{{ "{% endmath "}} %}```
 
-You can get pretty fancy, for instance, the wave equation's nabla is no big thing{% math %}\frac{\partial^2 y}{\partial t^2}= c^2\nabla^2u{% endmath %}
+You can get pretty fancy, for instance, the wave equation's nabla is no big thing:
 
-All of the standard Latex equation markup is available to use inside these block tags. 
+{% math %}\frac{\partial^2 y}{\partial t^2}= c^2\nabla^2u{% endmath %}
+
+All of the standard Latex equation markup is available to use inside these block tags.
+
+Please note that the block-level Mathjax expressions *must* be on their own line, separated from content above and below the block by a blank line for the Kramdown parser and the Mathjax javascript to play nicely with one another.
+
+The Mathjax integration is tricky, and some things such as the inline matrix notation simply do not work well. Bottom line: If you are using this to document mathematics, be super careful to isolate your <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> blocks by blank lines!  
 
 ## Tables
 

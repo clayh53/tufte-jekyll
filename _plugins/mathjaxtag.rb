@@ -1,7 +1,7 @@
 module Jekyll
   class MathJaxBlockTag < Liquid::Tag
     def render(context)
-      '<div class="mathblock">&#8203;<script type="math/tex; mode=display">'
+      '<div class="mathblock"><script type="math/tex; mode=display">'
     end
   end
 class MathJaxInlineTag < Liquid::Tag
