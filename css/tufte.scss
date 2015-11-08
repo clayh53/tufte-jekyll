@@ -54,6 +54,9 @@ html{
 @media screen and (min-width: 1300px){ html{ font-size: 17px; } }
 
 // sets link style according to values in _settings.scss
+.mathblock{
+  font-size: 1.3rem;
+}
 
 a { @if $link-style == underline
     {
