@@ -269,7 +269,7 @@ p, footer, div.table-wrapper, div.mathblock { width: 55%; }
 div.table-wrapper { overflow-x: auto; } //changed all overflow values to 'auto' so scroll bars appear only as needed
 
 @media screen and (max-width: 760px) { p, footer,div.mathblock { width: 90%; }
-                                       pre code { width: 87.5%; }
+                                       pre code { width: 97.5%; }
                                        ul { width: 85%; }
                                        figure { max-width: 90%; }
                                        figcaption, figure.fullwidth figcaption { margin-right: 0%;
@@ -284,6 +284,7 @@ div.table-wrapper { overflow-x: auto; } //changed all overflow values to 'auto' 
 pre, pre code, p pre code { width: 52.5%;
            padding-left: 2.5%;
            overflow-x: auto; }
+figure.highlight pre, figure.highlight pre code, figure.highlight p pre code { width: 97.5%; }
 
 .fullwidth, li.listing div{ max-width: 90%; }
 
@@ -311,6 +312,7 @@ label.margin-toggle:not(.sidenote-number) { display: none; }
                             label { cursor: pointer; }
                             pre, pre code, p code, p pre code { width: 90%; 
                                        padding: 0; }
+                            figure.highlight pre, figure.highlight pre code, figure.highlight p code, figure.highlight pre code { width: 97.5% }
                             .table-caption { display: block;
                                              float: right;
                                              clear: both;
@@ -399,6 +401,9 @@ body.full-width, .content-listing, ul.content-listing li.listing{ width: 90%;
   width: 90%;
 }
 
+.full-width figure.highlight {
+  max-width:90%;
+}
 
 h1.content-listing-header{
   font-style: normal;
@@ -419,6 +424,12 @@ li.listing {
   margin:0;
   & p{
     width: 100%
+  }
+  & figure.highlight{
+    max-width: 100%
+  }
+  & pre {
+    width: 97.5%
   }
 }
 
