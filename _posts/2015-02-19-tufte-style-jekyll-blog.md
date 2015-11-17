@@ -90,9 +90,9 @@ For these reasons, Tufte CSS encourages caution before reaching for a list eleme
 
 ### Margin Figures
 
-{% marginfigure 'mf-id-1' '/tufte-jekyll/assets/img/rhino.png' 'F.J. Cole, “The History of Albrecht Dürer’s Rhinoceros in Zoological Literature,” *Science, Medicine, and History: Essays on the Evolution of Scientific Thought and Medical Practice* (London, 1953), ed. E. Ashworth Underwood, 337-356. From page 71 of Edward Tufte’s *Visual Explanations*.'  %}Images and graphics play an integral role in Tufte’s work. To place figures in the margin, use the custom margin figure liquid tag included in the ```_plugins``` directory like so: 
+{% marginfigure 'mf-id-1' 'assets/img/rhino.png' 'F.J. Cole, “The History of Albrecht Dürer’s Rhinoceros in Zoological Literature,” *Science, Medicine, and History: Essays on the Evolution of Scientific Thought and Medical Practice* (London, 1953), ed. E. Ashworth Underwood, 337-356. From page 71 of Edward Tufte’s *Visual Explanations*.'  %}Images and graphics play an integral role in Tufte’s work. To place figures in the margin, use the custom margin figure liquid tag included in the ```_plugins``` directory like so: 
 
-```{{ "{% marginfigure 'mf-id-whatever' '/assets/img/rhino.png' 'F.J. Cole, “The History of Albrecht Dürer’s Rhinoceros in Zoological Literature,” *Science, Medicine, and History: Essays on the Evolution of Scientific Thought and Medical Practice* (London, 1953), ed. E. Ashworth Underwood, 337-356. From page 71 of Edward Tufte’s *Visual Explanations*.' "}} %}```. 
+```{{ "{% marginfigure 'mf-id-whatever' 'assets/img/rhino.png' 'F.J. Cole, “The History of Albrecht Dürer’s Rhinoceros in Zoological Literature,” *Science, Medicine, and History: Essays on the Evolution of Scientific Thought and Medical Practice* (London, 1953), ed. E. Ashworth Underwood, 337-356. From page 71 of Edward Tufte’s *Visual Explanations*.' "}} %}```. 
 
 Note that this tag has *three* parameters. The first is an arbitrary id. This parameter can be named anything as long as it is unique to this post. The second parameter is the path to the image. And the final parameter is whatever caption you want to be displayed with the figure.  All parameters *must* be enclosed in quotes for this simple liquid tag to work!
 
@@ -100,21 +100,21 @@ Note that this tag has *three* parameters. The first is an arbitrary id. This pa
 
 If you need a full-width image or figure, another custom liquid tag is available to use. Oddly enough, it is named 'fullwidth', and this markup:
 
-```{{ "{% fullwidth '/assets/img/napoleons-march.png' 'Napoleon's March (Edward Tufte’s English translation)' "}} %}```
+```{{ "{% fullwidth 'assets/img/napoleons-march.png' 'Napoleon's March (Edward Tufte’s English translation)' "}} %}```
 
 Yields this:
 
-{% fullwidth '/tufte-jekyll/assets/img/napoleons-march.png' "Napoleon's March (Edward Tufte’s English translation)" %}
+{% fullwidth 'assets/img/napoleons-march.png' "Napoleon's March (Edward Tufte’s English translation)" %}
 
 ### Main Column Figures
 
 Besides margin and full width figures, you can of course also include figures constrained to the main column. Yes, you guessed it, a custom liquid tag rides to the rescue once again:
 
-```{{ "{% maincolumn '/assets/img/export-imports.png' 'From Edward Tufte, *Visual Display of Quantitative Information*, page 92' "}} %}```
+```{{ "{% maincolumn 'assets/img/export-imports.png' 'From Edward Tufte, *Visual Display of Quantitative Information*, page 92' "}} %}```
 
 yields this:
 
-{% maincolumn '/tufte-jekyll/assets/img/exports-imports.png' 'From Edward Tufte, *Visual Display of Quantitative Information*, page 92' %}
+{% maincolumn 'assets/img/exports-imports.png' 'From Edward Tufte, *Visual Display of Quantitative Information*, page 92' %}
 
 ## Sidenotes and Margin notes
 
