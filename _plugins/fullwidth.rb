@@ -12,7 +12,8 @@ require "shellwords"
     end
 
     def render(context)
-      "<figure class='fullwidth'><img  src='#{@text[0]}'/>" +
+      baseurl = context.registers[:site].config['baseurl']
+      "<figure class='fullwidth'><img src='#{baseurl}/#{@text[0]}'/>"+
       "<figcaption>#{@text[1]}</figcaption></figure>"
     end
   end

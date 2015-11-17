@@ -13,7 +13,8 @@ module Jekyll
     end
 
     def render(context)
-      "<figure><figcaption>#{@text[1]}</figcaption><img src='#{@text[0]}'/></figure>"
+      baseurl = context.registers[:site].config['baseurl']
+      "<figure><figcaption>#{@text[1]}</figcaption><img src='#{baseurl}/#{@text[0]}'/></figure>"
     end
   end
 end
