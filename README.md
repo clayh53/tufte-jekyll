@@ -72,15 +72,15 @@ On smaller screens, tapping on the <span>&#8853;</span> symbol will open up the 
 
 ### Full width image
 
-This tag inserts an image that spans both the main content column and the side column. Full-width IOW:
+This tag inserts an image that spans both the main content column and the side column:
 
 ```
 blah blah 
-{% fullwidth 'url/to/image' 'A caption for the image' %}
+{% fullwidth 'assets/img/rhino.png' 'A caption for the image' %}
 blah
 ```
 
-Note the absence of the leading slash. Always use just the folder name without the leading slash. This is incorrect: `/url/to/image`
+Note the absence of a leading slash in the image url. This is incorrect: `/assets/img/rhino.png`
 
 Also note that fullwidth images need to be included on their own line in order for the captions to work correctly.
 
@@ -90,23 +90,23 @@ This tag inserts an image that is confined to the main content column:
 
 ```
 blah blah
-{% maincolumn 'path/to/image' 'This is the caption' %}
+{% maincolumn 'assets/img/rhino.png' 'This is the caption' %}
 blah
 ```
 
-No need for an ID in this tag because it doesn't have any doohickies that open and close on narrow screens. Again note the absence of the leading slash. Always use just the folder name without the leading slash. This is incorrect: `/path/to/image`
+No need for an ID in this tag because it doesn't have any doohickies that open and close on narrow screens. Again note the absence of the leading slash in the image url. This is incorrect: `/assets/img/rhino.png`
 
-Just like fullwidth images, main column images need to be included on their own line in order for the captions to work correctly.
+And just like fullwidth images, main column images need to be included on their own line in order for the captions to work correctly.
 
 ### Margin figure
 
 This tag inserts and image in the side column area. Note that an id needs to be specified:
 
 ```
-blah blah {% marginfigure 'margin-figure-id' 'path/to/image' 'This is the caption' %} blah
+blah blah {% marginfigure 'margin-figure-id' 'assets/img/rhino.png' 'This is the caption' %} blah
 ```
 
-This needs an ID parameter so that it can be clicked and opened on small screens. Again note the absence of the leading slash. Always use just the folder name without the leading slash. This is incorrect: `/path/to/image`
+This needs an ID parameter so that it can be clicked and opened on small screens. Again note the absence of the leading slash in the image url. This is incorrect: `/assets/img/rhino.png`
 
 ### New thought
 
