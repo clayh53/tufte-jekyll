@@ -311,10 +311,10 @@ Code samples use a monospace font using the 'code' class. The Kramdown parser ha
 is created by the following markup:
 <pre><code>```(map tufte-style all-the-things)```</code></pre>
 
-In theory, one should be able to append the language name right after the first three backticks and get some sexy code syntax highlighting, but for some reason, the only way I can make this work with the Kramdown and Rouge highlighting turned on is to enclose a block of code in the some Liquid tags. For instance, here is the Ruby code for one of the plugins included with this theme:
+To get the code highlighted in the language of your choice like so:
 
 
-{% highlight ruby %}
+``` ruby
 module Jekyll
   class RenderFullWidthTag < Liquid::Tag
   require "shellwords"
@@ -332,15 +332,12 @@ module Jekyll
 end
 
 Liquid::Template.register_tag('fullwidth', Jekyll::RenderFullWidthTag)
-{% endhighlight %}
-
-Which is created by surrounding the code with the *highlight* tag block pair:
-
 ```
-{{ "{% highlight ruby" }} %}
-  module Jekyll
+
+Enclose the code block in three backticks, followed by a space and then the language name, like this:
+
+<pre> <code>``` ruby
+    module Jekyll
     blah, blah...
-  Liquid::Template.register_tag('fullwidth', Jekyll::RenderFullWidthTag)
-{{ "{% endhighlight" }} %}
-```
-For some reason, the *linenos* tag modifier in the highlight tag works strangely when it is inserted in a tag. Use it if you like, but check to see how it is being parsed by the Jekyll engine before going live.
+   ```</code> </pre>
+

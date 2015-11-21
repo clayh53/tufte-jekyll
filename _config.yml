@@ -8,6 +8,7 @@ name: tufte
 markdown: Kramdown
 kramdown:  
   input: GFM
+  syntax_highlighter: rouge
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 highlighter: rouge
 permalink: /articles/:short_year/:title
