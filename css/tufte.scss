@@ -249,6 +249,8 @@ img { max-width: 100%; }
 
 li .sidenote, li .marginnote{ margin-right: -80%; } //added to allow for the fact that lists are indented and marginnotes and sidenotes push to right
 
+blockquote .sidenote, blockquote .marginnote { margin-right: -79% }
+
 .sidenote-number { counter-increment: sidenote-counter; }
 
 .sidenote-number:after, .sidenote:before { content: counter(sidenote-counter) " ";
