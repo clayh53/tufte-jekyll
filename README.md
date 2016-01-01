@@ -61,6 +61,8 @@ The custom liquid tags are designed to simplify writing content and displaying i
 
 * Markdown rendering inside the Liquid tags is spotty to non-existent. So if you want to embed a link inside a Liquid tag, you will need to fall back on good old html, e.g. ```<a href=\"http://someurl.com\">someurl label</a>``` instead of ```[someurl label](http://someurl.com)```. Note the the double quotes inside the href portion of the ```<a>``` tag are escaped.
 
+The [example site's Edge Cases entry](http://clayh53.github.io/tufte-jekyll/articles/15/Edge-Cases/) has an example toward the bottom illustrating this.
+
 ### Sidenote
 
 This tag inserts a *sidenote* in the content, which is like a footnote, only its in the spacious right-hand column. It is automatically numbered, starting over on each page. Just put it in the content like you would insert a footnote like so:

@@ -154,6 +154,6 @@ Related algorithms
 
 Example of the proper way to write an url inside a Liquid full-width image tag.
 
-This code: ```{% fullwidth "assets/img/rhino.png" "Tufte's pet rhino (via <a href=\"//www.edwardtufte.com/tufte/\">Edward Tufte</a>)" %}```
+This code: ```{{ '{% fullwidth "assets/img/rhino.png" "Tufte pet rhino (via <a href=\"//www.edwardtufte.com/tufte/\">Edward Tufte</a>)" ' }} %}```
 
 {% fullwidth "assets/img/rhino.png" "Tufte's pet rhino (via <a href=\"//www.edwardtufte.com/tufte/\">Edward Tufte</a>)" %}
