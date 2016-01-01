@@ -14,7 +14,7 @@ which fixes many of the issues with conflicts with the Kramdown parser. Some exa
 
 This code:
 
-```
+```latex
 {{ "{% math " }} %}
   D = \left(\begin{matrix}
   1 & -1 & & & & \\
@@ -150,6 +150,10 @@ Related algorithms
 
 + Numerous applications in statistics and machine learning: lasso, gen. lasso, graphical lasso, (overlapping) group lasso, ...
 
-+ Embraces distributed computing for big data {% sidenote 3 'Boyd, S., Parikh, N., Chu, E., Peleato, B., and Eckstein, J. (2011). Distributed optimization and statistical learning via the alternating direction method of multipliers. Found. Trends Mach. learn., 3(1):1-122.' %}
+### Liquid tag parsing strangeness
 
+Example of the proper way to write an url inside a Liquid full-width image tag.
 
+This code: ```{% fullwidth "assets/img/rhino.png" "Tufte's pet rhino (via <a href=\"//www.edwardtufte.com/tufte/\">Edward Tufte</a>)" %}```
+
+{% fullwidth "assets/img/rhino.png" "Tufte's pet rhino (via <a href=\"//www.edwardtufte.com/tufte/\">Edward Tufte</a>)" %}

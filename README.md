@@ -51,12 +51,22 @@ I needed to create several custom Liquid tags to wrap content in the right kind 
 
 Note that these tags *have been altered* from Version 1 of this theme to accommodate some responsive features, namely the ability to reveal hidden sidenotes, margin notes and margin figures by tapping either a superscript or a symbol on small screens. This requires you to add a parameter to the tag that is a unique *ID* for each tag instance on the page. What the id is called is not important, but it is important that it be unique for each individual element on the page. I would recommend in the interest of sanity to give names that are descriptive, like ```'sn-id-1'``` or ```'mf-id-rhino'```.
 
+### General Liquid Tag Guidelines
+
+The custom liquid tags are designed to simplify writing content and displaying it with the *tufte-css* look. However, the user must still take into account some of the very particular behavior that results when the Liquid template language and Ruby are put in a blender together. In particular, those using quotes inside a liquid tag should use the following guidelines:
+
+* *Use double quotes* to surround Liquid tag parameters. Single quotes will work, but the parsing engine will not consistently auto-escape double quotes inside single quotes, whereas single quotes inside double quotes seem to render correctly. I dunno. Science.
+
+* Complicated quote structures inside Liquid tags should follow this sequence: *First double quote*, then inside that, use *single quotes*, then if you need double quotes inside the single quotes, you must *escape* them with a backslash thusly: ```\"```.
+
+* Markdown rendering inside the Liquid tags is spotty to non-existent. So if you want to embed a link inside a Liquid tag, you will need to fall back on good old html, e.g. ```<a href=\"http://someurl.com\">someurl label</a>``` instead of ```[someurl label](http://someurl.com)```. Note the the double quotes inside the href portion of the ```<a>``` tag are escaped.
+
 ### Sidenote
 
 This tag inserts a *sidenote* in the content, which is like a footnote, only its in the spacious right-hand column. It is automatically numbered, starting over on each page. Just put it in the content like you would insert a footnote like so:
 
 ```
-blah lorem blah{% sidenote 'sidenote-id' 'This is a random sidenote' %} blah blah
+blah lorem blah{% sidenote "sidenote-id" "This is a random sidenote" %} blah blah
 ```
 And it will add the html spans and superscripts. On smaller screens, tapping on the number will reveal the sidenote!
 
@@ -65,7 +75,7 @@ And it will add the html spans and superscripts. On smaller screens, tapping on 
 This tag is essentially the same as a sidenote, but heh, no number. Like this:
 
 ```
-lorem nobeer toasty critters{% marginnote 'margin-note-id' 'Random thought when drinking' %} continue train of thought
+lorem nobeer toasty critters{% marginnote "margin-note-id" "Random thought when drinking" %} continue train of thought
 ```
 On smaller screens, tapping on the <span>&#8853;</span> symbol will open up the margin note.
 
@@ -75,7 +85,7 @@ This tag inserts an image that spans both the main content column and the side c
 
 ```
 blah blah
-{% fullwidth 'assets/img/rhino.png' 'A caption for the image' %}
+{% fullwidth "assets/img/rhino.png" "A caption for the image" %}
 blah
 ```
 
@@ -83,13 +93,14 @@ or
 
 ```
 blah blah
-{% fullwidth 'http://example.com/image.jpg' 'A caption for the image' %}
+{% fullwidth "http://example.com/image.jpg" "A caption for the image" %}
 blah
 ```
 
 Note the absence of a leading slash in the image url when using relative file paths. (This is incorrect: `/assets/img/rhino.png`)
 
-Also note that fullwidth images need to be included on their own line in order for the captions to work correctly.
+Also note that fullwidth images need to be included *on their own line* in order for the captions to work correctly.
+
 
 ### Main column image
 
@@ -97,7 +108,7 @@ This tag inserts an image that is confined to the main content column:
 
 ```
 blah blah
-{% maincolumn 'assets/img/rhino.png' 'This is the caption' %}
+{% maincolumn "assets/img/rhino.png" "This is the caption" %}
 blah
 ```
 
@@ -105,7 +116,7 @@ or
 
 ```
 blah blah
-{% maincolumn 'http://example.com/image.jpg' 'This is the caption' %}
+{% maincolumn "http://example.com/image.jpg" "This is the caption" %}
 blah
 ```
 
@@ -118,13 +129,13 @@ And just like fullwidth images, main column images need to be included on their 
 This tag inserts and image in the side column area. Note that an id needs to be specified:
 
 ```
-blah blah {% marginfigure 'margin-figure-id' 'assets/img/rhino.png' 'This is the caption' %} blah
+blah blah {% marginfigure "margin-figure-id" "assets/img/rhino.png" "This is the caption" %} blah
 ```
 
 or
 
 ```
-blah blah {% marginfigure 'margin-figure-id' 'http://example.com/image.jpg' 'This is the caption' %} blah
+blah blah {% marginfigure "margin-figure-id" "http://example.com/image.jpg" "This is the caption" %} blah
 ```
 
 This needs an ID parameter so that it can be clicked and opened on small screens. Again note the absence of the leading slash in the image url when using relative file paths. (This is incorrect: `/assets/img/rhino.png`)
@@ -134,7 +145,7 @@ This needs an ID parameter so that it can be clicked and opened on small screens
 This tag will render its contents in small caps. Useful at the beginning of new sections:
 
 ```
-{% newthought 'This will be rendered in small caps' %} blah blah
+{% newthought "This will be rendered in small caps" %} blah blah
 ```
 
 ### Mathjax
