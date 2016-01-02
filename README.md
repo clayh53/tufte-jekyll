@@ -72,6 +72,14 @@ The custom Liquid tags are designed to simplify writing content and displaying i
 
 The [demo site's Edge Cases entry](http://clayh53.github.io/tufte-jekyll/articles/15/Edge-Cases) has an example toward the bottom illustrating HTML inside of a tag parameter.
 
+### New thought
+
+This tag will render its contents in small caps. Useful at the beginning of new sections:
+
+```
+{% newthought "This will be rendered in small caps" %} blah blah
+```
+
 ### Sidenote
 
 This tag inserts a *sidenote* in the content, which is like a footnote, only its in the spacious right-hand column. It is automatically numbered, starting over on each page. Just put it in the content like you would insert a footnote like so:
@@ -149,14 +157,6 @@ blah blah {% marginfigure "margin-figure-id" "http://example.com/image.jpg" "Thi
 ```
 
 This needs an ID parameter so that it can be clicked and opened on small screens. Again note the absence of the leading slash in the image url when using relative file paths. (This is incorrect: `/assets/img/rhino.png`)
-
-### New thought
-
-This tag will render its contents in small caps. Useful at the beginning of new sections:
-
-```
-{% newthought "This will be rendered in small caps" %} blah blah
-```
 
 ### Mathjax
 
