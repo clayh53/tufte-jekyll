@@ -35,7 +35,7 @@ Removing either 'true' value will prevent the jekyll site building process from 
 
 ### SASS
 
-I am using Sass to create the css file used by this theme. If you would like to change things like fonts, text colors, background colors and so forth, edit the ```_scss/_settings.scss``` file. This file gets loaded first when Jekyll constructs the master CSS file from the tufte.scss SASS file, and contains SASS variables that influence the appearance of the site. The one variable that may be of interest to some is the ```$link-style``` variable, which can be set to either ```underline``` or ```color```. This will determine if your links are styled using the ```$contrast-color``` variable with no underlining, or whether they are styled using light underlining as seen on the [*tufte-css*](https://github.com/edwardtufte/tufte-css) repo.  
+I am using Sass to create the css file used by this theme. If you would like to change things like fonts, text colors, background colors and so forth, edit the ```_scss/_settings.scss``` file. This file gets loaded first when Jekyll constructs the master CSS file from the tufte.scss SASS file, and contains SASS variables that influence the appearance of the site. The one variable that may be of interest to some is the ```$link-style``` variable, which can be set to either ```underline``` or ```color```. This will determine if your links are styled using the ```$contrast-color``` variable with no underlining, or whether they are styled using light underlining as seen on the [*tufte-css*](https://github.com/edwardtufte/tufte-css) repo.
 
 ### Social icons
 
@@ -51,17 +51,26 @@ I needed to create several custom Liquid tags to wrap content in the right kind 
 
 Note that these tags *have been altered* from Version 1 of this theme to accommodate some responsive features, namely the ability to reveal hidden sidenotes, margin notes and margin figures by tapping either a superscript or a symbol on small screens. This requires you to add a parameter to the tag that is a unique *ID* for each tag instance on the page. What the id is called is not important, but it is important that it be unique for each individual element on the page. I would recommend in the interest of sanity to give names that are descriptive, like ```'sn-id-1'``` or ```'mf-id-rhino'```.
 
-### General Liquid Tag Guidelines
+### Notes about quotes in Liquid tags
 
-The custom liquid tags are designed to simplify writing content and displaying it with the *tufte-css* look. However, the user must still take into account some of the very particular behavior that results when the Liquid template language and Ruby are put in a blender together. In particular, those using quotes inside a liquid tag should use the following guidelines:
+The custom Liquid tags are designed to simplify writing content and displaying it with the *tufte-css* look. Here are a few notes on using quotes inside the tags.
 
-* *Use double quotes* to surround Liquid tag parameters. Single quotes will work, but the parsing engine will not consistently auto-escape double quotes inside single quotes, whereas single quotes inside double quotes seem to render correctly. I dunno. Science.
+* Liquid tags work best when you use double quotes to surround the tag parameters, as you'll see in all the examples below.
 
-* Complicated quote structures inside Liquid tags should follow this sequence: *First double quote*, then inside that, use *single quotes*, then if you need double quotes inside the single quotes, you must *escape* them with a backslash thusly: ```\"```.
+* You can use single quotes and apostrophes in the text inside tag parameters. Liquid will automatically process them correctly. For example: `{% newthought "I'm so smart!" %}` will render as `I'm so smart!`
 
-* Markdown rendering inside the Liquid tags is spotty to non-existent. So if you want to embed a link inside a Liquid tag, you will need to fall back on good old html, e.g. ```<a href=\"http://someurl.com\">someurl label</a>``` instead of ```[someurl label](http://someurl.com)```. Note the the double quotes inside the href portion of the ```<a>``` tag are escaped.
+* To use a double quote in the text inside a tag parameter, escape the double quote by placing a backslash directly in front of it, for example: `{% newthought "\"I'm so smart!\", she thought." %}` will render as `"I'm so smart!", she thought.`
 
-The [example site's Edge Cases entry](http://clayh53.github.io/tufte-jekyll/articles/15/Edge-Cases) has an example toward the bottom illustrating this.
+* You can use HTML inside of a tag parameter. (However, you cannot use Markdown inside a tag parameter) You can use either single quotes, or escaped double quotes in the HTML. For example, both of the following tags will work:
+
+```
+{% newthought "Example website: <a href='http://example.com'>example label</a>" %}
+```
+```
+{% newthought "Example website: <a href=\"http://example.com\">example label</a>" %}
+```
+
+The [demo site's Edge Cases entry](http://clayh53.github.io/tufte-jekyll/articles/15/Edge-Cases) has an example toward the bottom illustrating HTML inside of a tag parameter.
 
 ### Sidenote
 
@@ -102,7 +111,6 @@ blah
 Note the absence of a leading slash in the image url when using relative file paths. (This is incorrect: `/assets/img/rhino.png`)
 
 Also note that fullwidth images need to be included *on their own line* in order for the captions to work correctly.
-
 
 ### Main column image
 
