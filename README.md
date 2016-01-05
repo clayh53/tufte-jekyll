@@ -89,6 +89,8 @@ blah lorem blah{% sidenote "sidenote-id" "This is a random sidenote" %} blah bla
 ```
 And it will add the html spans and superscripts. On smaller screens, tapping on the number will reveal the sidenote!
 
+The `full-width` page layout will not display side notes. (It's a full-width page and has no margin)
+
 ### Margin note
 
 This tag is essentially the same as a sidenote, but heh, no number. Like this:
@@ -97,6 +99,8 @@ This tag is essentially the same as a sidenote, but heh, no number. Like this:
 lorem nobeer toasty critters{% marginnote "margin-note-id" "Random thought when drinking" %} continue train of thought
 ```
 On smaller screens, tapping on the <span>&#8853;</span> symbol will open up the margin note.
+
+The `full-width` page layout will not display margin notes. (It's a full-width page and has no margin)
 
 ### Full width image
 
@@ -158,6 +162,8 @@ blah blah {% marginfigure "margin-figure-id" "http://example.com/image.jpg" "Thi
 
 This needs an ID parameter so that it can be clicked and opened on small screens. Again note the absence of the leading slash in the image url when using relative file paths. (This is incorrect: `/assets/img/rhino.png`)
 
+The `full-width` page layout will not display margin figures. (It's a full-width page and has no margin)
+
 ### Mathjax
 
 Totally used this functionality from a [gist by Jessy Cowan-Sharpe](https://gist.github.com/jessykate/834610) to make working with Mathjax expressions a little easier. Short version, wrap inline math in a tag pair thusly: ```{% m %}mathjax expression{% em %}``` and wrap bigger block level stuff with ```{% math %}mathjax expression{% endmath %}```
@@ -185,7 +191,3 @@ This is `baseurl:` with nothing after it. Not even a space.
 I have added a boilerplate Rakefile directly from the [jekyll-rake-boilerplate repo](https://github.com/gummesson/jekyll-rake-boilerplate). This saves you a small amount of time by prepending the date on a post name and populated the bare minimum of YAML front matter in the file. Please visit the link to the repo to find out how it runs. One thing to note is that there should be *no* space between the task and the opening bracket of your file name. ```rake post["Title"]``` will work while ```rake post ["Title"]``` will not.
 
 There is another rakefile (UploadtoGithub.Rakefile) included that only has one task in it - an automated upload to a *Github Pages* location of the site. This is necessary because of the plugins used by this theme. It does scary stuff like move your ```_site``` somewhere safe, delete everything, move the ```_site``` back and then do a commit to the ```gh-pages``` branch of your repository. You can read about it [here](http://blog.nitrous.io/2013/08/30/using-jekyll-plugins-on-github-pages.html). You would only need to use this if you are using Github project pages to host your site. Integration with the existing Rakefile is left as an exercise for the reader.
-
-### To-do list
-
-One very cool option would be for someone to monkey with the SASS file so that when the full-width page option is picked *margin notes* and *side notes* can be used, but opened by the same clicking technique as is implemented on smaller screens.
