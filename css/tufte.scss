@@ -291,6 +291,8 @@ pre, pre code, p pre code { width: 52.5%;
 
 .fullwidth, li.listing div{ max-width: 90%; }
 
+.full-width { .sidenote, .sidenote-number, .marginnote { display: none; } }
+
 span.newthought { font-variant: small-caps;
                   font-size: 1.2em;
                   letter-spacing: 0.05rem; }
