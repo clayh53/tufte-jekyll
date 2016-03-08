@@ -1,3 +1,8 @@
+# Jekyll tag plugin to render Mathjax expressions
+# Usage:
+#   Inline expression: {% m %}mathjax expression{% em %}
+#   Block expression: {% math %}mathjax expression{% endmath %}
+
 module Jekyll
   class MathJaxBlockTag < Liquid::Tag
     def render(context)
@@ -18,9 +23,9 @@ class MathJaxEndInlineTag < Liquid::Tag
     def render(context)
       '</script></span>'
     end
-  end  
+  end
 end
- 
+
 Liquid::Template.register_tag('math', Jekyll::MathJaxBlockTag)
 Liquid::Template.register_tag('m', Jekyll::MathJaxInlineTag)
 Liquid::Template.register_tag('endmath', Jekyll::MathJaxEndBlockTag)

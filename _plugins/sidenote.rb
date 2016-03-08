@@ -1,3 +1,6 @@
+# Jekyll tag plugin to add sidenotes
+# Usage: {% sidenote "SIDENOTE_ID" "This is the sidenote content" %}
+
 module Jekyll
   class RenderSideNoteTag < Liquid::Tag
 
@@ -15,4 +18,3 @@ module Jekyll
 end
 
 Liquid::Template.register_tag('sidenote', Jekyll::RenderSideNoteTag)
-

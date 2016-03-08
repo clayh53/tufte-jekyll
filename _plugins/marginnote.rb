@@ -1,3 +1,6 @@
+# Jekyll tag plugin to render margin notes
+# Usage: {% marginnote "MARGINNOTE_ID" "This is the margin note content" %}
+
 module Jekyll
   class RenderMarginNoteTag < Liquid::Tag
 
@@ -15,4 +18,3 @@ module Jekyll
 end
 
 Liquid::Template.register_tag('marginnote', Jekyll::RenderMarginNoteTag)
-

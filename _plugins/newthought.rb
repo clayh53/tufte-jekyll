@@ -1,6 +1,6 @@
-## Newthought tag will render anything in the tag with small caps
-## Usage {% newthought Your text string here} will render a span
-## YOUR TEXT STRING HERE (sort of, you know, small caps) if you are using the tufte.css file
+# Jekyll tag to render text in small caps
+# Useful at the beginning of new sections
+# Usage: {% newthought "This will be rendered in small caps" %}
 
 module Jekyll
   class RenderNewThoughtTag < Liquid::Tag
