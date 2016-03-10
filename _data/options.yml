@@ -1,2 +1,3 @@
 mathjax: true
+mathjax_inline_dollar: false
 lato_font_load: true
