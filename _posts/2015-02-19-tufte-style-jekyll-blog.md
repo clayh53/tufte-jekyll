@@ -257,7 +257,7 @@ As an example of alternative table styles, academic publications written in <spa
 {% newthought 'I like this style of table,' %}  so I have made it the default for unstyled tables. This allows use of the [*Markdown Extra*](https://michelf.ca/projects/php-markdown/extra/) features built into the [*Kramdown*](http://kramdown.gettalong.org/parser/kramdown.html) parser. Here is a table created using the Markdown Extra table syntax to make a nice table which has the side benefit of being human readable in the raw markdown file:
 
 {% marginnote 'tableID-3' 'Table 3: a table created with *Markdown Extra* markup using default table styling' %}
-
+<div class="table-wrapper" markdown="block">
 |                 |mpg  | cyl  |  disp  |   hp   |  drat  | wt  |
 |:----------------|----:|-----:|-------:|-------:|-------:|----:|
 |Mazda RX4        |21   |6     |160     |110     |3.90    |2.62 |
@@ -267,6 +267,7 @@ As an example of alternative table styles, academic publications written in <spa
 |Hornet Sportabout|18.7 |8     |360     |175     |3.15    |3.44 |
 |Valiant          |18.1 |6     |160     |105     |2.76    |3.46 |
 
+</div>
 
 Using the following markup(down):
 
