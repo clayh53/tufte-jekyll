@@ -7,6 +7,9 @@ categories: post
 Some edge cases and cautionary examples on using Markdown for writing content using this theme. In particular, list syntax can really knot things up.
 <!--more-->
 
+* Table of contents
+{:toc}
+
 ### Mathjax improperly parsing greater and less than and ampersands inside blocks
 
 The mathjax plugin has been modified to contain all the block style mathjax inside a ```<div class="mathblock">..</div>``` tag wrapper pair
@@ -73,9 +76,16 @@ Other examples from the [wikia Tex reference](http://latex.wikia.com/wiki/Matrix
 \end{Vmatrix}
 {% endmath %}
 
+$$
+\begin{Vmatrix}
+\alpha& \beta^{*}\\
+\gamma^{*}& \delta
+\end{Vmatrix}
+$$
+
 However, a problem still exists for inline matrix notation, from an example [here](https://en.wikibooks.org/wiki/LaTeX/Mathematics#Matrices_in_running_text):
 
-A matrix in text must be set smaller: {% m %}\bigl(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix} \bigr){% em %} to not increase leading in a portion of text
+A matrix in text must be set smaller: $$ \bigl(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix} \bigr) $$ to not increase leading in a portion of text
 
 ## Edge Case 1 from Quxiaofeng:
 

@@ -154,9 +154,12 @@ is written by enclosing the expression with a *Liquid block tag pair* ('math' an
 
 ```{{ "{% math "}}%}x = {-b \pm \sqrt{b^2-4ac} \over 2a}.{{ "{% endmath "}} %}```
 
+
 You can get pretty fancy, for instance, the wave equation's nabla is no big thing:
 
 {% math %}\frac{\partial^2 y}{\partial t^2}= c^2\nabla^2u{% endmath %}
+
+$$\frac{\partial^2 y}{\partial t^2}= c^2\nabla^2u$$
 
 All of the standard Latex equation markup is available to use inside these block tags.
 
