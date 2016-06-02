@@ -209,7 +209,7 @@ section { padding-top: 1rem;
           padding-bottom: 1rem; }
 
 
-ul { width: 45%;
+ul,ol { width: 45%;
      -webkit-padding-start: 5%;
      -webkit-padding-end: 5%;
      list-style-type: none; }
@@ -461,11 +461,15 @@ hr.slender {
 
 //printing stuff
 @media print {
+
+    * {
+    -webkit-transition: none !important;
+    transition: none !important;
+    }
     *,
     *:before,
     *:after {
         background: transparent !important;
-        color: #000 !important; // Black prints faster:http://www.sanbeiji.com/archives/953
         box-shadow: none !important;
         text-shadow: none !important;
     }

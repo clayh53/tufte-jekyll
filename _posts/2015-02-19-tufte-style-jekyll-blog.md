@@ -159,7 +159,6 @@ You can get pretty fancy, for instance, the wave equation's nabla is no big thin
 
 {% math %}\frac{\partial^2 y}{\partial t^2}= c^2\nabla^2u{% endmath %}
 
-$$\frac{\partial^2 y}{\partial t^2}= c^2\nabla^2u$$
 
 All of the standard Latex equation markup is available to use inside these block tags.
 
