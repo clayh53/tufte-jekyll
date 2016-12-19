@@ -1,5 +1,5 @@
-baseurl: /tufte-jekyll 
-title: Tufte
+baseurl:
+title: Tufte-Jekyll
 subtitle: Content-centric blogging
 author: clay harmon
 simple_search: http://google.com/search
