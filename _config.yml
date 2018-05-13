@@ -6,6 +6,9 @@ simple_search: http://google.com/search
 description: A Jekyll theme for content-rich sites
 name: tufte
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 permalink: /articles/:short_year/:title
 timezone: America/New_York
