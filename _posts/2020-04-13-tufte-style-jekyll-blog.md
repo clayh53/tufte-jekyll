@@ -1,10 +1,9 @@
 ---
 layout: post
 title:  "Tufte-style Jekyll blog"
-date:   2015-02-19 21:46:04
+date:   2020-04-13 09:46:04
 categories: jekyll css
 ---
-## Introduction
 
 {% newthought 'The Tufte Jekyll theme' %} is an attempt to create a website design with the look and feel of Edward Tufte's books and handouts. Tufte’s style is known for its extensive use of sidenotes, tight integration of graphics with text, and well-set typography.<!--more--> The idea for this project is essentially cribbed wholesale from Tufte and R Markdown's Tufte Handout format{% sidenote 'One' 'See [tufte-latex.github.io/tufte-latex/](https://tufte-latex.github.io/tufte-latex/) and [rmarkdown.rstudio.com/tufte_handout_format](http://rmarkdown.rstudio.com/tufte_handout_format.html)' %} This page is an adaptation of the [Tufte Handout PDF](http://rmarkdown.rstudio.com/examples/tufte-handout.pdf).
 
@@ -50,17 +49,18 @@ Tufte CSS uses ```<h1>``` for the document title, ```<p>``` with class ```code``
 
 
 > [It is] notable that the Feynman lectures (3 volumes) write about all of physics in 1800 pages, using only 2 levels of hierarchical headings: chapters and A-level heads in the text. It also uses the methodology of *sentences* which then cumulate sequentially into *paragraphs*, rather than the grunts of bullet points. Undergraduate Caltech physics is very complicated material, but it didn’t require an elaborate hierarchy to organize.
+
 <cite>[http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0000hB](http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0000hB)</cite>
 
 
 As a bonus, this excerpt regarding the use of headings provides an example of using block quotes. Markdown does not have a native ```<cite>``` shorthand, but real html can be sprinkled in with the Markdown text. In the previous example, the ```<cite>``` was preceded with a single return after the quotation itself. The previous blockquote was written in Markdown thusly:
 
-\> ```[It is] notable that the Feynman lectures (3 volumes) write about all of physics in 1800 pages, using only 2 levels of hierarchical headings: chapters and A-level heads in the text. It also uses the methodology of *sentences* which then cumulate sequentially into *paragraphs*, rather than the grunts of bullet points. Undergraduate Caltech physics is very complicated material, but it didn’t require an elaborate hierarchy to organize.```
-```<cite>[http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0000hB](http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0000hB)</cite>```
+```Liquid
+[It is] notable that the Feynman lectures (3 volumes) write about all of physics in 1800 pages, using only 2 levels of hierarchical headings: chapters and A-level heads in the text. It also uses the methodology of *sentences* which then cumulate sequentially into *paragraphs*, rather than the grunts of bullet points. Undergraduate Caltech physics is very complicated material, but it didn’t require an elaborate hierarchy to organize.
+<cite>[http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0000hB](http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0000hB)</cite>
+```
 
-Tufte CSS styles headings ```h1```, ```h2```, and ```h3```, making them nearly identical except for font size. The ```h1``` should be used as a title, the ```h2``` for section headings, and ```h3``` for subsection headings.
 
-While this Jekyll theme supports more specific headings, if you feel the urge to reach for a heading of level 4 or higher, consider redesigning your document.
 
 {% newthought 'In his later books' %}{% sidenote 'two' '[http://www.edwardtufte.com/tufte/books_be](http://www.edwardtufte.com/tufte/books_be)'%}, Tufte starts each section with a bit of vertical space, a non-indented paragraph, and sets the first few words of the sentence in small caps. To accomplish this using this style, enclose the sentence fragment you want styled with small caps in a custom Liquid tag called 'newthought' like so:
 
@@ -73,6 +73,28 @@ While this Jekyll theme supports more specific headings, if you feel the urge to
 In print, Tufte uses the proprietary Monotype Bembo{% sidenote 3 'See Tufte’s comment in the [Tufte book fonts](http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0000Vt) thread.' %} font. A similar effect is achieved in digital formats with the now open-source ETBembo, which Tufte-Jekyll supplies with a ```@font-face``` reference to a .ttf file. Thanks to [Linjie Ding](https://github.com/daveliepmann/tufte-css/commit/0a810a7d5f4707941c6f9fe99a53ec41f50a5c00), italicized text uses the ETBembo Italic font instead of mechanically skewing the characters. In case ETBembo somehow doesn’t work, Tufte CSS degrades gracefully to other serif fonts like Palatino and Georgia. Notice that Tufte CSS includes separate font files for **bold** (strong) and *italic* (emphasis), instead of relying on the browser to mechanically transform the text. This is typographic best practice. It’s also really important. Thus concludes my unnecessary use of em and strong for the purpose of example.
 
 Code snippets ape GitHub's font selection using Microsoft's [*Consolas*](http://www.microsoft.com/typography/ClearTypeFonts.mspx) and the sans-serif font uses Tufte's choice of Gill Sans. Since this is not a free font, and some systems will not have it installed, the free google font [*Lato*](https://www.google.com/fonts/specimen/Lato) is designated as a fallback.
+
+
+
+<h2 id="epigraphs">Epigraphs</h2>
+
+{% epigraph 'The English language . . . becomes ugly and inaccurate because our thoughts are foolish, but the slovenliness of our language makes it easier for us to have foolish thoughts.' 'George Orwell' ' "Politics and the English Language" ' %}
+
+{% epigraph 'For a successful technology, reality must take precedence over public relations, for Nature cannot be fooled.' 'Richard P. Feynman' ' “What Do You Care What Other People Think?” ' %}
+
+
+
+If you’d like to introduce your page or a section of your page with some quotes, use epigraphs. The two examples above show how they are styled. Epigraph elements are modeled after chapter epigraphs in Tufte’s books (particularly *Beautiful Evidence*). The [Tufte-css](https://github.com/edwardtufte/tufte-css) gitub repository has detailed instructions on how to achieve this using HTML elements. As an easier alternative, the *Tufte-jekyll* theme uses custom *Liquid tag* pairs that allow the writer to embed elements such as epigraphs in the middle of the regular Markdown text being edited. 
+
+In order to use an epigraph in a page or section, type this:
+
+```{{ "{% epigraph 'text of citation' 'author of citation' 'citation source' "}} %}```
+
+to produce this:
+
+{% epigraph 'I do not paint things, I paint only the differences between things.' 'Henri Matisse' 'Henri Matisse Dessins: thèmes et variations, 1943' %}
+
+{% epigraph  ' "How did you go bankrupt?" Two ways. Gradually, then suddenly.' 'Ernest Hemingway' ' "The Sun Also Rises" '%}
 
 ### Lists
 
@@ -140,31 +162,31 @@ The Markdown parser being used by this Jekyll theme is Kramdown, which contains 
 
 For instance, the following inline sequence:
 
-*When {% m %}a \ne 0{% em %}, there are two solutions to {% m %}ax^2 + bx + c = 0{% em %}*
+*When $$ a \ne 0 $$, there are two solutions to $$ ax^2 + bx + c = 0 $$*
 
-is written by enclosing a Mathjax expression with a *Liquid inline tag pair* ('m' and 'em') like so:
+is written by enclosing a Mathjax expression within *a matching pair of double dollar signs: ```$$```*:
 
-```When {{ "{% m "}}%} a \ne 0{{ "{% em "}}%}, there are two solutions to {{ "{% m " }}%}ax^2 + bx + c = 0{{ "{% em " }}%}```
+```When $$ a \ne 0 $$, there are two solutions to $$ ax^2 + bx + c = 0 $$```
 
 Similarly, this block-level Mathjax expression:
 
-{% math %}x = {-b \pm \sqrt{b^2-4ac} \over 2a}.{% endmath %}
+$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 
-is written by enclosing the expression with a *Liquid block tag pair* ('math' and 'endmath') like so:
+is written by enclosing the expression within a pair of ```$$``` with an empty line above and below:
 
-```{{ "{% math "}}%}x = {-b \pm \sqrt{b^2-4ac} \over 2a}.{{ "{% endmath "}} %}```
+```$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$```
 
 
 You can get pretty fancy, for instance, the wave equation's nabla is no big thing:
 
-{% math %}\frac{\partial^2 y}{\partial t^2}= c^2\nabla^2u{% endmath %}
+$$ \frac{\partial^2 y}{\partial t^2}= c^2\nabla^2u $$
 
 
-All of the standard Latex equation markup is available to use inside these block tags.
+All of the standard <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> equation markup is available to use inside these block tags.
 
 Please note that the block-level Mathjax expressions *must* be on their own line, separated from content above and below the block by a blank line for the Kramdown parser and the Mathjax javascript to play nicely with one another.
 
-The Mathjax integration is tricky, and some things such as the inline matrix notation simply do not work well. Bottom line: If you are using this to document mathematics, be super careful to isolate your <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> blocks by blank lines!  
+The Mathjax integration is tricky, and some things such as the inline matrix notation simply do not work well unless allowances are made for using the notation for a small matrix. Bottom line: If you are using this to document mathematics, be super careful to isolate your <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> blocks by blank lines!  
 
 ## Tables
 
@@ -255,10 +277,30 @@ As an example of alternative table styles, academic publications written in <spa
 </table>
 </div>
 
+The table above was written in HTML as follows:
 
-{% newthought 'I like this style of table,' %}  so I have made it the default for unstyled tables. This allows use of the [*Markdown Extra*](https://michelf.ca/projects/php-markdown/extra/) features built into the [*Kramdown*](http://kramdown.gettalong.org/parser/kramdown.html) parser. Here is a table created using the Markdown Extra table syntax to make a nice table which has the side benefit of being human readable in the raw markdown file:
+```
+<div class="table-wrapper">
+<table class="booktabs">
+          <thead>
+            <tr><th colspan="2" class="cmid">Items</th><th class="nocmid"></th></tr>
+            <tr><th>Animal</th><th>Description</th><th>Price ($)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Gnat</td>     <td>per gram</td><td class="r">13.65</td></tr>
+            <tr><td></td>         <td>each</td>    <td class="r">0.01</td></tr>
+            <tr><td>Gnu</td>      <td>stuffed</td> <td class="r">92.50</td></tr>
+            <tr><td>Emu</td>      <td>stuffed</td> <td class="r">33.33</td></tr>
+            <tr><td>Armadillo</td><td>frozen</td>  <td class="r">8.99</td></tr>
+          </tbody>
+</table>
+</div>
+```
 
-{% marginnote 'tableID-3' 'Table 3: a table created with *Markdown Extra* markup using default table styling' %}
+
+{% newthought 'I like this style of table,' %}  so I have made it the default for unstyled tables. This allows use of the [*Markdown Extra*](https://michelf.ca/projects/php-markdown/extra/) features built into the [*Kramdown*](http://kramdown.gettalong.org/parser/kramdown.html) parser. Here is a table created using the Markdown Extra table syntax to make a nice table which has the side benefit of being human readable in the raw Markdown file:
+
+{% marginnote 'tableID-3' 'Table 3: a table created with *Markdown Extra* markup using only the default table styling' %}
 
 |                 |mpg  | cyl  |  disp  |   hp   |  drat  | wt  |
 |:----------------|----:|-----:|-------:|-------:|-------:|----:|
@@ -270,13 +312,15 @@ As an example of alternative table styles, academic publications written in <spa
 |Valiant          |18.1 |6     |160     |105     |2.76    |3.46 |
 
 
-Using the following markup(down):
+Using the following Markdown formatting:
 
 ```
 |                 |mpg  | cyl  |  disp  |   hp   |  drat  | wt  |
 |:----------------|----:|-----:|-------:|-------:|-------:|----:|
 |Mazda RX4        |21   |6     |160     |110     |3.90    |2.62 |
-etc..
+|Mazda RX4 Wag    |21   |6     |160     |110     |3.90    |2.88 |
+|Datsun 710       |22.8 |4     |108     |93      |3.85    |2.32 |
+etc...
 ```
 
 The following is a more simple table, showing the Markdown-style table markup. Remember to label the table with a *marginnote* Liquid tag, and you *must* separate the label from the table with a single blank line. This markup:

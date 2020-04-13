@@ -2,6 +2,8 @@
 
 The *Tufte-Jekyll* blog theme is based on the github repository by Edward Tufte [here](https://github.com/edwardtufte/tufte-css), which was orginally created by Dave Leipmann, but is now labeled under Edward Tufte's moniker. I borrowed freely from the Tufte-CSS repo and have transformed many of the typographic and page-structural features into a set of custom Liquid tags that make creating content using this style much easier than writing straight HTML. Essentially, if you know markdown, and mix in a few custom Liquid tags, you can be creating a website with this document style in short order.
 
+Please be aware that the feature parity between the tufte-css repository and this project is not perfect. It is very close, but this Jekyll theme has additional CSS to scratch some of my own itches. One example is that the sidenote's typography is spaced in my CSS so they are on the same baseline grid as the body text and it doesn't hurt my eyes when I look at them. 
+
 ## Demo
 
 A sample site with self-documenting content is available [here](http://clayh53.github.io/tufte-jekyll/) on github pages.
@@ -47,7 +49,7 @@ In the ```assets/img``` directory is a file called ```badge_1.png```. This file'
 
 ## Some things about the things
 
-I needed to create several custom Liquid tags to wrap content in the right kind of tags. You will create your posts in the normal way in the ```_posts``` directory, and then edit them with Github-Flavored Markdown. To all that GFM goodness, you can use the following custom Liquid tags in your content area.
+I needed to create several custom Liquid tags to wrap content in the right kind of tags. You will create your posts in the normal way in the ```_posts``` directory, and then edit them with Github-Flavored Markdown. In addition to all that GFM goodness, you can use the following custom Liquid tags in your content area.
 
 Note that these tags *have been altered* from Version 1 of this theme to accommodate some responsive features, namely the ability to reveal hidden sidenotes, margin notes and margin figures by tapping either a superscript or a symbol on small screens. This requires you to add a parameter to the tag that is a unique *ID* for each tag instance on the page. What the id is called is not important, but it is important that it be unique for each individual element on the page. I would recommend in the interest of sanity to give names that are descriptive, like ```'sn-id-1'``` or ```'mf-id-rhino'```.
 
@@ -55,11 +57,11 @@ Note that these tags *have been altered* from Version 1 of this theme to accommo
 
 The custom Liquid tags are designed to simplify writing content and displaying it with the *tufte-css* look. Here are a few notes on using quotes inside the tags.
 
-* Liquid tags work best when you use double quotes to surround the tag parameters, as you'll see in all the examples below.
+* Liquid tags work with either double or single quotes to surround the tag parameters, as you'll see in all the examples below.
 
-* You can use single quotes and apostrophes in the text inside tag parameters. Liquid will automatically process them correctly. For example: `{% newthought "I'm so smart!" %}` will render as `I'm so smart!`
+* You can use single quotes and apostrophes in the text inside tag parameters, as long as all the parameters are surrounded by double quotes. Liquid will automatically process them correctly. For example: `{% newthought "I'm so smart!" %}` will render as `I'm so smart!`. If the text inside one of the parameters contains a single quote, then use double quotes to surround the parameters. Conversely, if the text inside one of the parameters contains a double quote, use single quotes to surround the parameters.
 
-* To use a double quote in the text inside a tag parameter, escape the double quote by placing a backslash directly in front of it, for example: `{% newthought "\"I'm so smart!\", she thought." %}` will render as `"I'm so smart!", she thought.`
+* One can also use a double quote in the text inside a tag parameter by 'escaping' the double quote by placing a backslash directly in front of it, for example: `{% newthought "\"I'm so smart!\", she thought." %}` will render as `"I'm so smart!", she thought.`
 
 * You can use HTML inside of a tag parameter. (However, you cannot use Markdown inside a tag parameter) You can use either single quotes, or escaped double quotes in the HTML. For example, both of the following tags will work:
 
@@ -71,6 +73,14 @@ The custom Liquid tags are designed to simplify writing content and displaying i
 ```
 
 The [demo site's Edge Cases entry](http://clayh53.github.io/tufte-jekyll/articles/15/Edge-Cases) has an example toward the bottom illustrating HTML inside of a tag parameter.
+
+### Epigraph
+
+This tag will render its three components into a standalone epigraph. This can be used as an introduction to a page or to a section within a page. As with most things Markdown, surround the epigraph with a blank line above and below it.
+
+```
+{% epigraph ' "How did you go bankrupt?" Two ways. Gradually, then suddenly.' 'Ernest Hemingway' ' "The Sun Also Rises" ' %}
+```
 
 ### New thought
 
@@ -166,7 +176,9 @@ The `full-width` page layout will not display margin figures. (It's a full-width
 
 ### Mathjax
 
-Totally used this functionality from a [gist by Jessy Cowan-Sharpe](https://gist.github.com/jessykate/834610) to make working with Mathjax expressions a little easier. Short version, wrap inline math in a tag pair thusly: ```{% m %}mathjax expression{% em %}``` and wrap bigger block level stuff with ```{% math %}mathjax expression{% endmath %}```
+For those wanting to use this Jekyll theme for academic writing, the new Kramdown Markdown engine will accurately parse *MathJax* expressions as long as they are enclosed in a pair of double dollar signs like this:
+
+```$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$```
 
 As a side note - if you do not need the math ability, navigate to the ```_data/options.yml``` file and change the mathjax to 'false' and it will not load the mathjax javascript.
 
