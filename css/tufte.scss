@@ -66,8 +66,14 @@ p > a { @if $link-style == underline
     {
       color: $text-color;
       text-decoration: none;
-      border-bottom: 1px solid #777;
-      padding-bottom: 1px;
+      background: -webkit-linear-gradient($bg-color, $bg-color), -webkit-linear-gradient($bg-color, $bg-color), -webkit-linear-gradient(currentColor, currentColor);
+      background: linear-gradient($bg-color, $bg-color), linear-gradient($bg-color, $bg-color), linear-gradient(currentColor, currentColor);
+      -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+      -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+      background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+      background-repeat: no-repeat, no-repeat, repeat-x;
+      text-shadow: 0.03em 0 $bg-color, -0.03em 0 $bg-color, 0 0.03em $bg-color, 0 -0.03em $bg-color, 0.06em 0 $bg-color, -0.06em 0 $bg-color, 0.09em 0 $bg-color, -0.09em 0 $bg-color, 0.12em 0 $bg-color, -0.12em 0 $bg-color, 0.15em 0 $bg-color, -0.15em 0 $bg-color;
+      background-position: 0% 93%, 100% 93%, 0% 93%; 
     }
     @else
     {
