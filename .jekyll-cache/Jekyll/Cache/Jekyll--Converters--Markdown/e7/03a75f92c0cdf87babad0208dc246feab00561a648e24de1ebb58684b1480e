@@ -1,4 +1,4 @@
-I"Ò#<p>Some edge cases and cautionary examples on using Markdown for writing content using this theme. In particular, list syntax can really knot things up.
+I"‚#<p>Some edge cases and cautionary examples on using Markdown for writing content using this theme. In particular, list syntax can really knot things up.
 <!--more--></p>
 
 <h3 id="mathjax-improperly-parsing-greater-and-less-than-and-ampersands-inside-blocks">Mathjax improperly parsing greater and less than and ampersands inside blocks</h3>
@@ -92,9 +92,9 @@ D = \left(\begin{matrix}
 
 <p>Please note that there must be <em>no blank lines between your list items</em>. This is due to a really strange thing about the Jekyll Markdown engine I have never noticed before. If you have a list, and you put a blank line between the items like this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    + list item 1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  + list item 1
 
-     + list item 2
+  + list item 2
 </code></pre></div></div>
 
 <p>It will create an html tag structure like this:</p>
@@ -113,7 +113,7 @@ D = \left(\begin{matrix}
 <p>However, if your Markdown is this:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    + list item 1
-     + list item 2
+    + list item 2
 </code></pre></div></div>
 
 <p>It will create a tag structure like this:</p>
@@ -153,7 +153,7 @@ D = \left(\begin{matrix}
 
 <p>Example of the proper way to write an url inside a Liquid full-width image tag.</p>
 
-<p>This code: <code class="highlighter-rouge">{% fullwidth "assets/img/rhino.png" "Tuftes pet rhino (via &lt;a href=\"//www.edwardtufte.com/tufte/\"&gt;Edward Tufte&lt;/a&gt;)"  %}</code></p>
+<p>This code: <code class="highlighter-rouge">{% fullwidth "assets/img/rhino.png" "Tufte\ %}</code></p>
 
-<figure class="fullwidth"><img src="/assets/img/rhino.png" /><figcaption>Tufte's pet rhino (via <a href="//www.edwardtufte.com/tufte/">Edward Tufte</a>)</figcaption></figure>
+<figure class="fullwidth"><img src="/assets/img/rhino.png" /><figcaption>Tufte's pet rhino (via &lt;a href=\'//www.edwardtufte.com/tufte/\'&gt;Edward Tufte&lt;/a&gt;)</figcaption></figure>
 :ET

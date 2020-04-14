@@ -1,0 +1,159 @@
+I"�#<p>Some edge cases and cautionary examples on using Markdown for writing content using this theme. In particular, list syntax can really knot things up.
+<!--more--></p>
+
+<h3 id="mathjax-improperly-parsing-greater-and-less-than-and-ampersands-inside-blocks">Mathjax improperly parsing greater and less than and ampersands inside blocks</h3>
+
+<p>The mathjax HTML <code class="highlighter-rouge">&lt;head&gt;</code> scripts have been modified to properly render block style mathjax expressions inside a <code class="highlighter-rouge">$$ ... $$</code> set of character pairs,
+using the standard Kramdown parser. Some examples sent to me by Quxiaofeng are now parsing correctly, I believe.</p>
+
+<p>This code:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">$$</span><span class="nb">
+  D </span><span class="o">=</span><span class="nb"> </span><span class="nv">\left</span><span class="o">(</span><span class="nv">\begin</span><span class="p">{</span><span class="nb">matrix</span><span class="p">}</span><span class="nb">
+  </span><span class="m">1</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="o">-</span><span class="m">1</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\\</span><span class="nb">
+  </span><span class="p">&amp;</span><span class="nb">    </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\cdots</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb">   </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\\</span><span class="nb">
+  </span><span class="p">&amp;</span><span class="nb">    </span><span class="p">&amp;</span><span class="nb">        </span><span class="p">&amp;</span><span class="nb"> </span><span class="m">1</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="o">-</span><span class="m">1</span><span class="nb">
+ </span><span class="nv">\end</span><span class="p">{</span><span class="nb">matrix</span><span class="p">}</span><span class="nb">
+ </span><span class="nv">\right</span><span class="o">)</span><span class="nb">
+</span><span class="p">$$</span>
+</code></pre></div></div>
+<p>yields this:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+D = \left(\begin{matrix}
+  1 & -1 & & & & \\
+  &    & \cdots &   & \\
+  &    &        & 1 & -1
+\end{matrix}
+\right) %]]></script>
+
+<p>Other examples from the <a href="http://latex.wikia.com/wiki/Matrix_environments">wikia Tex reference</a>:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{matrix}
+\alpha& \beta^{*}\\
+\gamma^{*}& \delta
+\end{matrix} %]]></script>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{bmatrix}
+\alpha& \beta^{*}\\
+\gamma^{*}& \delta
+\end{bmatrix} %]]></script>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{Bmatrix}
+\alpha& \beta^{*}\\
+\gamma^{*}& \delta
+\end{Bmatrix} %]]></script>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{vmatrix}
+\alpha& \beta^{*}\\
+\gamma^{*}& \delta
+\end{vmatrix} %]]></script>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{Vmatrix}
+\alpha& \beta^{*}\\
+\gamma^{*}& \delta
+\end{Vmatrix} %]]></script>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{Vmatrix}
+\alpha& \beta^{*}\\
+\gamma^{*}& \delta
+\end{Vmatrix} %]]></script>
+
+<p>However, a problem still exists for inline matrix notation, from an example <a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics#Matrices_in_running_text">here</a>:</p>
+
+<p>A matrix in text must be set smaller: <script type="math/tex">% <![CDATA[
+\bigl(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix} \bigr) %]]></script> to not increase leading in a portion of text. The way this inline matrix is written is: <code class="highlighter-rouge">$$ \bigl(\begin{smallmatrix}a &amp; b \\ c &amp; d\end{smallmatrix} \bigr) $$</code></p>
+
+<h2 id="edge-case-1-from-quxiaofeng">Edge Case 1 from Quxiaofeng:</h2>
+
+<h3 id="no-blank-lines-between-markdown-list-items">No blank lines between Markdown list items</h3>
+
+<p>The issue arises when sidenotes and marginnotes are put into list items.  As mentioned in the main documentation page, lists can be problematic not only for semantic clarity, but also because they can creating formatting issues. For example:</p>
+
+<h3 id="related-algorithms">Related algorithms</h3>
+
+<ul>
+  <li>Split Bregman iteration <label for="1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="1" class="margin-toggle" /><span class="sidenote">Goldstein, T. and Osher, S. (2009). The split Bregman method for l1-regularized problems. SIAM J. Img. Sci., 2:323-343. </span></li>
+  <li>Dykstra’s alternating projection algorithm <label for="2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="2" class="margin-toggle" /><span class="sidenote">Dykstra, R. L. (1983). An algorithm for restricted least squares regression. J. Amer. Statist. Assoc., 78(384):837-842. </span></li>
+  <li>Proximal point algorithm applied to the dual</li>
+  <li>Numerous applications in statistics and machine learning: lasso, gen. lasso, graphical lasso, (overlapping) group lasso, …</li>
+  <li>Embraces distributed computing for big data <label for="3" class="margin-toggle sidenote-number"></label><input type="checkbox" id="3" class="margin-toggle" /><span class="sidenote">Boyd, S., Parikh, N., Chu, E., Peleato, B., and Eckstein, J. (2011). Distributed optimization and statistical learning via the alternating direction method of multipliers. Found. Trends Mach. learn., 3(1):1-122. </span></li>
+</ul>
+
+<h3 id="why-this-matters">Why this matters</h3>
+
+<p>Notice how the sidenotes display properly, but the fact that sidenotes have more display ‘volume’ than the list items themselves causes a horizontal mismatch between the sidenote item’s number and its corresponding list item.</p>
+
+<p>Please note that there must be <em>no blank lines between your list items</em>. This is due to a really strange thing about the Jekyll Markdown engine I have never noticed before. If you have a list, and you put a blank line between the items like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  + list item 1
+
+  + list item 2
+</code></pre></div></div>
+
+<p>It will create an html tag structure like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;ul&gt;
+   &lt;li&gt;
+      &lt;p&gt;list item 1&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+      &lt;p&gt;list item 2&lt;/p&gt;
+   &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre></div></div>
+<p>Which <em>totally</em> goofs up the layout CSS.</p>
+
+<p>However, if your Markdown is this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    + list item 1
+    + list item 2
+</code></pre></div></div>
+
+<p>It will create a tag structure like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;ul&gt;
+   &lt;li&gt;list item 1&lt;/li&gt;
+   &lt;li&gt;list item 2&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre></div></div>
+
+<p>Here is the same content as above, with a blank line separating the list items. Notice how the sidenotes get squashed into the main content area:</p>
+
+<h3 id="remarks-on-admm-version-2---one-blank-line-between-markdown-list-items">Remarks on ADMM version 2 - <strong>one blank line</strong> between Markdown list items</h3>
+
+<p>Related algorithms</p>
+
+<ul>
+  <li>
+    <p>Split Bregman iteration <label for="1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="1" class="margin-toggle" /><span class="sidenote">Goldstein, T. and Osher, S. (2009). The split Bregman method for l1-regularized problems. SIAM J. Img. Sci., 2:323-343. </span></p>
+  </li>
+  <li>
+    <p>Dykstra’s alternating projection algorithm <label for="2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="2" class="margin-toggle" /><span class="sidenote">Dykstra, R. L. (1983). An algorithm for restricted least squares regression. J. Amer. Statist. Assoc., 78(384):837-842. </span></p>
+  </li>
+  <li>
+    <p>Proximal point algorithm applied to the dual</p>
+  </li>
+  <li>
+    <p>Numerous applications in statistics and machine learning: lasso, gen. lasso, graphical lasso, (overlapping) group lasso, …
+<br />
+<br />
+<br />
+<br /></p>
+  </li>
+</ul>
+
+<h3 id="liquid-tag-parsing-strangeness">Liquid tag parsing strangeness</h3>
+
+<p>Example of the proper way to write an url inside a Liquid full-width image tag.</p>
+
+<p>This code: <code class="highlighter-rouge">{% fullwidth "assets/img/rhino.png" "Tuftes pet rhino (via &lt;a href=\"//www.edwardtufte.com/tufte/\"&gt;Edward Tufte&lt;/a&gt;)"  %}</code></p>
+
+<figure class="fullwidth"><img src="/assets/img/rhino.png" /><figcaption>Tufte's pet rhino (via <a href="//www.edwardtufte.com/tufte/">Edward Tufte</a>)</figcaption></figure>
+:ET

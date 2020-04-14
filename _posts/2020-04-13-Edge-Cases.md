@@ -105,9 +105,9 @@ Notice how the sidenotes display properly, but the fact that sidenotes have more
 Please note that there must be *no blank lines between your list items*. This is due to a really strange thing about the Jekyll Markdown engine I have never noticed before. If you have a list, and you put a blank line between the items like this:
 
 ```
-    + list item 1
+  + list item 1
 
-     + list item 2
+  + list item 2
 ```
 
 It will create an html tag structure like this:
@@ -128,7 +128,7 @@ However, if your Markdown is this:
 
 ```
     + list item 1
-     + list item 2
+    + list item 2
 ```
 
 It will create a tag structure like this:
@@ -161,8 +161,9 @@ Related algorithms
 
 ### Liquid tag parsing strangeness
 
-Example of the proper way to write an url inside a Liquid full-width image tag.
+Example of the proper way to write an url inside a *Liquid* full-width image tag.
 
 This code: ```{{ '{% fullwidth "assets/img/rhino.png" "Tuftes pet rhino (via <a href=\"//www.edwardtufte.com/tufte/\">Edward Tufte</a>)" ' }} %}```
 
+produces the following image with a title. Notice that I have had to escape the double quotes in the HTML with a backslash. Also, the example above leaves out the single quote in 'Tufte's" because of the topsy-turvy way that you have to escape the escapes in code sections that are used for illustrative purposes in this text. Bottom line is that there are occasionally some odd interactions between the Markdown parser, custom *Liquid* tags and HTML.
 {% fullwidth "assets/img/rhino.png" "Tufte's pet rhino (via <a href=\"//www.edwardtufte.com/tufte/\">Edward Tufte</a>)" %}

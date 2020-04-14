@@ -308,7 +308,7 @@ div.table-wrapper { overflow-x: auto; } //changed all overflow values to 'auto' 
 
 .marginnote code, .sidenote code { font-size: 1rem; } //more .code class removal
 
-pre, pre code, p pre code { width: 52.5%;
+pre { width: 52.5%; //, pre code, p pre code
            padding-left: 2.5%;
            overflow-x: auto; }
 
