@@ -220,7 +220,6 @@ th, td{ font-size: 1.2rem;
                  line-height: 1.96; }
 /* -- End of Table Styling section --*/
 
-
 /* Basic Layout stuff --*/
 
 article { position: relative;
@@ -230,7 +229,6 @@ article { position: relative;
 
 section { padding-top: 1rem;
           padding-bottom: 1rem; }
-
 
 ul,ol { width: 45%;
      -webkit-padding-start: 5%;
@@ -246,7 +244,7 @@ figure, figure img.maincolumn { max-width: 55%;
 
 figcaption { float: right;
              clear: right;
-             margin-right: -48%;
+             margin-right: -50%;
              margin-top: 0;
              margin-bottom: 0;
              font-size: 1.0rem;
@@ -255,7 +253,7 @@ figcaption { float: right;
              position: relative;
              max-width: 40%; }
 
-figure.fullwidth figcaption { float: left; margin-right: 0%; margin-left: 36%; }
+figure.fullwidth figcaption { float: left; margin-right: 0%; margin-left: 33%; max-width: 100%; }
 
 img { max-width: 100%; }
 
@@ -269,6 +267,7 @@ img { max-width: 100%; }
                          line-height: 1.96; //changed to bring line heights into rational pattern
                          vertical-align: baseline;
                          position: relative; }
+
 
 li .sidenote, li .marginnote{ margin-right: -80%; } //added to allow for the fact that lists are indented and marginnotes and sidenotes push to right
 
@@ -352,7 +351,10 @@ label.margin-toggle:not(.sidenote-number) { display: none; }
                                              position: relative; }
                             div.table-wrapper, table, table.booktabs { width: 85%; }
                             div.table-wrapper { border-right: 1px solid #efefef; }
-                            img { max-width: 100%; } }
+                            img { max-width: 100%; } 
+                            figcaption.maincolumn-figure, figure.fullwidth figcaption { float:none; text-align: center;}
+                            figure.fullwidth figcaption { margin-left: 0; }
+                          }
 /*--- End of Basic Layout stuff from tufte.css ---*/
 
 /* -- Jekyll specific styling --*/

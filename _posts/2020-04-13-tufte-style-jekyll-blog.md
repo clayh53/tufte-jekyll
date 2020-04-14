@@ -128,6 +128,7 @@ Yields this:
 
 {% fullwidth 'assets/img/napoleons-march.png' "Napoleon's March (Edward Tufte’s English translation)" %}
 
+
 ### Main Column Figures
 
 Besides margin and full width figures, you can of course also include figures constrained to the main column. Yes, you guessed it, a custom liquid tag rides to the rescue once again:

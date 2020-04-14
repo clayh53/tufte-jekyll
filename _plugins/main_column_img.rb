@@ -15,9 +15,9 @@ module Jekyll
     def render(context)
       baseurl = context.registers[:site].config['baseurl']
       if @text[0].start_with?('http://', 'https://','//')
-        "<figure><figcaption><span class='marginnote'>#{@text[1]}</span></figcaption><img src='#{@text[0]}'/></figure>"
+        "<figure><img src='#{@text[0]}'/><figcaption class='maincolumn-figure'><span>#{@text[1]}</span></figcaption></figure>"
       else
-        "<figure><figcaption><span class='marginnote'>#{@text[1]}</span></figcaption><img src='#{baseurl}/#{@text[0]}'/></figure>"
+        "<figure><img src='#{baseurl}/#{@text[0]}'/><figcaption class='maincolumn-figure'><span>#{@text[1]}</span></figcaption></figure>"
       end
     end
   end
