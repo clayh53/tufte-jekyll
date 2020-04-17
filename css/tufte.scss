@@ -62,7 +62,7 @@ a {
   text-decoration: none;
 }
 
-p > a { @if $link-style == underline
+p > a, cite > a, span > a { @if $link-style == underline
     {
       color: $text-color;
       text-decoration: none;
@@ -86,7 +86,7 @@ body { width: 87.5%;
        margin-left: auto;
        margin-right: auto;
        padding-left: 12.5%;
-       font-family: et-bembo, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+       font-family: $body-font;
        background-color: $bg-color;
        color: $text-color;
        max-width: 1400px;
