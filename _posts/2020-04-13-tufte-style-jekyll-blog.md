@@ -130,18 +130,18 @@ If you need a full-width image or figure, another custom liquid tag is available
 
 Yields this:
 
-{% fullwidth 'assets/img/napoleons-march.png' "Napoleon's March (Edward Tufte’s English translation)" %}
+{% fullwidth 'assets/img/napoleons-march.png' "Napoleon's March *(Edward Tufte’s English translation)*" %}
 
 
 ### Main Column Figures
 
 Besides margin and full width figures, you can of course also include figures constrained to the main column. Yes, you guessed it, a custom liquid tag rides to the rescue once again:
 
-```{{ "{% maincolumn 'assets/img/export-imports.png' 'From Edward Tufte, *Visual Display of Quantitative Information*, page 92' "}} %}```
+```{{ "{% maincolumn 'assets/img/export-imports.png' 'From Edward Tufte, <em>Visual Display of Quantitative Information</em>, page 92' "}} %}```
 
 yields this:
 
-{% maincolumn 'assets/img/exports-imports.png' 'From Edward Tufte, *Visual Display of Quantitative Information*, page 92' %}
+{% maincolumn "assets/img/exports-imports.png" "From Edward Tufte, *Visual Display of Quantitative Information*, page 92" %}
 
 ## Sidenotes and Margin notes
 
