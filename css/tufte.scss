@@ -53,10 +53,11 @@ html{
 
 @media screen and (min-width: 1300px){ html{ font-size: 17px; } }
 
-// sets link style according to values in _settings.scss
+// Mathjax fonts need TLC
 .mjx-math{
   font-size: 1.3rem;
 }
+// sets link style according to values in _settings.scss
 a {
   color: $contrast-color;
   text-decoration: none;
@@ -181,7 +182,7 @@ h1 code, h2 code, h3 code { font-size: 0.80em; } //left in for no real reason
 /*-- Table styling section - For Tufte-Jekyll, booktabs style is default for Markdown tables  --*/
 
 table, table.booktabs { width: auto;  //making booktabs style tables the unstyled default in case someone uses Markdown styling
-                 margin: 0 auto;
+                 //margin: 0 auto;
                  border-spacing: 0px;
                  border-top: 2px solid $border-color;
                  border-bottom: 2px solid $border-color; }
@@ -189,7 +190,8 @@ table, table.booktabs { width: auto;  //making booktabs style tables the unstyle
 .booktabs th, th { border-bottom: 1px solid $border-color;
                padding: 0.65ex 0.5em 0.4ex 0.5em;
                font-weight: normal;
-               text-align: center; }
+               //text-align: center; 
+               }
 
 th, td{ font-size: 1.2rem;
         line-height: 1.71428571;  }
@@ -202,7 +204,7 @@ th, td{ font-size: 1.2rem;
 
 .booktabs td, td {  padding-left: 0.5em;
                     padding-right: 0.5em;
-                    text-align: left; }
+                    text-align: left; }            
 
 .booktabs caption, caption { font-size: 90%;
                     text-align: left;
@@ -212,9 +214,9 @@ th, td{ font-size: 1.2rem;
                     margin-top: 1ex;
                     caption-side: top; }
 
-.booktabs tbody tr td.l { text-align: left !important; }
-.booktabs tbody tr td.c { text-align: center !important; }
-.booktabs tbody tr td.r { text-align: right !important; }
+.booktabs tbody tr, .booktabs thead tr th.l, .booktabs td.l { text-align: left !important; }
+.booktabs tbody tr, .booktabs thead tr th.c, .booktabs td.c { text-align: center !important; }
+.booktabs tbody tr, .booktabs thead tr th.r, .booktabs td.r { text-align: right !important; }
 
 .table-caption { float:right;
                  clear:right;
@@ -296,9 +298,9 @@ blockquote .sidenote, blockquote .marginnote { margin-right: -79% }
                    color: $contrast-color;
                    top: 0rem; } //removed superscripting for numerical reference in sidenote
 
-p, footer, div.table-wrapper,  .MJXc-display{ width: 55%; }
+p, footer, div.table-wrapper,  .MJXc-display { width: 55%; }
 
-div.table-wrapper { overflow-x: auto; } //changed all overflow values to 'auto' so scroll bars appear only as needed
+div.table-wrapper, table { overflow-x: auto; } //changed all overflow values to 'auto' so scroll bars appear only as needed
 
 @media screen and (max-width: 760px) { p, footer { width: 90%; }
                                        pre code { width: 87.5%; }
@@ -553,76 +555,92 @@ hr.slender {
 /* --- Icomoon icon fonts CSS --*/
 @font-face {
   font-family: 'icomoon';
-  src:url('../fonts/icomoon.eot?rgwlb8');
-  src:url('../fonts/icomoon.eot?#iefixrgwlb8') format('embedded-opentype'),
-    url('../fonts/icomoon.woff?rgwlb8') format('woff'),
-    url('../fonts/icomoon.ttf?rgwlb8') format('truetype'),
-    url('../fonts/icomoon.svg?rgwlb8#icomoon') format('svg');
+  src:  url('../fonts/icomoon.eot?pmc8bw');
+  src:  url('../fonts/icomoon.eot?pmc8bw#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?pmc8bw') format('truetype'),
+    url('../fonts/icomoon.woff?pmc8bw') format('woff'),
+    url('../fonts/icomoon.svg?pmc8bw#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
+  font-display: block;
 }
 
 [class^="icon-"], [class*=" icon-"] {
-  font-family: 'icomoon';
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  color: $contrast-color;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-pencil:before {
-  content: "\e600";
+.icon-mail3:before {
+  content: "\ea85";
 }
-.icon-film:before {
-  content: "\e60f";
+.icon-amazon:before {
+  content: "\ea87";
 }
-.icon-calendar:before {
-  content: "\e601";
+.icon-google2:before {
+  content: "\ea89";
 }
-.icon-link:before {
-  content: "\e602";
-}
-.icon-info:before {
-  content: "\e603";
-}
-.icon-cancel-circle:before {
-  content: "\e604";
-}
-.icon-checkmark-circle:before {
-  content: "\e605";
-}
-.icon-spam:before {
-  content: "\e606";
-}
-.icon-mail:before {
-  content: "\e607";
-}
-.icon-googleplus:before {
-  content: "\e608";
-}
-.icon-facebook:before {
-  content: "\e609";
+.icon-facebook2:before {
+  content: "\ea91";
 }
 .icon-twitter:before {
-  content: "\e60a";
+  content: "\ea96";
 }
-.icon-feed:before {
-  content: "\e60b";
+.icon-rss2:before {
+  content: "\ea9c";
 }
-.icon-flickr:before {
-  content: "\e60c";
+.icon-youtube:before {
+  content: "\ea9d";
+}
+.icon-vimeo2:before {
+  content: "\eaa1";
+}
+.icon-lanyrd:before {
+  content: "\eaa2";
+}
+.icon-flickr3:before {
+  content: "\eaa5";
+}
+.icon-behance2:before {
+  content: "\eaa9";
+}
+.icon-dropbox:before {
+  content: "\eaae";
 }
 .icon-github:before {
-  content: "\e60d";
+  content: "\eab0";
 }
-.icon-box-add:before {
-  content: "\e60e";
+.icon-blogger2:before {
+  content: "\eab8";
+}
+.icon-soundcloud2:before {
+  content: "\eac4";
+}
+.icon-skype:before {
+  content: "\eac5";
+}
+.icon-reddit:before {
+  content: "\eac6";
+}
+.icon-linkedin:before {
+  content: "\eac9";
+}
+.icon-pinterest:before {
+  content: "\ead1";
+}
+.icon-paypal:before {
+  content: "\ead8";
+}
+.icon-html-five:before {
+  content: "\eae4";
 }
 /*-- End of Icomoon icon font section --*/

@@ -206,55 +206,55 @@ Tables are designed with an ```overflow:scroll``` property to create slider bars
   <table class="table-alpha" id="newspaper-tone">
     <thead>
       <tr>
-        <th class="text">Content and tone of front-page articles in 94 U.S. newspapers, October and November, 1974</th>
-        <th>Number of articles</th>
+        <th class="left">Content and tone of front-page articles in 94 U.S. newspapers, October and November, 1974</th>
+        <th class="left">Number of articles</th>
         <th>Percent of articles with negative criticism of specific person or policy</th></tr>
     </thead>
     <tbody>
       <tr>
         <td class="text">Watergate: defendants and prosecutors, Ford’s pardon of Nixon</td>
         <td><div class="number">537</div></td>
-        <td><div class="number">49%</div></td>
+        <td class="c"><div class="number">49%</div></td>
       </tr>
       <tr>
         <td class="text">Inflation, high cost of living</td>
         <td><div class="number">415</div></td>
-        <td><div class="number">28%</div></td>
+        <td class="c"><div class="number">28%</div></td>
       </tr>
       <tr>
         <td class="text">Government competence: costs, quality, salaries of public employees</td>
         <td><div class="number">322</div></td>
-        <td><div class="number">30%</div></td>
+        <td class="c"><div class="number">30%</div></td>
       </tr>
       <tr>
         <td class="text">Confidence in government: power of special interests, trust in political leaders, dishonesty in politics</td>
         <td><div class="number">266</div></td>
-        <td><div class="number">52%</div></td>
+        <td class="c"><div class="number">52%</div></td>
       </tr>
       <tr>
         <td class="text">Government power: regulation of business, secrecy, control of CIA and FBI</td>
         <td><div class="number">154</div></td>
-        <td><div class="number">42%</div></td>
+        <td class="c"><div class="number">42%</div></td>
       </tr>
       <tr>
         <td class="text">Crime</td>
         <td><div class="number">123</div></td>
-        <td><div class="number">30%</div></td>
+        <td class="c"><div class="number r">30%</div></td>
       </tr>
       <tr>
         <td class="text">Race</td>
         <td><div class="number">103</div></td>
-        <td><div class="number">25%</div></td>
+        <td class="c"><div class="number">25%</div></td>
       </tr>
       <tr>
         <td class="text">Unemployment</td>
         <td><div class="number">100</div></td>
-        <td><div class="number">13%</div></td>
+        <td class="c"><div class="number">13%</div></td>
       </tr>
       <tr>
         <td class="text">Shortages: energy, food</td>
         <td><div class="number">68</div></td>
-        <td><div class="number">16%</div></td>
+        <td class="c"><div class="number">16%</div></td>
       </tr>
     </tbody>
   </table>
@@ -270,7 +270,7 @@ As an example of alternative table styles, academic publications written in <spa
 <table class="booktabs">
           <thead>
             <tr><th colspan="2" class="cmid">Items</th><th class="nocmid"></th></tr>
-            <tr><th>Animal</th><th>Description</th><th>Price ($)</th></tr>
+            <tr><th class="l">Animal</th><th>Description</th><th class="r">Price ($)</th></tr>
           </thead>
           <tbody>
             <tr><td>Gnat</td>     <td>per gram</td><td class="r">13.65</td></tr>
@@ -289,7 +289,7 @@ The table above was written in HTML as follows:
 <table class="booktabs">
           <thead>
             <tr><th colspan="2" class="cmid">Items</th><th class="nocmid"></th></tr>
-            <tr><th>Animal</th><th>Description</th><th>Price ($)</th></tr>
+            <tr><th class="l">Animal</th><th>Description</th class="r"><th>Price ($)</th></tr>
           </thead>
           <tbody>
             <tr><td>Gnat</td>     <td>per gram</td><td class="r">13.65</td></tr>
@@ -331,7 +331,7 @@ etc...
 The following is a more simple table, showing the Markdown-style table markup. Remember to label the table with a *marginnote* Liquid tag, and you *must* separate the label from the table with a single blank line. This markup:
 
 ```
-{% marginnote 'Table-ID4' 'Table 4: a simple table showing left, center, and right alignment of table headings and data' %}
+{{ "{% marginnote 'Table-ID4' 'Table 4: a simple table showing left, center, and right alignment of table headings and data' "}} %}
 
 |**Left** |**Center**|**Right**|
 |:--------|:--------:|--------:|
@@ -349,7 +349,6 @@ Yields this table:
  Aardvarks|         1|$3.50
        Cat|   5      |$4.23
   Dogs    |3         |$5.29
-
 
 
 ## Code
