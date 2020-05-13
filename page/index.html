@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>blog</title>
+  <title>page</title>
   <meta name="description" content="A Jekyll theme for content-rich sites">
 
   <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
@@ -45,12 +45,12 @@
   <link rel="stylesheet" type="text/css" href="/tufte-jekyll/css/tufte.css">
   <!-- <link rel="stylesheet" type="text/css" href="/tufte-jekyll/css/print.css" media="print"> -->
 
-  <link rel="canonical" href="/tufte-jekyll/">
+  <link rel="canonical" href="/tufte-jekyll/page/">
 
   <link rel="alternate" type="application/rss+xml" title="Tufte-Jekyll" href="/tufte-jekyll/feed.xml" />
 </head>
 
-  <body class="full-width">
+  <body>
     <!--- Header and nav template site-wide -->
 <header>
     <nav class="group">
@@ -60,13 +60,13 @@
   	
 		
 		    
-		      <a class="active" href="/tufte-jekyll/" class="active">blog</a>
+		      <a href="/tufte-jekyll/">blog</a>
 		    
 	    
   	
 		
 		    
-		      <a href="/tufte-jekyll/page/">page</a>
+		      <a class="active" href="/tufte-jekyll/page/" class="active">page</a>
 		    
 	    
   	
@@ -86,29 +86,41 @@
   	
 	</nav>
 </header>
-    <article>
-        <h1 class="content-listing-header sans">Articles</h1>
-  <ul class="content-listing ">
-          
-        <li class="listing">
-          <hr class="slender">
-          <a href="/tufte-jekyll/articles/20/Edge-Cases"><h3 class="contrast">Edge Cases</h3></a>
-          <br><span class="smaller">April 13, 2020</span>  <br/>
-          <div><p>Some edge cases and cautionary examples on using Markdown for writing content using this theme. In particular, list syntax can really knot things up.</p>
-</div> 
-        </li>
-          
-        <li class="listing">
-          <hr class="slender">
-          <a href="/tufte-jekyll/articles/20/tufte-style-jekyll-blog"><h3 class="contrast">Tufte-style Jekyll blog</h3></a>
-          <br><span class="smaller">April 13, 2020</span>  <br/>
-          <div><p><span class="newthought">The Tufte Jekyll theme</span>  is an attempt to create a website design with the look and feel of Edward Tufte’s books and handouts. Tufte’s style is known for its extensive use of sidenotes, tight integration of graphics with text, and well-set typography.</p>
-</div> 
-        </li>
-    
-  </ul>
+    <article class="group">
+      <h1>page</h1>
+<p class="subtitle"></p>
+
+<p><span class="newthought">In this first iteration</span>  of the <em>Tufte-Jekyll</em> theme, a post and a page have exactly the same layout. That means that all the typographic and structural details are identical between the two.</p>
+
+<h2 id="pages-and-posts">Pages and Posts</h2>
+
+<p>Jekyll provides for both pages and posts in its default configuration. I have left this as-is.</p>
+
+<h3 id="posts">Posts</h3>
+
+<p>Conceptually, posts are for recurring pieces of similar content such as might be found in a typical blog entry. Post content all sits in a folder named <code class="highlighter-rouge">_posts</code> and files are created in this folder<label for="1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="1" class="margin-toggle" /><span class="sidenote">Yes, a page has essentially the same old shit as a post </span> that are names with a date pre-pended to the title of the post. For instance <code class="highlighter-rouge">2105-02-20-this-is-a-post.md</code> is a perfectly valid post filename.</p>
+
+<p>Posts will always have a section above the content itself consisting of YAML front matter, which is meta-data information about the post. Minimally, a post title must always be present for it to be processed properly.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+Title: Some Title
+---
+## Content
+
+Markdown formatted content *here*.
+</code></pre></div></div>
+
+<h3 id="pages">Pages</h3>
+
+<p>Pages are any HTML documents <em>or</em> Markdown documents with YAML front matter that are then converted to content. Page material is more suited to static, non-recurring types of content. Like this</p>
+
+<p>I am not going to re-write the Jekyll documentation. Read it and you will figure out how the site is structured.</p>
+
+
+
+
     </article>
-    <span class="print-footer">blog - clay harmon</span>
+    <span class="print-footer">page - clay harmon</span>
     <footer>
   <hr class="slender">
   <ul class="footer-links">
