@@ -63,7 +63,7 @@ The custom Liquid tags are designed to simplify writing content and displaying i
 
 * One can also use a double quote in the text inside a tag parameter by 'escaping' the double quote by placing a backslash directly in front of it, for example: `{% newthought "\"I'm so smart!\", she thought." %}` will render as `"I'm so smart!", she thought.`
 
-* You can use HTML inside of a tag parameter. (However, you cannot use Markdown inside a tag parameter) You can use either single quotes, or escaped double quotes in the HTML. For example, both of the following tags will work:
+* You can use HTML inside of a tag parameter. Originally, Markdown support inside the Liquid parameters strings was spotty, but I recently added some code that should allow most Markdown inside the tag parameter strings. You can use either single quotes, or escaped double quotes in the HTML. For example, both of the following tags will work:
 
 ```
 {% newthought "Example website: <a href='http://example.com'>example label</a>" %}
