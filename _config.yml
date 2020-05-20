@@ -1,9 +1,9 @@
-baseurl: /tufte-jekyll
-title: Tufte-Jekyll
-subtitle: Content-centric blogging
-author: clay harmon
+baseurl: /
+title: The Sweep
+subtitle: VolSweep Blog
+author: REV
 simple_search: http://google.com/search
-description: A Jekyll theme for content-rich sites
+description: Open-sourced data exploration
 name: tufte
 markdown: kramdown
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
