@@ -1,10 +1,10 @@
 baseurl: /
 title: The Sweep
-subtitle: VolSweep Blog
+subtitle: A Data Blog
 author: REV
 simple_search: http://google.com/search
 description: Open-sourced data exploration
-name: tufte
+name: VolSweep Blog
 markdown: kramdown
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 permalink: /articles/:short_year/:title
