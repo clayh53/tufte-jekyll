@@ -314,6 +314,7 @@ img { max-width: 100%; }
                          margin-bottom: 1.96rem;
                          font-size: 0.778rem;
                          line-height: 1.5;
+                         overflow-wrap: break-word;
                          // font-size: 1.0rem;
                          // line-height: 1.96; //changed to bring line heights into rational pattern
                          vertical-align: baseline;
@@ -327,7 +328,7 @@ blockquote .sidenote, blockquote .marginnote { margin-right: -79% }
 .sidenote-number { counter-increment: sidenote-counter; }
 
 .sidenote-number:after, .sidenote:before { content: counter(sidenote-counter) " ";
-                                           font-family: et-bembo-roman-old-style;
+                                           font-family: $body-font;
                                            color: $contrast-color; //added color
                                            position: relative;
                                            vertical-align: baseline; }
@@ -342,6 +343,8 @@ blockquote .sidenote, blockquote .marginnote { margin-right: -79% }
                    top: 0rem; } //removed superscripting for numerical reference in sidenote
 
 p, footer, div.table-wrapper,  .MJXc-display { width: 55%; }
+
+li p { width: 100%; }
 
 div.table-wrapper, table { overflow-x: auto; } //changed all overflow values to 'auto' so scroll bars appear only as needed
 
