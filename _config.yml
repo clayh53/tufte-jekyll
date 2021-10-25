@@ -1,9 +1,9 @@
-baseurl: /tufte-jekyll
-title: Tufte-Jekyll
-subtitle: Content-centric blogging
-author: clay harmon
+baseurl: /blog
+title: Ideatify Blog
+subtitle: About Creativity | ideatify.com/blog
+author: Ideatify.com
 simple_search: http://google.com/search
-description: A Jekyll theme for content-rich sites
+description: Articles about creativity
 name: tufte
 markdown: kramdown
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"

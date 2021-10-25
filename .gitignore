@@ -1,5 +1,7 @@
 _site
 .sass-cache
 .jekyll-cache
+.jekyll-cache/*
+.idea
 .DS\_Store
 config.codekit
