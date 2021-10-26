@@ -297,7 +297,7 @@ blockquote .sidenote, blockquote .marginnote { margin-right: -79% }
 
 .sidenote-number:after, .sidenote:before { content: counter(sidenote-counter) " ";
                                            font-family: et-bembo-roman-old-style;
-                                           color: $contrast-color; //added color
+                                           color: $sidenote-color; //added color
                                            position: relative;
                                            vertical-align: baseline; }
 
@@ -307,7 +307,7 @@ blockquote .sidenote, blockquote .marginnote { margin-right: -79% }
                          left: 0.1rem; }
 
 .sidenote:before { content: counter(sidenote-counter) ".\000a0"; // this is unicode for a non-breaking space
-                   color: $contrast-color;
+                   color: $sidenote-color;
                    top: 0rem; } //removed superscripting for numerical reference in sidenote
 
 .full-width {
