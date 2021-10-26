@@ -2,11 +2,15 @@
 <html>
   {% include head.html %}
   <body class="full-width">
-    {% include header.html %}
-    <article>
-      {{ content }}
-    </article>
-    {% include print-footer.html %}
-    {% include footer.html %}
+    <div class="max-w-7xl mx-auto">
+      {% include header.html %}
+      <div class="flex items-center justify-center">
+        <article>
+          {{ content }}
+        </article>
+      </div>
+      {% include print-footer.html %}
+      {% include footer.html %}
+    </div>
   </body>
 </html>

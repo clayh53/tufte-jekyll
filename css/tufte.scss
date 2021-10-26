@@ -16,6 +16,7 @@ nav_exclude: true
 @import "../_sass/fonts";
 @import "../_sass/settings";
 @import "../_sass/syntax-highlighting";
+@import "../_sass/utilities";
 
 // Global Resets
 //
@@ -83,7 +84,18 @@ p > a, cite > a, span > a { @if $link-style == underline
     }
   }
 
-body { width: 87.5%;
+
+body.full-width { width: 100%;
+    padding-left: 12.5%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: $body-font;
+    background-color: $bg-color;
+    color: $text-color;
+    max-width: 1400px;
+    counter-reset: sidenote-counter; }
+
+body.article { width: 87.5%;
        margin-left: auto;
        margin-right: auto;
        padding-left: 12.5%;
@@ -298,6 +310,10 @@ blockquote .sidenote, blockquote .marginnote { margin-right: -79% }
                    color: $contrast-color;
                    top: 0rem; } //removed superscripting for numerical reference in sidenote
 
+.full-width {
+  p { width: 90% !important;}
+
+}
 p, footer, div.table-wrapper,  .MJXc-display { width: 55%; }
 
 div.table-wrapper, table { overflow-x: auto; } //changed all overflow values to 'auto' so scroll bars appear only as needed
@@ -428,22 +444,36 @@ ul.footer-links li{
 
 //Full width page styling stuff
 
-body.full-width, .content-listing, ul.content-listing li.listing{ width: 90%;
-       margin-left: auto;
-       margin-right: auto;
-       padding: 0% 5%;
-
+body.full-width{ width: 90%;
+   margin-left: auto;
+   margin-right: auto;
 }
+
+.content-listing {
+  //width: 90%;
+  //margin-left: auto;
+  //margin-right: auto;
+  diplay: flex;
+  align-items: center;
+  justify_content: center;
+}
+ul.content-listing li.listing{
+  width: 100%;
+}
+
 .full-width article p{
   width: 90%;
 }
-
 
 h1.content-listing-header{
   font-style: normal;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   font-size: 1.8rem;
+  margin: auto;
+  text-align: center;
+  margin-top: 0.1rem;
+  margin-bottom: 1rem;
 }
 
 li.listing hr{

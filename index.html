@@ -5,13 +5,13 @@ title: blog
 ---
 
   <h1 class="content-listing-header sans">Articles</h1>
-  <ul class="content-listing ">
+  <ul class="w-90">
     {% for post in site.posts %}      
-        <li class="listing">
+        <li class="w-full">
           <hr class="slender">
           <a href="{{ post.url | prepend: site.baseurl }}"><h3 class="contrast">{{ post.title }}</h3></a>
           <br><span class="smaller">{{ post.date | date: "%B %-d, %Y" }}</span>  <br/>
-          <div>{{ post.excerpt }}</div> 
+          <div class="w-full">{{ post.excerpt }}</div> 
         </li>
     {% endfor %}
   </ul>
