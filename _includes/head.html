@@ -11,7 +11,7 @@
     <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
   {% endif %}
   
-  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+<!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
   {% if site.data.options.mathjax %}
     <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
@@ -33,12 +33,9 @@
   });
 </script>
 
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
- <!--   <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-  {% endif %}
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>  
+{% endif %}
 
   <link rel="stylesheet" type="text/css" href="{{ "/css/tufte.css" | prepend: site.baseurl }}">
   <!-- <link rel="stylesheet" type="text/css" href="{{ "/css/print.css" | prepend: site.baseurl }}" media="print"> -->
