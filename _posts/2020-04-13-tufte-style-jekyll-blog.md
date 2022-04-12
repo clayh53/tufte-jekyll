@@ -15,7 +15,7 @@ The remainder of this sample post is a self-documenting survey of the features o
 
 ### The SASS settings file
 
-I have taken much of the actual *Tufte-css* files and modified them as necessary to accomodate the needs inherent in creating a Jekyll theme that has additional writing aids such as the Liquid tags. I have also turned the CSS file into a [SASS](http://sass-lang.com) file (the .scss type).  This means that you can alter things like font choices, text color, background color, and underlining style by changing values in this file. When the Jekyll site is built using ```jekyll build``` the settings in this file will be compiled into the customized CSS file that the site uses.
+I have taken much of the actual *Tufte-css* files and modified them as necessary to accomodate the needs inherent in creating a Jekyll theme that has additional writing aids such as the Liquid tags. I have also turned the CSS file into a [SASS](http://sass-lang.com) file (the .scss type).  This means that you can alter things like font choices, text color, background color, and underlining style by changing values in this file. When the Jekyll site is built using ```jekyll build``` the settings in this file will be compiled into the customized CSS file that the site uses. If you don't use SCSS or SASS, you are missing out on a huge productivity tool.
 
 This file looks like this:
 
