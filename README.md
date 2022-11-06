@@ -72,7 +72,7 @@ The custom Liquid tags are designed to simplify writing content and displaying i
 {% newthought "Example website: <a href=\"http://example.com\">example label</a>" %}
 ```
 
-The [demo site's Edge Cases entry](http://clayh53.github.io/tufte-jekyll/articles/15/Edge-Cases) has an example toward the bottom illustrating HTML inside of a tag parameter.
+The [demo site's Edge Cases entry](https://clayh53.github.io/tufte-jekyll/articles/20/Edge-Cases.html) has an example toward the bottom illustrating HTML inside of a tag parameter.
 
 ### Epigraph
 
