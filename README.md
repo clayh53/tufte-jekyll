@@ -182,6 +182,17 @@ For those wanting to use this Jekyll theme for academic writing, the new Kramdow
 
 As a side note - if you do not need the math ability, navigate to the ```_data/options.yml``` file and change the mathjax to 'false' and it will not load the mathjax javascript.
 
+### Social icons
+You can add multiple social icons in the footer of your blogpost. To do so just go to ```_data/social.yml``` and add a yml element.
+i.e.
+
+```
+- link: https://twitter.com/your_name
+  icon: icon-twitter
+```
+
+You can find the list of social icons in ```css/tufte.scss```.
+
 ### Setting your baseurl correctly
 
 In the `_config.yml` file is a setting called `baseurl`. This is used by the Jekyll engine to construct all the proper links in the static site. Right now it is set to `/tufte-jekyll` since this project is using Github Pages and you are required to set the project name as the baseurl to serve from Github Pages.
