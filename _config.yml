@@ -1,14 +1,14 @@
-baseurl: /tufte-jekyll
-title: Tufte-Jekyll
-subtitle: Content-centric blogging
-author: clay harmon
+baseurl: /
+title: Tom's Blog
+subtitle: It's possible to make maths interesting
+author: thomas kealy
 simple_search: http://google.com/search
-description: A Jekyll theme for content-rich sites
+description: The HOTTEST Technical writing on Data Science topics
 name: tufte
 markdown: kramdown
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 permalink: /articles/:short_year/:title
-timezone: America/New_York
+timezone: Berlin
 excerpt_separator: <!--more-->  # you can specify your own separator, of course.
 exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', 'UploadToGithub.Rakefile', 'README.md']
 post:
